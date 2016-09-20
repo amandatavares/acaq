@@ -23,8 +23,8 @@
 
 <!-- if there are creation errors, they will show here -->
 <!-- {{ HTML::ul($errors->all()) }} -->
-
-{{ Form::model($question, array('route' => array('perguntas.update', $question->id), 'method' => 'PUT', 'files' => true)) }}
+<!-- {{ Form::open(array('url' => 'perguntas', 'files' => true)) }} -->
+{{ Form::model($question, array('route' => array('perguntas.update', $question->id), 'files' => true, 'method' => 'PUT')) }}
 
     <div class="form-group">
         {{ Form::label('title', 'Title') }}

@@ -9,6 +9,7 @@ use App\Question as Question;
 // use Illuminate\Support\Facades\View as View;
 // use Illuminate\Support\Facades\Validator as Validator;
 // use Illuminate\Html\HtmlFacade as Html;
+use Html;
 
 class QuestionController extends Controller
 {
@@ -90,9 +91,9 @@ class QuestionController extends Controller
         // process the login
         // store
         $questions = Question::find($id);
-        $questions->title       = input('title');
-        $questions->description      = input('description');
-        $questions->img_path = input('img_path');
+        $questions->title       = $request->input('title');
+        $questions->description      = $request->input('description');
+        $questions->img_path = $request->input('img_path');
         $questions->save();
 
         // redirect
