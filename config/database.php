@@ -58,7 +58,7 @@ return [
             'port' => env('DB_PORT', '3306'),
             'database' => env('DB_DATABASE', 'acaqbd'),
             'username' => env('DB_USERNAME', 'root'),
-            'password' => env('DB_PASSWORD', '1234'),
+            'password' => env('DB_PASSWORD', ''),
             'charset' => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix' => '',
@@ -111,7 +111,7 @@ return [
 
         'default' => [
             'host' => env('REDIS_HOST', 'localhost'),
-            'password' => env('REDIS_PASSWORD', '1234'),
+            'password' => env('REDIS_PASSWORD', ''),
             'port' => env('REDIS_PORT', 3306),
             'database' => env('DB_DATABASE', 'acaqbd'),
         ],
