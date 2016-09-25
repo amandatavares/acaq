@@ -55,7 +55,19 @@
 
                 <!-- edit this nerd (uses the edit method found at GET /questions/{id}/edit -->
                 <a class="btn btn-small btn-info" href="{{ url('perguntas/' . $value->id . '/edit') }}">Edit this Nerd</a>
+                <!--Deleta
+                <a class="btn btn-small btn-info" href="{{ url('perguntas/delete/'.$value->id) }}">Delet</a> -->
+                <a>
+                    <td>
+                        <form action="/perguntas/delete/{{ $value->id }}" method="POST">
+                            {{ csrf_field() }}
+                            {{ method_field('DELETE') }}
 
+                             <button>Delete Task</button>
+                
+                        </form>
+                    </td>
+                </a>
             </td>
         </tr>
     @endforeach

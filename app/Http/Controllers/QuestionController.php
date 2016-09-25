@@ -78,26 +78,31 @@ class QuestionController extends Controller
         return view('perguntas.edit')
             ->with('question', $questions);
     }
-    public function update($id)
+    public function update($id, Request $request)
     {
         // validate
         // read more on validation at http://laravel.com/docs/validation
-        $rules = array(
-              'title'       => 'required|max:255',
-              'description'      => 'required'
-        );
-        $validator = $this->validate($request, $rules);
+        //$rules = array(
+        //      'title'       => 'required|max:255',
+        //      'description'      => 'required'
+        //);
+        //$validator = validate($request, $rules);
 
         // process the login
         // store
         $questions = Question::find($id);
-        $questions->title       = $request->input('title');
-        $questions->description      = $request->input('description');
+        $questions->title = $request->input('title');
+        $questions->description  = $request->input('description');
         $questions->img_path = $request->input('img_path');
         $questions->save();
 
         // redirect
         session()->flash('message', 'Successfully updated question!');
         return redirect('perguntas');
+    }
+    public function delete($id, Request $request)
+    { 
+        Question::findOrFail($id)->delete();
+        return redirect('/perguntas');
     }
 }

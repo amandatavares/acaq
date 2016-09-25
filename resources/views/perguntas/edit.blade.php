@@ -21,10 +21,7 @@
 
 <h1>Edit question {{ $question->id }}</h1>
 
-<!-- if there are creation errors, they will show here -->
-<!-- {{ HTML::ul($errors->all()) }} -->
-<!-- {{ Form::open(array('url' => 'perguntas', 'files' => true)) }} -->
-{{ Form::model($question, array('route' => array('perguntas.update', $question->id), 'files' => true, 'method' => 'PUT')) }}
+{{ Form::model($question, ['url' => ['perguntas/edit', $question->id], 'files' => true]) }}
 
     <div class="form-group">
         {{ Form::label('title', 'Title') }}

@@ -9,6 +9,8 @@
 
                 <div class="panel-body">
                     You are logged in!
+                    <a href="{{ url('/perguntas') }}">Veja as perguntas</a>
+                    <p>{{ Auth::user()->name }}</p>
                 </div>
             </div>
         </div>
