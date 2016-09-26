@@ -14,6 +14,11 @@ class CreateanswersTable extends Migration {
 	{
 		Schema::create('answers', function(Blueprint $table) {
             $table->increments('id');
+            $table->integer('questions_id')->unsigned();
+			$table->foreign('questions_id')->
+			    references('id')->
+			    on('questions')->
+			    onDelete('cascade');
             $table->string('description');
             $table->string('img_path')->nullable();
             $table->integer('n_like')->default(0);
