@@ -15,12 +15,12 @@ class CreateQuestionsTable extends Migration
     {
         Schema::create('questions', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title');
-            $table->string('description');
-            $table->string('img_path')->nullable();
-            $table->integer('n_follower')->default(0);
-            $table->integer('n_favorite')->default(0);
-            $table->integer('n_complaint')->default(0);
+            // $table->string('title');
+            // $table->string('description');
+            // $table->string('img_path')->nullable();
+            // $table->integer('n_follower')->default(0);
+            // $table->integer('n_favorite')->default(0);
+            // $table->integer('n_complaint')->default(0);
             $table->timestamps();
         });
     }
