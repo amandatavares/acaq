@@ -1,6 +1,8 @@
 <?php
+use App\User;
+namespace App\Http\Controllers;
 
-class DashboardController extends BaseController {
+class DashboardController extends Controller {
 
 	public function getIndex()
 	{
@@ -10,7 +12,7 @@ class DashboardController extends BaseController {
 	}
 	$not_friends = $not_friends->get();
 
-	return View::make('dashboard.index')->with('not_friends', $not_friends);
+	return view('dashboard.index')->with('not_friends', $not_friends);
 	}
 
   	public function getAddFriend($id)

@@ -9,17 +9,20 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 // use Illuminate\Auth\Reminders\RemindableTrait;
 // use Illuminate\Auth\Reminders\RemindableInterface;
 
-class User extends Authenticatable 
+class User extends Authenticatable
 {
     // Eloquent
-    use Notifiable;    
+    use Notifiable;
 
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
+    protected $fillable = ['first_name', 'last_name', 'email', 'password'];
+
     protected $table = 'users';
+
 
     protected $hidden = array('password', 'remember_token');
 
