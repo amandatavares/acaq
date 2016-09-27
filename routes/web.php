@@ -33,3 +33,5 @@ Route::post('perguntas/edit/{id}', 'QuestionController@update');
 // Route::put('/perguntas', 'QuestionController@update');
 Route::resource("answers","AnswerController");
 Route::resource("comments","CommentController");
+// Create dashboard route
+Route::resource('dashboard', 'DashboardController');
