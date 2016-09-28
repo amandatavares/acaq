@@ -55,18 +55,10 @@ class User extends Authenticatable
      *
      * @var array
      */
-<<<<<<<< HEAD
-    protected $hidden = [
-        'password', 'remember_token',
-    ];
 
     public function questions()
     {
         return $this->hasMany('App\Question');
     }
-=======
-    // protected $hidden = [
-    //     'password', 'remember_token',
-    // ];
->>>>>>> d948daa0971955a0dee6d2552e30b211455f8f12
+
 }
