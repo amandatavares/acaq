@@ -28,6 +28,7 @@ Route::delete('perguntas/delete/{id}', 'QuestionController@delete');
 // Route::post('/pergunta/{id}',['id'=>'QuestionController@editQuestion']);
 Route::get('perguntas/{id}/edit', 'QuestionController@edit');
 Route::post('perguntas/edit/{id}', 'QuestionController@update');
+Route::get('perguntas/comments/{id}','QuestionController@comments');
 // Route::get('perguntas/{id}', 'QuestionController@show');
 // Route::get('perguntas/{id}/edit', 'QuestionController@edit');
 // Route::put('/perguntas', 'QuestionController@update');

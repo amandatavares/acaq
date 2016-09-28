@@ -8,7 +8,7 @@ class Question extends Model
 {
     //
     // protected $table = ['title','description'];
-    public function answer()
+    public function answers()
     {
         return $this->hasMany('App\Answer');
     }

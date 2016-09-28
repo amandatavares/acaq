@@ -8,9 +8,8 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
-                    You are logged in!
+                    You are logged in, {{ Auth::user()->first_name }}!
                     <a href="{{ url('/perguntas') }}">Veja as perguntas</a>
-                    <p>{{ Auth::user()->name }}</p>
                 </div>
             </div>
         </div>

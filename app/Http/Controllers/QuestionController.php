@@ -43,6 +43,7 @@ class QuestionController extends Controller
       $q->title = $request->title;
       $q->description = $request->description;
       $q->user_id = $request->user()->id;
+      //$q->categories_id = 1;
       /*if (isset($request->img_path) && trim($request->img_path) != "") {
         // checking file is valid.
         if ($request->hasFile('img_path') && $request->img_path->isValid()) {
@@ -65,10 +66,11 @@ class QuestionController extends Controller
     {
         // get the question
         $questions = Question::find($id);
+        $answers = $questions->answers;
 
         // show the view and pass the nerd to it
         return view('perguntas.show')
-            ->with('question', $questions);
+            ->with('question', $questions)->with('answers',$answers);
     }
     public function edit($id)
     {
@@ -79,10 +81,10 @@ class QuestionController extends Controller
         return view('perguntas.edit')
             ->with('question', $questions);
     }
-    public function update($id, Request $request)
+    public function update(Request $request, $id)
     {
         // validate
-        // read more on validation at http://laravel.com/docs/validation
+        // read more on validation at http: //laravel.com/docs/validation
         //$rules = array(
         //      'title'       => 'required|max:255',
         //      'description'      => 'required'
@@ -101,9 +103,13 @@ class QuestionController extends Controller
         session()->flash('message', 'Successfully updated question!');
         return redirect('perguntas');
     }
-    public function delete($id, Request $request)
+    public function delete(Request $request, $id)
     { 
         Question::findOrFail($id)->delete();
+        session()->flash('message', 'Successfully deleted question!');
         return redirect('/perguntas');
+    }
+    public function comment(Request $request, $id){
+
     }
 }

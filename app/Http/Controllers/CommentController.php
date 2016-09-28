@@ -40,7 +40,7 @@ class CommentController extends Controller {
 	{
 		$comment = new Comment();
 		
-      	$comment->description = $request->description;	
+      	$comment->description = $request->description;
 
 		$comment->save();
 

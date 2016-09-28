@@ -1,23 +1,8 @@
 <!-- app/views/questions/index.blade.php -->
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Look! I'm CRUDding</title>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-</head>
-<body>
-<div class="container">
+@extends('layouts.app')
 
-<nav class="navbar navbar-inverse">
-    <div class="navbar-header">
-        <a class="navbar-brand" href="{{ URL::to('perguntas') }}">ACAQ</a>
-    </div>
-    <ul class="nav navbar-nav">
-        <li><a href="{{ URL::to('perguntas') }}">View All questions</a></li>
-        <li><a href="{{ URL::to('perguntas/create') }}">Create a Question</a>
-    </ul>
-</nav>
+@section('content')
 
 <h1>All the questions</h1>
 
@@ -52,25 +37,24 @@
                 <!-- we will add this later since its a little more complicated than the other two buttons -->
 
                 <!-- show the nerd (uses the show method found at GET /questions/{id} -->
-                <a class="btn btn-small btn-success" href="{{ url('perguntas/' . $value->id) }}">Show this Nerd</a>
+                <a class="btn btn-small btn-success" style="float:left" href="{{ url('perguntas/' . $value->id) }}">Show this Nerd</a>
 
                 <!-- edit this nerd (uses the edit method found at GET /questions/{id}/edit -->
-                <a class="btn btn-small btn-info" href="{{ url('perguntas/' . $value->id . '/edit') }}">Edit this Nerd</a>
+                <a class="btn btn-small btn-info" style="float:left"  href="{{ url('perguntas/' . $value->id . '/edit') }}">Edit this Nerd</a>
                 <!--Deleta
                 <a class="btn btn-small btn-info" href="{{ url('perguntas/delete/'.$value->id) }}">Delet</a> -->
                 <!--<a class="btn btn-small btn-danger" href="{{ url('perguntas/delete/'.$value->id) }}">Delete this Nerd</a> -->
-                <form action="/perguntas/delete/{{ $value->id }}" method="POST">
+                <form action="/perguntas/delete/{{ $value->id }}" method="POST" style="float:left">
                     {{ csrf_field() }}
                     {{ method_field('DELETE') }}
                     <button class="btn btn-small btn-danger">Delete Task</button>
                 </form> 
+                <a class="btn btn-small btn-warning" style="float:left" href="{{url('perguntas/comments/'.$value->id)}}">Comment</a>
             </td>
-            <td>{{ $value->user->name }}</td>
+            <td>{{ $value->user->first_name }}</td>
         </tr>
     @endforeach
     </tbody>
 </table>
 
-</div>
-</body>
-</html>
+@endsection
