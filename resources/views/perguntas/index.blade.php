@@ -34,6 +34,7 @@
             <td>Description</td>
             <!-- <td>Nerd Level</td> -->
             <td>Actions</td>
+            <td>User</td>
         </tr>
     </thead>
     <tbody>
@@ -57,18 +58,14 @@
                 <a class="btn btn-small btn-info" href="{{ url('perguntas/' . $value->id . '/edit') }}">Edit this Nerd</a>
                 <!--Deleta
                 <a class="btn btn-small btn-info" href="{{ url('perguntas/delete/'.$value->id) }}">Delet</a> -->
-                <a>
-                    <td>
-                        <form action="/perguntas/delete/{{ $value->id }}" method="POST">
-                            {{ csrf_field() }}
-                            {{ method_field('DELETE') }}
-
-                             <button>Delete Task</button>
-                
-                        </form>
-                    </td>
-                </a>
+                <!--<a class="btn btn-small btn-danger" href="{{ url('perguntas/delete/'.$value->id) }}">Delete this Nerd</a> -->
+                <form action="/perguntas/delete/{{ $value->id }}" method="POST">
+                    {{ csrf_field() }}
+                    {{ method_field('DELETE') }}
+                    <button class="btn btn-small btn-danger">Delete Task</button>
+                </form> 
             </td>
+            <td>{{ $value->user->name }}</td>
         </tr>
     @endforeach
     </tbody>

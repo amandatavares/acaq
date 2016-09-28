@@ -42,7 +42,8 @@ class QuestionController extends Controller
       $q =  new Question();
       $q->title = $request->title;
       $q->description = $request->description;
-      if (isset($request->img_path) && trim($request->img_path) != "") {
+      $q->user_id = $request->user()->id;
+      /*if (isset($request->img_path) && trim($request->img_path) != "") {
         // checking file is valid.
         if ($request->hasFile('img_path') && $request->img_path->isValid()) {
           $destinationPath = 'question_uploads/'; // upload path
@@ -53,7 +54,7 @@ class QuestionController extends Controller
           // sending back with message
           // Session::flash('success', 'Upload successfully');
         }
-      }
+      }*/
       $q->save();
 
       // redirect
