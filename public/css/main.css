@@ -1,0 +1,149 @@
+/* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+body {
+  padding: 0;
+  margin: 0; }
+
+.vid-container {
+  position: relative;
+  height: 100vh;
+  overflow: hidden; }
+
+.bgvid {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw; }
+  .bgvid.inner {
+    top: calc(-50vh + 200px);
+    left: calc(-50vw + 200px);
+    filter: url("data:image/svg+xml;utf9,<svg%20version='1.1'%20xmlns='http://www.w3.org/2000/svg'><filter%20id='blur'><feGaussianBlur%20stdDeviation='10'%20/></filter></svg>#blur");
+    -webkit-filter: blur(10px);
+    -ms-filter: blur(10px);
+    -o-filter: blur(10px);
+    filter: blur(10px); }
+
+.inner-container {
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  top: calc(50vh - 200px);
+  left: calc(50vw - 200px);
+  overflow: hidden; }
+
+.btna {
+  border: 0;
+  padding: 10px;
+  font-size: 20px;
+  width: 300px;
+  margin: 20px auto;
+  display: block;
+  cursor: pointer; }
+  .btna:focus, .btna:active {
+    outline: none; }
+
+.btn-login {
+  background: #1ba287;
+  color: #fff;
+  margin: 20px auto 0px auto;
+}
+  .btn-login:active {
+    background: #147461; }
+
+.box {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  font-family: Helvetica;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.13);
+  padding: 30px 0px; }
+  .box h1 {
+    text-align: center;
+    margin: 30px 0;
+    font-size: 30px; }
+  .box input {
+    display: block;
+    width: 300px;
+    margin: auto;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.2);
+    color: #fff;
+    border: 0; }
+    .box input:focus, .box input:active {
+      outline: none; }
+  .box p {
+    font-size: 14px;
+    text-align: center; }
+    .box p span {
+      cursor: pointer;
+      color: #666; }
+
+.container-fluid {
+  background: #f3f3f3;
+  color: #222;
+  padding: 20px; }
+
+.bar-header {
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  top: 0;
+  left: 0; }
+  .bar-header .logo-bar {
+    position: relative;
+    background-image: linear-gradient(to right, #2dbe60, #0185a6);
+    height: 5px;
+    width: 100%;
+    z-index: 3; }
+
+.logo-sign, img {
+  display: block;
+  margin: 20px auto; }
+
+.box-sign {
+  align-items: center;
+  max-width: 384px;
+  margin: 0 auto 28px;
+  padding: 20px;
+  border: 1px solid #dedede;
+  background-color: #fff; }
+  .box-sign .btn-login {
+    width: 100%; }
+  .box-sign label {
+    margin-left: 2s1px; }
+  .box-sign input {
+    display: block;
+    width: 300px;
+    margin: 0 auto 20px;
+    padding: 10px;
+    background: #fff;
+    border: 1px solid #dedede; }
+    @media (max-width: 400px) {
+      .box-sign input {
+        width: 100%; } }
+    .box-sign input:focus, .box-sign input:active {
+      outline: none; }
+      /*-----------------------*/
+.check{
+  margin: 0px 15%;
+}
+
+#box-check{
+  width: auto;
+  float: right;
+  margin: -17px 60% 0px 0px;
+}
+
+#forgot{
+  margin: 8px 0px 0px 0px;
+}
+
+.input-text{
+  border-radius: 5px;
+}
+
+#change_pass {
+    margin: 20px auto;
+    text-align: center;
+}
+/*# sourceMappingURL=main.css.map */

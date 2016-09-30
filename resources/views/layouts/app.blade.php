@@ -14,7 +14,7 @@
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/main.css" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet">
     <script src="https://use.fontawesome.com/c453614277.js"></script>
 
 
@@ -25,7 +25,7 @@
 
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
-    <link href="/css/register.css" rel="stylesheet">
+    
     <!-- Scripts -->
     <script>
         window.Laravel = <?php echo json_encode([
