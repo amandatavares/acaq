@@ -3,7 +3,9 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use App\Answer;
+use App\Question as Question;
+
+use App\Answer as Answer;
 use Illuminate\Http\Request;
 
 class AnswerController extends Controller {
@@ -36,16 +38,18 @@ class AnswerController extends Controller {
 	 * @param Request $request
 	 * @return Response
 	 */
-	public function store(Request $request)
+	public function store(Request $request, $id)
 	{
 		
 		// $rules = array(            
   //           'description'      => 'required'
   //    	 );
   //     	$validator = $this->validate($request, $rules);
+		$question = Question::find($id);
 
       	$answer = new Answer();
       	$answer->description = $request->description;
+      	$answer->question_id = $question->id;
 
 		$answer->save();
 
@@ -108,6 +112,20 @@ class AnswerController extends Controller {
 		$answer->delete();
 
 		return redirect()->route('answers.index')->with('message', 'Item deleted successfully.');
+	}
+
+	public function answer_create($id){
+		$q = Question::find($id);
+		return view('perguntas.answer')->with('question', $q);
+	}
+	public function answer_store(Request $request, $id){
+		$answer =  new Answer();
+      	$answer->description = $request->description;
+      	$answer->question_id = $id;	
+      	$answer->user_id = $request->user()->id;
+		$answer->save();
+		session()->flash('message', 'Successfully created answer!');
+      	return redirect('perguntas');
 	}
 
 }

@@ -47,6 +47,8 @@
                 <ul class="nav navbar-nav">
                     <li><a href="{{ URL::to('perguntas') }}">View All questions</a></li>
                     <li><a href="{{ URL::to('perguntas/create') }}">Create a Question</a>
+                    <li><a href="{{ URL::to('perguntas/myquestions') }}">My Questions</a>
+
                 </ul>
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">

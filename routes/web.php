@@ -19,19 +19,10 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 Route::get('/categorias', 'CategoryController@index');
+Route::get('perguntas/myquestions', 'QuestionController@myquestions');
+Route::get('perguntas/answer/{id}', 'AnswerController@answer_create');
+Route::post('perguntas/answer/{id}', 'AnswerController@answer_store');
 Route::resource("perguntas","QuestionController");
-// Route::get('/perguntas', 'QuestionController@index');
-// Route::get('/perguntas/create', 'QuestionController@create');
-// Route::post('/perguntas', 'QuestionController@store');
-Route::delete('perguntas/delete/{id}', 'QuestionController@delete');
-// Route::post('/pergunta/ver', 'QuestionController@find');
-// Route::post('/pergunta/{id}',['id'=>'QuestionController@editQuestion']);
-Route::get('perguntas/{id}/edit', 'QuestionController@edit');
-Route::post('perguntas/edit/{id}', 'QuestionController@update');
-Route::get('perguntas/comments/{id}','QuestionController@comments');
-// Route::get('perguntas/{id}', 'QuestionController@show');
-// Route::get('perguntas/{id}/edit', 'QuestionController@edit');
-// Route::put('/perguntas', 'QuestionController@update');
 Route::resource("answers","AnswerController");
 Route::resource("comments","CommentController");
 // Create dashboard route

@@ -44,12 +44,12 @@
                 <!--Deleta
                 <a class="btn btn-small btn-info" href="{{ url('perguntas/delete/'.$value->id) }}">Delet</a> -->
                 <!--<a class="btn btn-small btn-danger" href="{{ url('perguntas/delete/'.$value->id) }}">Delete this Nerd</a> -->
-                <form action="/perguntas/delete/{{ $value->id }}" method="POST" style="float:left">
+                <form action="/perguntas/{{ $value->id }}" method="POST" style="float:left">
                     {{ csrf_field() }}
                     {{ method_field('DELETE') }}
                     <button class="btn btn-small btn-danger">Delete Task</button>
                 </form> 
-                <a class="btn btn-small btn-warning" style="float:left" href="{{url('perguntas/comments/'.$value->id)}}">Comment</a>
+                <a class="btn btn-small btn-warning" style="float:left" href="{{url('perguntas/answer/'.$value->id)}}">Answer</a>
             </td>
             <td>{{ $value->user->first_name }}</td>
         </tr>

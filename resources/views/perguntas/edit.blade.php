@@ -7,7 +7,10 @@
 
     <h1>Edit question {{ $question->id }}</h1>
 
-    {{ Form::model($question, ['url' => ['perguntas/edit', $question->id], 'files' => true]) }}
+    {{ Form::model($question, ['url' => ['perguntas', $question->id], 'files' => true]) }}
+       
+        {{ csrf_field() }}
+        {{ method_field('PUT') }}
 
         <div class="form-group">
             {{ Form::label('title', 'Title') }}

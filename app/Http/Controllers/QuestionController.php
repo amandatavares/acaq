@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\Question as Question;
+use Illuminate\Support\Facades\Auth;
 // use Illuminate\Support\Facades\Input as Input;
 // use Illuminate\Support\Facades\View as View;
 // use Illuminate\Support\Facades\Validator as Validator;
@@ -31,11 +32,11 @@ class QuestionController extends Controller
     {
       // $input = $request->all();
       // return Question::create($input);
-      $rules = array(
-            'title'       => 'required|max:255',
-            'description'      => 'required'
-      );
-      $validator = $this->validate($request, $rules);
+      //$rules = array(
+      //      'title'       => 'required|max:255',
+      //      'description'      => 'required'
+      //);
+      //$validator = $this->validate($request, $rules);
 
       // process the login
       // store
@@ -65,12 +66,12 @@ class QuestionController extends Controller
     public function show($id)
     {
         // get the question
-        $questions = Question::find($id);
-        $answers = $questions->answers;
+        $question = Question::find($id);
+        $answers = $question->answers;
 
         // show the view and pass the nerd to it
         return view('perguntas.show')
-            ->with('question', $questions)->with('answers',$answers);
+            ->with('question', $question)->with('answers',$answers);
     }
     public function edit($id)
     {
@@ -86,9 +87,9 @@ class QuestionController extends Controller
         // validate
         // read more on validation at http: //laravel.com/docs/validation
         //$rules = array(
-        //      'title'       => 'required|max:255',
-        //      'description'      => 'required'
-        //);
+       //      'title'       => 'required|max:255',
+       //       'description'      => 'required'
+       // );
         //$validator = validate($request, $rules);
 
         // process the login
@@ -103,13 +104,19 @@ class QuestionController extends Controller
         session()->flash('message', 'Successfully updated question!');
         return redirect('perguntas');
     }
-    public function delete(Request $request, $id)
+    public function destroy(Request $request, $id)
     { 
         Question::findOrFail($id)->delete();
         session()->flash('message', 'Successfully deleted question!');
         return redirect('/perguntas');
     }
-    public function comment(Request $request, $id){
-
+    /*public function comments($id){
+        $question = Question::find($id);
+        return view('perguntas.comment')->with('question', $question);
+    }*/
+    public function myquestions(){
+      $user = Auth::user();
+      $questions = $user->questions;
+      return view('perguntas.myquestions')->with('questions', $questions);
     }
 }

@@ -15,7 +15,7 @@
         <h3>Respostas:</h3>
 
             @foreach($answers as $key => $answers) 
-                <p>{{$answers->description}}</p>
+                <p><strong>{{$answers->user->first_name}}: </strong>{{$answers->description}}</p>
             @endforeach
 
         <!-- Consertar src da image 
