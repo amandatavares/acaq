@@ -1,5 +1,5 @@
 <?php
-use App\User;
+use App\User as User;
 namespace App\Http\Controllers;
 
 class DashboardController extends Controller {

@@ -61,6 +61,7 @@
                     <li><a href="{{ URL::to('perguntas') }}">View All questions</a></li>
                     <li><a href="{{ URL::to('perguntas/create') }}">Create a Question</a>
                     <li><a href="{{ URL::to('perguntas/myquestions') }}">My Questions</a>
+                    <li><a href="{{ URL::to('perguntas/myquestions') }}">Categories</a>
 
                 </ul>
                 <!-- Right Side Of Navbar -->
