@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'password' => 'A senha deve ter no mínimo seis caracteres.',
+    'password' => 'A senha deve ter no mínimo 6 caracteres.',
     'reset' => 'Sua senha foi atualizada!',
     'sent' => 'Nós enviamos a você um e-mail com o link para mudança de senha!',
     'token' => 'Esse código de mudança de senha é inválido.',

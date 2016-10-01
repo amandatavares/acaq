@@ -52,22 +52,7 @@
     <div class="container">
 
 
-      <!-- TEMPORARIOOOOOOOOOOO PAARA AJUDAR OS NEGOCIO, DEPOIS ISSO VAI PRO BELELEU -->
-      <li class="dropdown navbar-header">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-        Opções <span class="caret"></span>
-        </a>
-
-         <ul class="dropdown-menu" role="menu">
-          <li><a href="{{ URL::to('perguntas') }}">View All questions</a></li>
-          <li><a href="{{ URL::to('perguntas/create') }}">Create a Question</a>
-           <li><a href="{{ URL::to('perguntas/myquestions') }}">My Questions</a>
-          </ul>
-        </li>
-         <!-- TEMPORARIOOOOOOOOOOO PAARA AJUDAR OS NEGOCIO, DEPOIS ISSO VAI PRO BELELEU --> 
-
-         <!-- ISSO DAQUI SERÁ DESCOMENTADO, RELAXA --> 
-      <!-- <div class="navbar-header">
+         <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
@@ -77,7 +62,7 @@
         <a class="navbar-brand" href="index.php">
           <img src="img/Logo.png" class="navbar-logo" alt="" />
         </a>
-      </div> -->
+      </div> 
 
       <div class="box-search">
         <form class="navbar-form" action="" method="post">

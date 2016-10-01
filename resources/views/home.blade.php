@@ -8,24 +8,36 @@
         <div class="col-md-12">
           <div class="box-post">
             <div class="box-post">
-              <div class="box-title">
-                <input type="text" placeholder="TÍTULO" name="name" class="input-title">
-              </div>
-              <div class="box-desc">
-                <textarea name="name" placeholder="O que quer saber?" class="input-desc"></textarea>
-              </div>
-              <div class="box-footer ">
-                <a  class="btn-post btn-max pull-right" href="#">
-                  <img class="img-box" src="img/question.png" alt="" />
-                </a>
-                <a class="btn-post btn-min pull-right" href="#">
-                  <img class="img-box" src="img/user.png" alt="" />
-                  <!-- <input type="file" accept="image/*;capture=camera"> Esse comando é pra inserir a imagens, eu não consegui atribuir a imagem. Se conseguir, me diz <3 -->  
-                </a>
-                <a class="btn-post btn-min pull-right" href="#">
-                  <img class="img-box" src="img/push-pin.png" alt="" />
-                </a>
-              </div>
+            {{ Form::open(array('url' => 'perguntas', 'files' => true)) }}
+                  <div class="box-title">
+                    {{ Form::text('title', old('title'), array('class' => 'input-title', 'placeholder' => 'TÍTULO')) }}
+                  </div>
+
+                  <div class="box-desc">
+                    {{ Form::textarea('description', old('description'), array('class' => 'input-desc', 'placeholder' => 'O que quer saber?')) }}
+                  </div>
+
+                  <div class="box-footer ">
+                    <a  class="btn-post btn-max pull-right" href="#">
+                    {{ Form::submit('Create the Question!', array('class' => 'img-box')) }}
+                      <img class="img-box" src="img/question.png" alt=""/> 
+                    </a>
+
+                    <div>
+
+                    <a class="btn-post btn-min pull-right" href="#">
+                    {{ Form::file('img_path', array('class' => 'btn-post btn-min pull-right')) }}
+                      <img class="img-box" src="img/user.png" alt="" />
+                    </a>
+                    </div>
+            {{ Form::close() }}
+
+                    <!-- BOTAO DE ANEXO (N ENTENDI PRA QUE SERVE)
+                    <a class="btn-post btn-min pull-right" href="#">
+                      <img class="img-box" src="img/push-pin.png" alt="" />
+                    </a> -->
+
+                  </div>
             </div>
           </div>    
         </div>
@@ -40,7 +52,7 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
-                    You are logged in, {{ Auth::user()->first_name }}!
+                    Você está logado, {{ Auth::user()->first_name }}!
                     <a href="{{ url('/perguntas') }}">Veja as perguntas</a>
                 </div>
             </div>
