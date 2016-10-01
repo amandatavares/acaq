@@ -141,9 +141,21 @@ body {
 .input-text{
   border-radius: 5px;
 }
-
+#reset-email{
+  padding: 15px;
+}
+#reset-btn{
+  margin: 0px !important;
+}
 #change_pass {
     margin: 20px auto;
     text-align: center;
+}
+
+.help-block1 strong{
+  display: block;
+  color: #a94442;
+  text-align: center;
+  margin: 0px !important;
 }
 /*# sourceMappingURL=main.css.map */
