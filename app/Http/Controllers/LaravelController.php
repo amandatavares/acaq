@@ -12,20 +12,20 @@ use Illuminate\Support\Facades\Auth;
 // use Illuminate\Html\HtmlFacade as Html;
 use Html;
 
-class QuestionController extends Controller
+class LaravelController extends Controller
 {
     //
     function index(){
       // Liste todos os filmes e os retorne no Index
       $question = Question::all();
-      return view('home')
+      return view('perguntas.index')
             ->with('questions', $question);
       // return view('home/index',['questions'=>$question]);
     }
     function create()
     {
         // load the create form (app/views/perguntas/create.blade.php)
-        return view('home');
+        return view('perguntas.create');
     }
 
     function store(Request $request)

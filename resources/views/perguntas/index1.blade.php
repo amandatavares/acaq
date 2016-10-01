@@ -1,6 +1,6 @@
 <!-- app/views/questions/index.blade.php -->
 
-@extends('layouts.app')
+@extends('layouts.app1')
 
 @section('content')
 
@@ -23,7 +23,6 @@
         </tr>
     </thead>
     <tbody>
-    
     @foreach($questions as $key => $value)
         <tr>
             <td>{{ $value->id }}</td>

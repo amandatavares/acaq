@@ -17,7 +17,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+Route::get('/home', 'QuestionController@index');
+
+Route::get('/laravel', 'LaravelController@index');
+
 Route::get('/categorias', 'CategoryController@index');
 Route::get('perguntas/myquestions', 'QuestionController@myquestions');
 Route::get('perguntas/answer/{id}', 'AnswerController@answer_create');
