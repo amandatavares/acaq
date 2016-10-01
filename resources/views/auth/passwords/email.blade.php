@@ -56,7 +56,7 @@
       {{ csrf_field() }}
 
       <div  class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-        <label for="email">E-mail</label>
+        <label for="email" id="reset-email">E-mail</label>
         <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
         @if ($errors->has('email'))
           <span class="help-block">
@@ -65,7 +65,7 @@
         @endif
       </div>
 
-        <button class="btna btn-login form-group input-text" type="submit" name="signup">Link para mudar de senha</button>
+        <button class="btna btn-login form-group input-text "  id="reset-btn" type="submit" name="signup">Link para mudar de senha</button>
       </form>
     </div>
 

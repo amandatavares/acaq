@@ -6,10 +6,6 @@ use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\Question as Question;
 use Illuminate\Support\Facades\Auth;
-// use Illuminate\Support\Facades\Input as Input;
-// use Illuminate\Support\Facades\View as View;
-// use Illuminate\Support\Facades\Validator as Validator;
-// use Illuminate\Html\HtmlFacade as Html;
 use Html;
 
 class QuestionController extends Controller
@@ -32,11 +28,11 @@ class QuestionController extends Controller
     {
       // $input = $request->all();
       // return Question::create($input);
-      //$rules = array(
-      //      'title'       => 'required|max:255',
-      //      'description'      => 'required'
-      //);
-      //$validator = $this->validate($request, $rules);
+      $rules = array(
+            'title'       => 'required|max:255',
+            'description'      => 'required'
+      );
+      $validator = $this->validate($request, $rules);
 
       // process the login
       // store
@@ -44,7 +40,7 @@ class QuestionController extends Controller
       $q->title = $request->title;
       $q->description = $request->description;
       $q->user_id = $request->user()->id;
-      //$q->categories_id = 1;
+      $q->category_id = 1;
       /*if (isset($request->img_path) && trim($request->img_path) != "") {
         // checking file is valid.
         if ($request->hasFile('img_path') && $request->img_path->isValid()) {

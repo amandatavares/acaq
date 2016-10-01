@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Eloquent\Model;
+
 
 class CategoriesTableSeeder extends Seeder
 {
@@ -12,7 +14,8 @@ class CategoriesTableSeeder extends Seeder
     public function run()
     {
       DB::table('categories')->insert([
-          'name' => "Animais",
+          'name' => 'Animais',
+          'name' => 'Informática',
       ]);
     }
 }

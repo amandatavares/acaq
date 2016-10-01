@@ -17,11 +17,10 @@ class CreateQuestionsTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->default(0);
-            //$table->integer('categories_id')->unsigned();
-            //$table->foreign('categories_id')->
-            //    references('id')->
-           //     on('categories')->
-           //     onDelete('cascade');
+            $table->integer('category_id')->unsigned();
+            $table->foreign('category_id')->
+                references('id')->
+                on('categories');
             $table->string('title');
             $table->string('description');
             $table->string('img_path')->nullable();

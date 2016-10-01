@@ -61,7 +61,11 @@
                     <li><a href="{{ URL::to('perguntas') }}">View All questions</a></li>
                     <li><a href="{{ URL::to('perguntas/create') }}">Create a Question</a>
                     <li><a href="{{ URL::to('perguntas/myquestions') }}">My Questions</a>
-                    <li><a href="{{ URL::to('perguntas/myquestions') }}">Categories</a>
+                    <li><a href="{{ URL::to('categories') }}">Categories</a>
+                    <li><a href="{{ URL::to('home') }}">Home</a>
+                    <li><a href="{{ URL::to('myfriends') }}">My friends</a>
+                    <li><a href="{{ URL::to('allusers') }}">All users</a>
+
 
                 </ul>
                 <!-- Right Side Of Navbar -->
@@ -84,9 +88,12 @@
                                         Logout
                                     </a>
 
+                                    <!-- Right Side Of Navbar -->
                                     <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
                                         {{ csrf_field() }}
                                     </form>
+
+                                    
                                 </li>
                             </ul>
                         </li>
@@ -95,6 +102,13 @@
             </div>
         </div>
     </nav>
+
+
+
+
+
+
+
     <div class="container">
         @yield('content')
     </div>

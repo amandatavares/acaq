@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>ACAQ Template</title>
+    <title>Login</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -66,21 +66,21 @@
 
         	<div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
 	       		<input class="input-text" type="text" placeholder="E-mail" id="email" type="email" name="email" value="{{ old('email') }}" required autofocus>
-	       		@if ($errors->has('email'))
-                    <span class="help-block">
+	        </div>
+            @if ($errors->has('email'))
+                    <span class="help-block help-block1">
                     <strong>{{ $errors->first('email') }}</strong>
                     </span>
                 @endif
-	        </div>
 
 	        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
 	        	<input class="input-text" type="password" placeholder="Senha" id="password" type="password" name="password" required>
-	        	@if ($errors->has('password'))
-                     <span class="help-block">
+	        </div>
+            @if ($errors->has('password'))
+                     <span class="help-block help-block1">
                      <strong>{{ $errors->first('password') }}</strong>
                      </span>
                 @endif
-	        </div>
 
           <!--
 	        <div >
