@@ -131,13 +131,22 @@
 	font-size: 12px;
 }
 
-.friends-box {
+.following-box {
 	position: absolute;
 	width: 23%;
 	height: 50%;
 	background-color: white;
 	margin-left: 2%;
 	margin-top: 0.75%;
+	border-radius: 6px;
+}
+.followers-box {
+	position: absolute;
+	width: 23%;
+	height: 50%;
+	background-color: white;
+	margin-left: 2%;
+	margin-top: 350px;
 	border-radius: 6px;
 }
 
