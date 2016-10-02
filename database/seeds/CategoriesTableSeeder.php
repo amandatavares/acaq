@@ -15,7 +15,7 @@ class CategoriesTableSeeder extends Seeder
     {
       DB::table('categories')->insert([
           'name' => 'Animais',
-          'name' => 'Informática',
+          // 'name' => 'Informática',
       ]);
     }
 }

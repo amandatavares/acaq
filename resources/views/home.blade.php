@@ -19,13 +19,13 @@
 
                   <div class="box-footer ">
                     <a  class="btn-post btn-max pull-right" href="#">
-                    {{ Form::submit('', array('class' => 'create-btn')) }} 
+                    {{ Form::submit('', array('class' => 'create-btn')) }}
                     </a>
 
                     <div>
 
                     <a class="btn-post btn-min pull-right" href="#">
-                    {{ Form::file('', array('class' => 'upload_img_btn')) }}
+                    {{ Form::file('img_path', array('class' => 'upload_img_btn')) }}
                     </a>
                     </div>
             {{ Form::close() }}
@@ -37,11 +37,11 @@
 
                   </div>
             </div>
-          </div>    
+          </div>
         </div>
       </div>
       </div>
-      <!--/Post box--> 
+      <!--/Post box-->
 
         <!-- POST -->
      @foreach($questions as $key => $value)
@@ -65,7 +65,7 @@
                             {{ csrf_field() }}
                             {{ method_field('DELETE') }}
                             <button>Apagar</button>
-                            </form> 
+                            </form>
                             </a></li>
                         <li class="set-prof"><a class="set" href="{{url('perguntas/answer/'.$value->id)}}">Responder</a></li>
                     </ul>
@@ -91,7 +91,7 @@
        </div>
       </div>
       @endforeach
-          <!-- POST --> 
+          <!-- POST -->
 
 <div class="container">
     <div class="row">
