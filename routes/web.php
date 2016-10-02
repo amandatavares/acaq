@@ -58,3 +58,6 @@ Route::get('allusers', function(){
 Route::get('perfil', function(){
 	return view('perfil');
 });
+// Curtidas
+Route::post('doLike','LikesController@doLike');
+Route::post('questionLikes','LikesController@questionLikes');
