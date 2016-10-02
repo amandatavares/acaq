@@ -37,7 +37,7 @@
     <!-- START OF acaq imports -->
         <script src="/js/jquery.js"></script>
         <script src="/js/bootstrap.min.js"></script>
-
+        <script src="/js/custom.js"></script>
         <link rel="stylesheet" type="text/css" href="/css/nav.css">
         <link rel="stylesheet" type="text/css" href="/css/search.css">
         <link rel="stylesheet" type="text/css" href="/css/posts.css">
