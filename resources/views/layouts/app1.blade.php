@@ -68,7 +68,7 @@
       </div> 
 
       <div class="box-search">
-        <form class="navbar-form" action="" method="post">
+        <form class="navbar-form" action="{{ url('/pesquisa') }}" method="post">
           <input type="text" class="acaq-input" placeholder="Pesquise por usuários e perguntas" name="search" value="">
           <a  class="btn-search btn-max pull-right" href="#">
             <img class="img-search" src="/img/search.png" alt="" />

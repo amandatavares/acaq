@@ -55,7 +55,6 @@
             @if ( $value->user_id === Auth::user()->id)
             <div class="dropdown dropdown-post pull-right">
                     <button class="btn-trans dropdown-toggle" type="button" data-toggle="dropdown">
-                        <!-- http://loremflickr.com/200/200/woman,profile -->
                         <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu post-drop">

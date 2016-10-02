@@ -65,6 +65,7 @@
                     <li><a href="{{ URL::to('home') }}">Home</a>
                     <li><a href="{{ URL::to('myfriends') }}">My friends</a>
                     <li><a href="{{ URL::to('allusers') }}">All users</a>
+                    <li><a href="{{ URL::to('pesquisar') }}">Pesquisar</a>
 
 
                 </ul>

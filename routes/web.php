@@ -17,7 +17,6 @@ Route::get('/', function () {
 
 Auth::routes();
 
-
 Route::get('myfriends', 'FriendshipController@index');
 Route::get('myfriends/{id}/questions', 'FriendshipController@show_questions');
 Route::get('/home', 'HomeController@index');
@@ -28,14 +27,16 @@ Route::get('/laravel', 'LaravelController@index');
 
 Route::get('/categorias', 'CategoryController@index');
 
-
-Route::get('/profile', 'ProfileController@index');
-
+Route::post('/pesquisar', function(Request $request){
+	$users = App\User::all();
+	$name = $request->search;
+	$count = 0;
+	return view('pesquisa')->with('users',$users)->with('search',$search)->with('count', $count);
+});
 
 Route::get('add_user/{id}', 'FriendshipController@add_friend');
 
 Route::get('perguntas/myquestions', 'QuestionController@myquestions');
-
 Route::get('perguntas/answer/{id}', 'AnswerController@answer_create');
 Route::post('perguntas/answer/{id}', 'AnswerController@answer_store');
 Route::resource("perguntas","QuestionController");
@@ -48,4 +49,6 @@ Route::get('allusers', function(){
 	$users = App\User::all();
 	return view('allusers')->with('users',$users);
 });
-
+Route::get('perfil', function(){
+	return view('perfil');
+});
