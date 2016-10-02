@@ -68,14 +68,14 @@
       </div> 
 
       <div class="box-search">
-      {{ Form::open(array('url' => 'perguntas', 'files' => true, 'class' => 'navbar-form')) }}
-        
-        {{ Form::text('search', old('title'), array('class' => 'acaq-input', 'placeholder' => 'Pesquise por usuários e perguntas')) }}
-        
-        {{ Form::submit('', array('class' => 'btn-search')) }} 
-        
-        {{ Form::close() }}
-         
+
+        <form class="navbar-form" action="{{ url('/pesquisa') }}" method="post">
+          <input type="text" class="acaq-input" placeholder="Pesquise por usuários e perguntas" name="search">
+
+          <input type="submit" class="btn-search" name=" ">
+          
+        </form>
+
       </div>
 
       <ul class="nav navbar-nav navbar-right">

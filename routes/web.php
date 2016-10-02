@@ -10,13 +10,13 @@
 | to using a Closure or controller method. Build something great!
 |
 */
+use Illuminate\Http\Request;
 
 Route::get('/', function () {
     return view('auth/login');
 });
 
 Auth::routes();
-
 
 Route::get('myfriends', 'FriendshipController@index');
 
@@ -30,6 +30,11 @@ Route::get('/laravel', 'LaravelController@index');
 
 Route::get('/categorias', 'CategoryController@index');
 
+Route::post('/pesquisa', function(Request $request){
+	$users = App\User::all();
+	$search = $request->search;
+	return view('pesquisa')->with('users',$users)->with('search',$search);
+});
 
 Route::get('/profile', 'ProfileController@index');
 
@@ -37,7 +42,6 @@ Route::get('/profile', 'ProfileController@index');
 Route::get('add_user/{id}', 'FriendshipController@add_friend');
 
 Route::get('perguntas/myquestions', 'QuestionController@myquestions');
-
 Route::get('perguntas/answer/{id}', 'AnswerController@answer_create');
 Route::post('perguntas/answer/{id}', 'AnswerController@answer_store');
 Route::resource("perguntas","QuestionController");
@@ -51,6 +55,6 @@ Route::get('allusers', function(){
 	$users = App\User::all();
 	return view('allusers')->with('users',$users);
 });
-
-
-
+Route::get('perfil', function(){
+	return view('perfil');
+});
