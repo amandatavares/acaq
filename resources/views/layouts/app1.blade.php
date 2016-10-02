@@ -21,7 +21,7 @@
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>QUAL É O NOME?</title>
+        <title>Alguém conhece?</title>
 
         <!-- Styles -->
         <link href="/css/app.css" rel="stylesheet">
@@ -89,7 +89,7 @@
               <ul class="dropdown-menu profile-drop">
                   <li class="set-prof"><a class="set" href="{{ url('/profile') }}">Meu Perfil</a></li>
                   <li class="set-prof"><a class="set" href="{{ url('/following') }}">Seguindo</a></li>
-                  <li class="set-prof"><a class="set" href="{{ url('/profile') }}">Seguidores</a></li>
+                  <li class="set-prof"><a class="set" href="{{ url('/followers') }}">Seguidores</a></li>
                   <li class="set-prof"><a class="set" href="#">Ajuda</a></li>
                   <li class="set-prof"><a class="set" href="{{ url('/logout') }}"
                                         onclick="event.preventDefault();
