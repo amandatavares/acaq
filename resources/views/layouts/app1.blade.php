@@ -39,6 +39,7 @@
         <script src="/js/bootstrap.min.js"></script>
 
         <link rel="stylesheet" type="text/css" href="/css/nav.css">
+        <link rel="stylesheet" type="text/css" href="/css/search.css">
         <link rel="stylesheet" type="text/css" href="/css/posts.css">
         <link rel="stylesheet" type="text/css" href="/css/style.css">
         <link rel="stylesheet" type="text/css" href="/css/vertical-nav.css">
