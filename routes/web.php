@@ -13,12 +13,16 @@
 use Illuminate\Http\Request;
 
 Route::get('/', function () {
+    return view('auth/index');
+});
+
+Route::get('/login', function () {
     return view('auth/login');
 });
 
 Auth::routes();
 
-Route::get('myfriends', 'FriendshipController@index');
+Route::get('/following', 'FriendshipController@index');
 
 Route::get('follows', 'FriendshipController@follows');
 

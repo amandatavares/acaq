@@ -65,6 +65,7 @@
   border-radius: 100%;
   border: 0;
   margin-left: 10px;
+  cursor: pointer;
 }
 
 .btn-min {
@@ -93,7 +94,7 @@
     height: 50px;
     background-repeat: no-repeat;
     border: none;
-    cursor: pointer;  
+    cursor: pointer;
 }
 
 .upload_img_btn{

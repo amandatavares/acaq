@@ -30,7 +30,7 @@ class FriendshipController extends Controller
     		}
     	}
 
-    	return view('friendships.index')
+    	return view('friendships.following')
     		->with('friends', $friendships)->with('not_friends',$not_friends);
     }
     public function show_questions($id)
