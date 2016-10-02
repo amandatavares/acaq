@@ -25,7 +25,7 @@
 
         <!-- Styles -->
         <link href="/css/app.css" rel="stylesheet">
-        
+
         <!-- Scripts -->
         <script>
             window.Laravel = <?php echo json_encode([
@@ -45,12 +45,12 @@
         <link rel="stylesheet" type="text/css" href="/css/index-post.css">
         <link rel="stylesheet" type="text/css" href="/css/profile.css">
         <link rel="stylesheet" type="text/css" href="/fonts/stylesheet.css">
-        
+
     <!-- END OF acaq imports -->
 </head>
 
 <body>
-    
+
     <nav class="navbar navbar-acaq" role="navigation">
     <div class="container">
 
@@ -65,7 +65,7 @@
         <a class="navbar-brand" href="{{ url('/home') }}">
           <img src="/img/Logo.png" class="navbar-logo" alt="" />
         </a>
-      </div> 
+      </div>
 
       <div class="box-search">
 
@@ -73,7 +73,7 @@
           <input type="text" class="acaq-input" placeholder="Pesquise por usuários e perguntas" name="search">
 
           <input type="submit" class="btn-search" name=" ">
-          
+
         </form>
 
       </div>
@@ -111,7 +111,7 @@
           <ul class="listaNav">
             <button class="btn-trans" type="button">
               <li>
-                <a href="index.php">
+                <a href="/home">
                   <img class="btn-post img-vertical-set-box" src="/img/home.png" alt=""/>
                 </a>
               </li>
@@ -131,7 +131,7 @@
                 </ul>
               </div></li>
 
-              <li> 
+              <li>
               <div class="dropdown dropdown-conf">
                 <button id="vert" class="btn-trans dropdown-toggle" type="button" data-toggle="dropdown">
                   <!-- http://loremflickr.com/200/200/woman,profile -->
@@ -143,7 +143,7 @@
 
                     <li class="set">
 
-                    {{ Form::file('Alterar minha foto do perfil', array('class' => 'set')) }}  
+                    {{ Form::file('Alterar minha foto do perfil', array('class' => 'set')) }}
                     <a class="set" href="{{ url('/profilepic') }}">Alterar minha foto do perfil</a>
 
                     </li>
@@ -153,9 +153,9 @@
 
                 </ul>
               </div>
-            </li>          
+            </li>
 
-            <li> 
+            <li>
               <div class="dropdown dropdown-conf">
                 <button id="vert" class="btn-trans dropdown-toggle" type="button" data-toggle="dropdown">
                   <!-- http://loremflickr.com/200/200/woman,profile -->

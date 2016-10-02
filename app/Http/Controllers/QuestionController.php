@@ -32,7 +32,7 @@ class QuestionController extends Controller
             'title'       => 'required|max:255',
             'description'      => 'required'
       ));
-      
+
 
       // process the login
       // store
@@ -42,7 +42,7 @@ class QuestionController extends Controller
       $q->user_id = $request->user()->id;
       $q->user_img = $request->user()->img_profile;
       $q->category_id = 1;
-      
+
       if (isset($request->img_path) && trim($request->img_path) != "") {
         // checking file is valid.
         if ($request->hasFile('img_path') && $request->img_path->isValid()) {
@@ -52,7 +52,7 @@ class QuestionController extends Controller
           $q->img_path = $fileName;
           $request->img_path->move($destinationPath, $fileName); // uploading file to given path
           //sending back with message
-          Session::flash('success', 'Upload successfully');
+          // Session::flash('success', 'Upload successfully');
         }
       }
       $q->save();
@@ -103,7 +103,7 @@ class QuestionController extends Controller
         return redirect('perguntas');
     }
     public function destroy(Request $request, $id)
-    { 
+    {
         Question::findOrFail($id)->delete();
         session()->flash('message', 'Successfully deleted question!');
         return redirect('/perguntas');
