@@ -132,7 +132,7 @@
 
                 <div class="panel-body">
                     Você está logado, {{ Auth::user()->first_name }}!
-                    <a href="{{ url('/perguntas') }}">Veja as perguntas</a>
+                    <a href="{{ url('/laravel') }}">Veja as perguntas</a>
                 </div>
             </div>
         </div>

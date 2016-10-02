@@ -28,7 +28,13 @@ Route::get('/laravel', 'LaravelController@index');
 
 Route::get('/categorias', 'CategoryController@index');
 
+
 Route::get('/profile', 'ProfileController@index');
+
+
+Route::get('add_user/{id}', 'FriendshipController@add_friend');
+
+Route::get('perguntas/myquestions', 'QuestionController@myquestions');
 
 Route::get('perguntas/answer/{id}', 'AnswerController@answer_create');
 Route::post('perguntas/answer/{id}', 'AnswerController@answer_store');

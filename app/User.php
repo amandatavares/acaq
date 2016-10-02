@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\Auth;
 // use Illuminate\Auth\UserTrait;
 // use Illuminate\Auth\UserInterface;
 // use Illuminate\Auth\Reminders\RemindableTrait;
@@ -44,6 +45,17 @@ class User extends Authenticatable
     public function removeFriend(User $user)
     {
         $this->friends()->detach($user->id);
+    }
+    public function isFriend($id)
+    {
+        $friends = Auth::user()->friendships;
+        foreach ($friends as $key => $friend) {
+            if($friend->id == $id){
+                return TRUE;
+            }else{
+                return FALSE;
+            }
+        }
     }
 
     // protected $fillable = [
