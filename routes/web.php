@@ -24,7 +24,7 @@ Auth::routes();
 
 Route::get('/following', 'FriendshipController@index');
 
-Route::get('follows', 'FriendshipController@follows');
+Route::get('/followers', 'FriendshipController@followers');
 
 Route::get('profile/{id}', 'FriendshipController@show_questions');
 

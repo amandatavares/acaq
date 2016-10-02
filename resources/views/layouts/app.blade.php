@@ -63,9 +63,9 @@
                     <li><a href="{{ URL::to('perguntas/myquestions') }}">My Questions</a>
                     <li><a href="{{ URL::to('categories') }}">Categories</a>
                     <li><a href="{{ URL::to('home') }}">Home</a>
-                    <li><a href="{{ URL::to('myfriends') }}">My friends</a>
+                    <li><a href="{{ URL::to('following') }}">My friends</a>
                     <li><a href="{{ URL::to('allusers') }}">All users</a>
-                    <li><a href="{{ URL::to('follows') }}">Seguidores</a>
+                    <li><a href="{{ URL::to('followers') }}">Seguidores</a>
 
 
                 </ul>

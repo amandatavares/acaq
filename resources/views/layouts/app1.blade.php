@@ -126,8 +126,10 @@
                   </button>
 
                   <ul class="dropdown-menu set-drop">
-                    <li class="set"><a class="set" href="conf-teste.php">Ver quem estou seguindo</a></li>
                     <li class="set"><a class="set" href="conf-teste.php">Ver perguntas de quem sigo</a></li>
+                    <li class="set"><a class="set" href="{{ url('/following') }}">Seguindo</a></li>
+                    <li class="set"><a class="set" href="{{ url('/followers') }}">Seguidores</a></li>
+                    
                 </ul>
               </div></li>
 
@@ -141,12 +143,12 @@
 
                   {{ Form::open(array('action' => 'HomeController@index', 'files' => true, 'class' => 'set')) }}
 
-                    <li class="set">
+                    
 
                     {{ Form::file('Alterar minha foto do perfil', array('class' => 'set')) }}
                     <a class="set" href="{{ url('/profilepic') }}">Alterar minha foto do perfil</a>
 
-                    </li>
+                    
 
                   {{ Form::close() }}
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use App\User;
+use App\Friendship;
 use Illuminate\Http\Request;
 use App\Question as Question;
 use Illuminate\Support\Facades\Auth;
@@ -28,12 +29,19 @@ class ProfileController extends Controller
         }
       }
 
-      // Liste todos os filmes e os retorne no Index
+        $followers = [];
+        foreach (Friendship::all() as $key => $f) {
+            if($f->id == Auth::user()->id)
+                $followers[] = $f->user_id;
+        }
+
       $question = Question::all();
       return view('profile')
-            ->with('questions', $question)->with('friends', $friendships);
+            ->with('questions', $question)->with('friends', $friendships)->with('followers',$followers)->with('users',$users);
       // return view('home/index',['questions'=>$question]);
     }
+
+
     function create()
     {
         // load the create form (app/views/perguntas/create.blade.php)
