@@ -68,12 +68,14 @@
       </div> 
 
       <div class="box-search">
-        <form class="navbar-form" action="" method="post">
-          <input type="text" class="acaq-input" placeholder="Pesquise por usuários e perguntas" name="search" value="">
-
-          <input type="submit" class="btn-search" name=" ">
-          
-        </form>
+      {{ Form::open(array('url' => 'perguntas', 'files' => true, 'class' => 'navbar-form')) }}
+        
+        {{ Form::text('search', old('title'), array('class' => 'acaq-input', 'placeholder' => 'Pesquise por usuários e perguntas')) }}
+        
+        {{ Form::submit('', array('class' => 'btn-search')) }} 
+        
+        {{ Form::close() }}
+         
       </div>
 
       <ul class="nav navbar-nav navbar-right">
@@ -85,7 +87,8 @@
               </button>
               <ul class="dropdown-menu profile-drop">
                   <li class="set-prof"><a class="set" href="{{ url('/profile') }}">Meu Perfil</a></li>
-                  <li class="set-prof"><a class="set" href="#">Seguidores</a></li>
+                  <li class="set-prof"><a class="set" href="{{ url('/profile') }}">Seguindo</a></li>
+                  <li class="set-prof"><a class="set" href="{{ url('/profile') }}">Seguidores</a></li>
                   <li class="set-prof"><a class="set" href="#">Ajuda</a></li>
                   <li class="set-prof"><a class="set" href="{{ url('/logout') }}"
                                         onclick="event.preventDefault();
@@ -112,12 +115,21 @@
                   <img class="btn-post img-vertical-set-box" src="/img/home.png" alt=""/>
                 </a>
               </li>
-              <li>
-                <a href="#">
-                <img class="btn-post img-vertical-set-box" src="/img/follow_request.png" alt=""/>
-                </a>
-              </li>
               </button>
+
+              <li>
+              <div class="dropdown dropdown-conf">
+                <button id="vert" class="btn-trans dropdown-toggle" type="button" data-toggle="dropdown">
+                  <!-- http://loremflickr.com/200/200/woman,profile -->
+                  <img src="/img/follow_request.png" class="btn-post img-vertical-set-box" alt="" />
+                  </button>
+
+
+                  <ul class="dropdown-menu set-drop">
+                    <li class="set"><a class="set" href="conf-teste.php">Ver quem estou seguindo</a></li>
+                    <li class="set"><a class="set" href="conf-teste.php">Ver perguntas de quem sigo</a></li>
+                </ul>
+              </div></li>
 
               <li> 
               <div class="dropdown dropdown-conf">
