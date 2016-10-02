@@ -35,9 +35,25 @@ class FriendshipController extends Controller
     }
     public function show_questions($id)
     {
-    	$friend = User::find($id);
-    	return view('friendships.show_questions')
-    		->with('friend', $friend);
+        $friend = User::find($id);
+
+        $friendships = [];
+        $not_friends = [];
+        $friends = $friend->friendships;
+        $users = User::all();
+        foreach ($users as $key => $user) {
+            foreach ($friends as $key => $f) {
+                if($user->id == $f->id){
+                    $friendships[] = $user;
+                }else{
+                    $not_friends[] = $user;
+                }
+            }
+        }
+
+    	
+    	return view('friendships.profile')
+    		->with('friend', $friend)->with('friend_f', $friendships);;
     }
     public function add_friend($id)
     {

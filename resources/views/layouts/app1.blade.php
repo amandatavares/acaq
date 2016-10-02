@@ -13,7 +13,7 @@
         <meta name="author" content="">
 
         <!-- Bootstrap Core CSS -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="/css/bootstrap.min.css" rel="stylesheet">
         <link href="/css/main.css" rel="stylesheet">
         <script src="https://use.fontawesome.com/c453614277.js"></script>
 
@@ -35,8 +35,8 @@
     <!-- END OF ORIGINAL app.blade.php -->
 
     <!-- START OF acaq imports -->
-        <script src="js/jquery.js"></script>
-        <script src="js/bootstrap.min.js"></script>
+        <script src="/js/jquery.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
 
         <link rel="stylesheet" type="text/css" href="/css/nav.css">
         <link rel="stylesheet" type="text/css" href="/css/posts.css">
@@ -70,9 +70,9 @@
       <div class="box-search">
         <form class="navbar-form" action="{{ url('/pesquisa') }}" method="post">
           <input type="text" class="acaq-input" placeholder="Pesquise por usuários e perguntas" name="search" value="">
-          <a  class="btn-search btn-max pull-right" href="#">
-            <img class="img-search" src="/img/search.png" alt="" />
-          </a>
+
+          <input type="submit" class="btn-search" name=" ">
+          
         </form>
       </div>
 
