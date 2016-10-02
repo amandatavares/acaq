@@ -21,18 +21,18 @@ class QuestionController extends Controller
     function create()
     {
         // load the create form (app/views/perguntas/create.blade.php)
-        return view('home');
+        return view('perguntas.create');
     }
 
     function store(Request $request)
     {
       // $input = $request->all();
       // return Question::create($input);
-      $rules = array(
+      $this->validate($request, array(
             'title'       => 'required|max:255',
             'description'      => 'required'
-      );
-      $validator = $this->validate($request, $rules);
+      ));
+      
 
       // process the login
       // store
@@ -82,11 +82,11 @@ class QuestionController extends Controller
     {
         // validate
         // read more on validation at http: //laravel.com/docs/validation
-        //$rules = array(
-       //      'title'       => 'required|max:255',
-       //       'description'      => 'required'
-       // );
-        //$validator = validate($request, $rules);
+        $rules = array(
+             'title'       => 'required|max:255',
+              'description'      => 'required'
+        );
+        $validator = validate($request, $rules);
 
         // process the login
         // store

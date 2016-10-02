@@ -10,6 +10,8 @@ use App\User;
 
 use Illuminate\Support\Facades\Auth;
 
+use App\Friendship;
+
 class FriendshipController extends Controller
 {
     public function index()
@@ -36,5 +38,13 @@ class FriendshipController extends Controller
     	$friend = User::find($id);
     	return view('friendships.show_questions')
     		->with('friend', $friend);
+    }
+    public function add_friend($id)
+    {
+        $friend = new Friendship;
+        $friend->id = $id;
+        $friend->user_id = Auth::user()->id;
+        $friend->save();
+        return redirect('allusers');
     }
 }
