@@ -20,6 +20,8 @@ Auth::routes();
 
 Route::get('myfriends', 'FriendshipController@index');
 
+Route::get('follows', 'FriendshipController@follows');
+
 Route::get('profile/{id}', 'FriendshipController@show_questions');
 
 Route::get('/home', 'HomeController@index');
