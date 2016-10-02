@@ -19,15 +19,13 @@
 
                   <div class="box-footer ">
                     <a  class="btn-post btn-max pull-right" href="#">
-                    {{ Form::submit('Create the Question!', array('class' => 'img-box')) }}
-                      <img class="img-box" src="/img/question.png" alt=""/> 
+                    {{ Form::submit('', array('class' => 'create-btn')) }} 
                     </a>
 
                     <div>
 
                     <a class="btn-post btn-min pull-right" href="#">
-                    {{ Form::file('img_path', array('class' => 'btn-post btn-min pull-right')) }}
-                      <img class="img-box" src="/img/user.png" alt="" />
+                    {{ Form::file('', array('class' => 'upload_img_btn')) }}
                     </a>
                     </div>
             {{ Form::close() }}
@@ -53,7 +51,28 @@
           <div class="index-post">
             <div class="post-box">
 
-             <!-- Options -->
+            <!-- options new-->
+            @if ( $value->user_id === Auth::user()->id)
+            <div class="dropdown dropdown-post pull-right">
+                    <button class="btn-trans dropdown-toggle" type="button" data-toggle="dropdown">
+                        <!-- http://loremflickr.com/200/200/woman,profile -->
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu post-drop">
+                        <li class="set-prof"><a href="{{ url('perguntas/' . $value->id) }}" class="set">Abrir pergunta</a></li>
+                        <li class="set-prof"><a class="set" href="{{ url('perguntas/' . $value->id . '/edit') }}">Editar</a></li>
+                        <li class="set-prof"><a class="set">
+                            <form action="/perguntas/{{ $value->id }}" method="POST" style="float:left">
+                            {{ csrf_field() }}
+                            {{ method_field('DELETE') }}
+                            <button>Apagar</button>
+                            </form> 
+                            </a></li>
+                        <li class="set-prof"><a class="set" href="{{url('perguntas/answer/'.$value->id)}}">Responder</a></li>
+                    </ul>
+                </div>
+              @endif
+             <!-- Options 
              <div class=" dropdown options-post">
             <a class="dropdown-toggle options-post" href="#" data-toggle="dropdown" role="button" aria-expanded="true">
                 Opções <span class="caret"></span>
@@ -82,9 +101,9 @@
                 </li>
             </ul>
             </div>
-             <!-- Options -->
+              Options -->
 
-              <img class="profile-post-pic" src="img/Profile.png">
+              <img class="profile-post-pic" src="{{ $value->user_img }}">
               <h4 class="title">{{ $value->title }}</h4>
               <h6 class="desc">{{ $value->description }}</h6>
               <div class="post-footer">

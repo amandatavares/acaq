@@ -27,6 +27,7 @@
 	border-bottom: 5px solid #e0e0e0;
 	border-top-left-radius: 6px;
 	border-top-right-radius: 6px;
+	margin-top: 0px !important;
 }
 
 .cover-pic img.profile-pic {
@@ -64,9 +65,9 @@
 
 /*Para a parte inferior*/
 .publication-box {
-	position: absolute;
+	position: relative;
 	float: bottom;
-	top: 62%;
+	top: 210px;
 	width: 100%;
 	height: 15%;
 	border: 2px;
@@ -77,11 +78,11 @@
 	border-color: #efefef;
 }
 
-.profile-post-pic {
+.profile-post-pic-my {
 	position: absolute;
 	border-radius: 100%;
 	left: 5%;
-	top: 14%;
+	top: -7%;
 	width: 70px;
 	height: 70px;
 	/*margin-top: 15%;*/
@@ -97,24 +98,24 @@
 	background-color: #efefef;
 }
 
-.title {
+.title-my {
 	font-family: Nexa;
 	font-weight: bold;
 	color: #1abc9c;
 	margin-left: 2%;
 	margin-top: 1%;
-	font-size: 18px;
+	font-size: 22px;
 }
 
-.desc {
+.desc-my {
 	font-family: Nexa;
-	color: #2D2E38;
+	color: #111115;
 	margin-top: -1.5%;
 	margin-left: 2%;
-	font-size: 12px;
+	font-size: 14px;
 }
 
-.dropdown-post {
+.dropdown-post-my {
 	margin-top: -10%;
 	margin-right: 0.5%;
 }
@@ -135,7 +136,7 @@
 	width: 23%;
 	height: 50%;
 	background-color: white;
-	margin-left: 11%;
+	margin-left: 2%;
 	margin-top: 0.75%;
 	border-radius: 6px;
 }
@@ -158,7 +159,7 @@
 	position: absolute;
 	border-radius: 100%;
 	left: 10%;
-	top: 10%;
+	top: -20%;
 	width: 50px;
 	height: 50px;
 }
@@ -179,3 +180,4 @@
 	color: grey;
 	font-size: 12px;
 }
+

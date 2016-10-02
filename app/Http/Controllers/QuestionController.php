@@ -40,8 +40,10 @@ class QuestionController extends Controller
       $q->title = $request->title;
       $q->description = $request->description;
       $q->user_id = $request->user()->id;
+      $q->user_img = $request->user()->img_profile;
       $q->category_id = 1;
-      /*if (isset($request->img_path) && trim($request->img_path) != "") {
+      
+      if (isset($request->img_path) && trim($request->img_path) != "") {
         // checking file is valid.
         if ($request->hasFile('img_path') && $request->img_path->isValid()) {
           $destinationPath = 'question_uploads/'; // upload path
@@ -49,15 +51,15 @@ class QuestionController extends Controller
           $fileName = md5(time()."img").'.'.$extension; // renameing image
           $q->img_path = $fileName;
           $request->img_path->move($destinationPath, $fileName); // uploading file to given path
-          // sending back with message
-          // Session::flash('success', 'Upload successfully');
+          //sending back with message
+          Session::flash('success', 'Upload successfully');
         }
-      }*/
+      }
       $q->save();
 
       // redirect
       session()->flash('message', 'Successfully created question!');
-      return redirect('perguntas');
+      return redirect('home');
     }
     public function show($id)
     {
@@ -113,6 +115,6 @@ class QuestionController extends Controller
     public function myquestions(){
       $user = Auth::user();
       $questions = $user->questions;
-      return view('perguntas.myquestions')->with('questions', $questions);
+      return view('profile')->with('questions', $questions);
     }
 }

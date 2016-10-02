@@ -83,3 +83,31 @@
   width: 100%;
   margin: 0;
 }
+
+.create-btn{
+    background-image: url(/img/question.png);
+    background-position: 0px 0px;
+    border-radius: 100%;
+    background-size: 100%;
+    width: 50px;
+    height: 50px;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;  
+}
+
+.upload_img_btn{
+    background-image: url(/img/user.png);
+    background-position: 0px 0px;
+    border-radius: 100%;
+    background-size: 100%;
+    margin-right: 100px;
+    width: 25px;
+    height: 25px;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+}
+.upload_img_btn::-webkit-file-upload-button {
+  visibility: hidden;
+}

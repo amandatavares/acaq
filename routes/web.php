@@ -28,7 +28,8 @@ Route::get('/laravel', 'LaravelController@index');
 
 Route::get('/categorias', 'CategoryController@index');
 
-Route::get('perguntas/myquestions', 'QuestionController@myquestions');
+Route::get('/profile', 'ProfileController@index');
+
 Route::get('perguntas/answer/{id}', 'AnswerController@answer_create');
 Route::post('perguntas/answer/{id}', 'AnswerController@answer_store');
 Route::resource("perguntas","QuestionController");
@@ -41,6 +42,4 @@ Route::get('allusers', function(){
 	$users = App\User::all();
 	return view('allusers')->with('users',$users);
 });
-Route::get('perfil', function(){
-	return view('perfil');
-});
+

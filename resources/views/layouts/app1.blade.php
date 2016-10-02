@@ -21,7 +21,7 @@
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        <title>QUAL É O NOME?</title>
 
         <!-- Styles -->
         <link href="/css/app.css" rel="stylesheet">
@@ -43,6 +43,7 @@
         <link rel="stylesheet" type="text/css" href="/css/style.css">
         <link rel="stylesheet" type="text/css" href="/css/vertical-nav.css">
         <link rel="stylesheet" type="text/css" href="/css/index-post.css">
+        <link rel="stylesheet" type="text/css" href="/css/profile.css">
         <link rel="stylesheet" type="text/css" href="/fonts/stylesheet.css">
         
     <!-- END OF acaq imports -->
@@ -80,10 +81,10 @@
           <div class="dropdown dropdown-profile">
             <button class="btn-trans dropdown-toggle" type="button" data-toggle="dropdown">
               <!-- http://loremflickr.com/200/200/woman,profile -->
-              <img src="/img/Profile.png" class="user-icon" alt="" />
+              <img src="{{ Auth::user()->img_profile }}" class="user-icon" alt="" />
               </button>
               <ul class="dropdown-menu profile-drop">
-                  <li class="set-prof"><a class="set" href="profile.php">Meu Perfil</a></li>
+                  <li class="set-prof"><a class="set" href="{{ url('/profile') }}">Meu Perfil</a></li>
                   <li class="set-prof"><a class="set" href="#">Seguidores</a></li>
                   <li class="set-prof"><a class="set" href="#">Ajuda</a></li>
                   <li class="set-prof"><a class="set" href="{{ url('/logout') }}"
@@ -125,7 +126,19 @@
                   <img src="/img/user.png" class="btn-post img-vertical-set-box" alt="" />
                   </button>
                   <ul class="dropdown-menu set-drop">
-                    <li class="set"><a class="set" href="{{ url('/profilepic') }}">Alterar minha foto do perfil</a></li>
+
+                  {{ Form::open(array('action' => 'HomeController@index', 'files' => true, 'class' => 'set')) }}
+
+                    <li class="set">
+
+                    {{ Form::file('Alterar minha foto do perfil', array('class' => 'set')) }}  
+                    <a class="set" href="{{ url('/profilepic') }}">Alterar minha foto do perfil</a>
+
+                    </li>
+
+                  {{ Form::close() }}
+
+
                 </ul>
               </div>
             </li>          
