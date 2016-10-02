@@ -73,7 +73,7 @@
                 </div>
               @endif
 
-              <a href="{{ url('profile/' . $value->id . '') }}"><img class="profile-post-pic" src="{{ $value->user_img }}"></a>
+              <a href="{{ url('profile/' . $value->user_id . '') }}"><img class="profile-post-pic" src="{{ $value->user_img }}"></a>
               <h4 class="title">{{ $value->title }}</h4>
               <h6 class="desc">{{ $value->description }}</h6>
               <div class="post-footer">
