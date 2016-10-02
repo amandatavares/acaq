@@ -69,7 +69,7 @@
 
       <div class="box-search">
         <form class="navbar-form" action="{{ url('/pesquisa') }}" method="post">
-          <input type="text" class="acaq-input" placeholder="Pesquise por usuários e perguntas" name="search" value="">
+          <input type="text" class="acaq-input" placeholder="Pesquise por usuários e perguntas" name="search">
 
           <input type="submit" class="btn-search" name=" ">
           

@@ -10,6 +10,7 @@
 | to using a Closure or controller method. Build something great!
 |
 */
+use Illuminate\Http\Request;
 
 Route::get('/', function () {
     return view('auth/login');
@@ -29,11 +30,10 @@ Route::get('/laravel', 'LaravelController@index');
 
 Route::get('/categorias', 'CategoryController@index');
 
-Route::post('/pesquisar', function(Request $request){
+Route::post('/pesquisa', function(Request $request){
 	$users = App\User::all();
-	$name = $request->search;
-	$count = 0;
-	return view('pesquisa')->with('users',$users)->with('search',$search)->with('count', $count);
+	$search = $request->search;
+	return view('pesquisa')->with('users',$users)->with('search',$search);
 });
 
 Route::get('/profile', 'ProfileController@index');
