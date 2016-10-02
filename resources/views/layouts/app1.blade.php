@@ -88,7 +88,7 @@
               </button>
               <ul class="dropdown-menu profile-drop">
                   <li class="set-prof"><a class="set" href="{{ url('/profile') }}">Meu Perfil</a></li>
-                  <li class="set-prof"><a class="set" href="{{ url('/profile') }}">Seguindo</a></li>
+                  <li class="set-prof"><a class="set" href="{{ url('/following') }}">Seguindo</a></li>
                   <li class="set-prof"><a class="set" href="{{ url('/profile') }}">Seguidores</a></li>
                   <li class="set-prof"><a class="set" href="#">Ajuda</a></li>
                   <li class="set-prof"><a class="set" href="{{ url('/logout') }}"
@@ -112,7 +112,7 @@
           <ul class="listaNav">
             <button class="btn-trans" type="button">
               <li>
-                <a href="/home">
+                <a href="{{ url('/home') }}">
                   <img class="btn-post img-vertical-set-box" src="/img/home.png" alt=""/>
                 </a>
               </li>
@@ -124,7 +124,6 @@
                   <!-- http://loremflickr.com/200/200/woman,profile -->
                   <img src="/img/follow_request.png" class="btn-post img-vertical-set-box" alt="" />
                   </button>
-
 
                   <ul class="dropdown-menu set-drop">
                     <li class="set"><a class="set" href="conf-teste.php">Ver quem estou seguindo</a></li>
