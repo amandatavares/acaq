@@ -38,11 +38,13 @@
         <script src="js/jquery.js"></script>
         <script src="js/bootstrap.min.js"></script>
 
-        <link rel="stylesheet" type="text/css" href="css/posts.css">
-        <link rel="stylesheet" type="text/css" href="css/nav.css">
-        <link rel="stylesheet" type="text/css" href="css/style.css">
-        <link rel="stylesheet" type="text/css" href="css/vertical-nav.css">
-        <link rel="stylesheet" type="text/css" href="fonts/stylesheet.css">
+        <link rel="stylesheet" type="text/css" href="/css/nav.css">
+        <link rel="stylesheet" type="text/css" href="/css/posts.css">
+        <link rel="stylesheet" type="text/css" href="/css/style.css">
+        <link rel="stylesheet" type="text/css" href="/css/vertical-nav.css">
+        <link rel="stylesheet" type="text/css" href="/css/index-post.css">
+        <link rel="stylesheet" type="text/css" href="/fonts/stylesheet.css">
+        
     <!-- END OF acaq imports -->
 </head>
 
@@ -59,8 +61,8 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="index.php">
-          <img src="img/Logo.png" class="navbar-logo" alt="" />
+        <a class="navbar-brand" href="{{ url('/home') }}">
+          <img src="/img/Logo.png" class="navbar-logo" alt="" />
         </a>
       </div> 
 
@@ -68,7 +70,7 @@
         <form class="navbar-form" action="" method="post">
           <input type="text" class="acaq-input" placeholder="Pesquise por usuários e perguntas" name="search" value="">
           <a  class="btn-search btn-max pull-right" href="#">
-            <img class="img-search" src="img/search.png" alt="" />
+            <img class="img-search" src="/img/search.png" alt="" />
           </a>
         </form>
       </div>
@@ -78,7 +80,7 @@
           <div class="dropdown dropdown-profile">
             <button class="btn-trans dropdown-toggle" type="button" data-toggle="dropdown">
               <!-- http://loremflickr.com/200/200/woman,profile -->
-              <img src="img/Profile.png" class="user-icon" alt="" />
+              <img src="/img/Profile.png" class="user-icon" alt="" />
               </button>
               <ul class="dropdown-menu profile-drop">
                   <li class="set-prof"><a class="set" href="profile.php">Meu Perfil</a></li>
@@ -106,36 +108,41 @@
             <button class="btn-trans" type="button">
               <li>
                 <a href="index.php">
-                  <img class="btn-post img-vertical-set-box" src="img/home.png" alt=""/>
+                  <img class="btn-post img-vertical-set-box" src="/img/home.png" alt=""/>
                 </a>
               </li>
               <li>
                 <a href="#">
-                <img class="btn-post img-vertical-set-box" src="img/follow_request.png" alt=""/>
+                <img class="btn-post img-vertical-set-box" src="/img/follow_request.png" alt=""/>
                 </a>
               </li>
-              <li>
-                <a href="#">
-                  <img class="btn-post img-vertical-set-box" src="img/notifications.png" alt=""/>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <img class="btn-post img-vertical-set-box" src="img/speech_box.png" alt=""/>
-                </a>
-              </li>
-            </button>
+              </button>
+
+              <li> 
+              <div class="dropdown dropdown-conf">
+                <button id="vert" class="btn-trans dropdown-toggle" type="button" data-toggle="dropdown">
+                  <!-- http://loremflickr.com/200/200/woman,profile -->
+                  <img src="/img/user.png" class="btn-post img-vertical-set-box" alt="" />
+                  </button>
+                  <ul class="dropdown-menu set-drop">
+                    <li class="set"><a class="set" href="{{ url('/profilepic') }}">Alterar minha foto do perfil</a></li>
+                </ul>
+              </div>
+            </li>          
+
             <li> 
               <div class="dropdown dropdown-conf">
                 <button id="vert" class="btn-trans dropdown-toggle" type="button" data-toggle="dropdown">
                   <!-- http://loremflickr.com/200/200/woman,profile -->
-                  <img src="img/settings.png" class="btn-post img-vertical-set-box" alt="" />
+                  <img src="/img/settings.png" class="btn-post img-vertical-set-box" alt="" />
                   </button>
                   <ul class="dropdown-menu set-drop">
                     <li class="set"><a class="set" href="conf-teste.php">Configurações gerais da conta</a></li>
                 </ul>
               </div>
             </li>
+
+
           </ul>
         </div>
       </nav>

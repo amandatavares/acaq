@@ -26,7 +26,7 @@
         {{ Form::file('img_path', array('class' => 'form-control')) }}
     </div>
 
-    {{ Form::submit('Create the Question!', array('class' => 'btn btn-primary')) }}
+    {{ Form::submit('Create the Question!', array('class' => 'btn btn-primary', 'src' => 'question.png')) }}
 
 {{ Form::close() }}
 
