@@ -63,14 +63,22 @@ class FriendshipController extends Controller
         $friend->save();
         return redirect('allusers');
     }
+    public function add_follower($id)
+    {
+        $friend = new Friendship;
+        $friend->id = $id;
+        $friend->user_id = Auth::user()->id;
+        $friend->save();
+        return redirect('followers');
+    }
 
-    public function follows(){
+    public function followers(){
         $users = User::all();
-        $follows = [];
+        $followers = [];
         foreach (Friendship::all() as $key => $f) {
             if($f->id == Auth::user()->id)
-                $follows[] = $f->user_id;
+                $followers[] = $f->user_id;
         }
-        return view('follows')->with('follows',$follows)->with('users',$users);
+        return view('friendships.followers')->with('followers',$followers)->with('users',$users);
     }
 }

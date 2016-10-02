@@ -24,7 +24,8 @@ Auth::routes();
 
 Route::get('/following', 'FriendshipController@index');
 
-Route::get('follows', 'FriendshipController@follows');
+Route::get('followers', 'FriendshipController@followers');
+Route::get('followers/{id}', 'FriendshipController@add_follower');
 
 Route::get('profile/{id}', 'FriendshipController@show_questions');
 
@@ -64,3 +65,6 @@ Route::get('allusers', function(){
 Route::get('perfil', function(){
 	return view('perfil');
 });
+// Curtidas
+Route::post('doLike','LikesController@doLike');
+Route::post('questionLikes','LikesController@questionLikes');

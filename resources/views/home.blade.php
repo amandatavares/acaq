@@ -75,9 +75,13 @@
               <a href="{{ url('profile/' . $value->user_id . '') }}"><img class="profile-post-pic" src="{{ $value->user_img }}" title=" {{$value->first_name }}"></a>
               <h4 class="title">{{ $value->title }}</h4>
               <h6 class="desc">{{ $value->description }}</h6>
+              <!-- <?= Auth::user()?> -->
               <div class="post-footer">
-                <span class="pull-left">120</span>
-                <a class="btn-post btn-min pull-left">
+                <script>
+                likes(<?= $value->id ?>);
+                </script>
+                <span class="pull-left" id="question-<?= $value->id ?>"></span>
+                <a class="btn-post btn-min pull-left" onclick="like(<?=Auth::user()->id?>,<?=$value->id?>)">
                   <img class="img-box" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Bot%C3%B3n_Me_gusta.svg/1195px-Bot%C3%B3n_Me_gusta.svg.png" alt="" />
                 </a>
                 <a class="btn-post btn-min pull-left">
