@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests;
+use App\User;
 use Illuminate\Http\Request;
 use App\Question as Question;
 use Illuminate\Support\Facades\Auth;
@@ -12,10 +13,25 @@ class ProfileController extends Controller
 {
     //
     function index(){
+
+       $friendships = [];
+      $not_friends = [];
+      $friends = Auth::user()->friendships;
+      $users = User::all();
+      foreach ($users as $key => $user) {
+        foreach ($friends as $key => $friend) {
+          if($user->id == $friend->id){
+            $friendships[] = $user;
+          }else{
+            $not_friends[] = $user;
+          }
+        }
+      }
+
       // Liste todos os filmes e os retorne no Index
       $question = Question::all();
       return view('profile')
-            ->with('questions', $question);
+            ->with('questions', $question)->with('friends', $friendships);
       // return view('home/index',['questions'=>$question]);
     }
     function create()
@@ -40,4 +56,6 @@ class ProfileController extends Controller
       $questions = $user->questions;
       return view('profile')->with('questions', $questions);
     }
+
 }
+

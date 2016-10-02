@@ -48,13 +48,26 @@
 
     </div>
 
-
+   
     <div class="friends-box">
-        <div class="friends">
-            <img class="profile-friend-pic" src="/img/Profile2.png">
-            <h5>Noah</h5>
-            <h6>@noah_es</h6>
+        <div >
+            <h5 class="friends-title">SEGUINDO</h5>
         </div>
+        @if( $friends === null )
+            <div class="friends">
+                <h5>Você está seguindo ninguém</h5>
+                <h5>Procure um amigo!</h5>
+            </div>
+        @endif
+        
+        @foreach ($friends as $key => $val)
+        <div class="friends">
+            <h4></h4>
+            <img class="profile-friend-pic" src="{{ $val->img_profile }}">
+            <h5>{{ $val->first_name }}</h5>
+            <h6>{{ $val->email }}</h6>
+        </div>
+        @endforeach
     </div>
 
 

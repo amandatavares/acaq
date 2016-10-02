@@ -19,7 +19,9 @@ Auth::routes();
 
 
 Route::get('myfriends', 'FriendshipController@index');
-Route::get('myfriends/{id}/questions', 'FriendshipController@show_questions');
+
+Route::get('profile/{id}', 'FriendshipController@show_questions');
+
 Route::get('/home', 'HomeController@index');
 Route::get('/categories', 'CategoryController@index');
 Route::get('/home', 'QuestionController@index');
@@ -31,7 +33,7 @@ Route::get('/categorias', 'CategoryController@index');
 
 Route::get('/profile', 'ProfileController@index');
 
-
+//Jonas's routes
 Route::get('add_user/{id}', 'FriendshipController@add_friend');
 
 Route::get('perguntas/myquestions', 'QuestionController@myquestions');
@@ -41,6 +43,7 @@ Route::post('perguntas/answer/{id}', 'AnswerController@answer_store');
 Route::resource("perguntas","QuestionController");
 Route::resource("answers","AnswerController");
 Route::resource("comments","CommentController");
+
 // Create dashboard route
 Route::resource('dashboard', 'DashboardController@getIndex');
 
@@ -48,4 +51,6 @@ Route::get('allusers', function(){
 	$users = App\User::all();
 	return view('allusers')->with('users',$users);
 });
+
+
 
