@@ -52,10 +52,9 @@ class User extends Authenticatable
         foreach ($friends as $key => $friend) {
             if($friend->id == $id){
                 return TRUE;
-            }else{
-                return FALSE;
             }
         }
+        return FALSE;
     }
 
     // protected $fillable = [

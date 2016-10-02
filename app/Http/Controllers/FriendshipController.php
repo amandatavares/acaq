@@ -30,7 +30,7 @@ class FriendshipController extends Controller
     		}
     	}
 
-    	return view('friendships.index')
+    	return view('friendships.following')
     		->with('friends', $friendships)->with('not_friends',$not_friends);
     }
     public function show_questions($id)
@@ -62,5 +62,15 @@ class FriendshipController extends Controller
         $friend->user_id = Auth::user()->id;
         $friend->save();
         return redirect('allusers');
+    }
+
+    public function follows(){
+        $users = User::all();
+        $follows = [];
+        foreach (Friendship::all() as $key => $f) {
+            if($f->id == Auth::user()->id)
+                $follows[] = $f->user_id;
+        }
+        return view('follows')->with('follows',$follows)->with('users',$users);
     }
 }
