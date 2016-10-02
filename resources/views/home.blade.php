@@ -71,38 +71,8 @@
                     </ul>
                 </div>
               @endif
-             <!-- Options 
-             <div class=" dropdown options-post">
-            <a class="dropdown-toggle options-post" href="#" data-toggle="dropdown" role="button" aria-expanded="true">
-                Opções <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu" role="menu">
-                <li>
-                    <a href="{{ url('perguntas/' . $value->id) }}"">
-                        Abrir pergunta
-                    </a>
-                    <a href="{{ url('perguntas/' . $value->id . '/edit') }}">
-                        Editar
-                    </a>
 
-                    <a>
-                    <form action="/perguntas/{{ $value->id }}" method="POST" style="float:left">
-                    {{ csrf_field() }}
-                    {{ method_field('DELETE') }}
-                    <button>Apagar</button>
-                    </form> 
-                    </a>
-
-                    <a href="{{url('perguntas/answer/'.$value->id)}}">
-                        Responder
-                    </a>
-                    
-                </li>
-            </ul>
-            </div>
-              Options -->
-
-              <img class="profile-post-pic" src="{{ $value->user_img }}">
+              <a href="{{ url('profile/' . $value->id . '') }}"><img class="profile-post-pic" src="{{ $value->user_img }}"></a>
               <h4 class="title">{{ $value->title }}</h4>
               <h6 class="desc">{{ $value->description }}</h6>
               <div class="post-footer">
