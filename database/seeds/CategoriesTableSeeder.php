@@ -15,7 +15,12 @@ class CategoriesTableSeeder extends Seeder
     {
       DB::table('categories')->insert([
           'name' => 'Animais',
-          // 'name' => 'Informática',
+          'name' => 'Informática',
       ]);
+    }
+
+    public function down()
+    {
+      DB::table('categories')->delete();
     }
 }
