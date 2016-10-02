@@ -88,6 +88,7 @@ class QuestionController extends Controller
              'title'       => 'required|max:255',
               'description'      => 'required'
         );
+        
         $validator = validate($request, $rules);
 
         // process the login
