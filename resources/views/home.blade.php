@@ -76,10 +76,14 @@
               <h4 class="title">{{ $value->title }}</h4>
               <h6 class="desc">{{ $value->description }}</h6>
               <div class="post-footer">
-                <a class="btn-post btn-min pull-left" href="#">
+                <span class="pull-left">120</span>
+                <a class="btn-post btn-min pull-left">
+                  <img class="img-box" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Bot%C3%B3n_Me_gusta.svg/1195px-Bot%C3%B3n_Me_gusta.svg.png" alt="" />
+                </a>
+                <a class="btn-post btn-min pull-left">
                   <img class="img-box" src="/img/user.png" alt="" />
                 </a>
-                <a class="btn-post btn-min pull-left" href="#">
+                <a class="btn-post btn-min pull-left">
                   <img class="img-box" src="/img/push-pin.png" alt="" />
                 </a>
               </div>
