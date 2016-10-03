@@ -50,10 +50,10 @@
      <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <div class="index-post">
-            <div class="post-box">
 
-            <!-- options new-->
+
+         <div class="index-post">
+            <div class="post-box">
             @if ( $value->user_id === Auth::user()->id)
             <div class="dropdown dropdown-post pull-right">
                     <button class="btn-trans dropdown-toggle" type="button" data-toggle="dropdown">
@@ -74,21 +74,33 @@
                 </div>
               @endif
 
-              <a href="{{ url('profile/' . $value->user_id . '') }}"><img class="profile-post-pic" src="{{ $value->user_img }}" title=" {{$value->first_name }}"></a>
-              <h4 class="title">{{ $value->title }}</h4>
-              <h6 class="desc">{{ $value->description }}</h6>
+
+
+              <div class="profile-pic-post pull-left">
+                <a href="{{ url('profile/' . $value->user_id . '') }}">
+                <img class="profile-post-pic" src="{{ $value->user_img }}"></a>
+              </div>
+
+              <div class="post-title-desc">
+                <h4 class="title">{{ $value->title }}</h4>
+                <h6 class="desc">{{ $value->description }}</h6>
+              </div>
+
                @if ($value->img_path != NULL)
-              <div class="thumbnail">
-                <img src="question_uploads/{{ $value->img_path }}" style="width:400px;height:400px;">
+              <div class="thumbnail post-img">
+                <img src="question_uploads/{{ $value->img_path }}" style="width:500px;height:auto;">
               </div>
               @endif
+
               <div class="post-footer">
                 <script>
                   likes(<?= $value->id ?>);
                 </script>
-                <a class="pull-left likes" id="question-<?= $value->id ?>" data-toggle="modal" data-target="#modal-question-<?= $value->id?>"></a>
 
-                <div id="modal-question-<?= $value->id?>" style="margin-top:15% !important" class="modal fade" role="dialog">
+                <div>
+                  <a class="pull-left likes" id="question-<?= $value->id ?>" data-toggle="modal" data-target="#modal-question-<?= $value->id?>"></a>
+
+                  <div id="modal-question-<?= $value->id?>" style="margin-top:15% !important" class="modal fade" role="dialog">
                   <div class="modal-dialog modal-sm">
                     <!-- Modal content-->
                     <div class="modal-content">
@@ -102,24 +114,26 @@
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                       </div>
                     </div>
-
                   </div>
                 </div>
 
-                <a class="btn-post btn-min pull-left" onclick="like(<?=Auth::user()->id?>,<?=$value->id?>)">
-                  <img class="img-box" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Bot%C3%B3n_Me_gusta.svg/1195px-Bot%C3%B3n_Me_gusta.svg.png" alt="" />
-                </a>
-                <a class="btn-post btn-min pull-left">
-                  <img class="img-box" src="/img/user.png" alt="" />
-                </a>
-                <a class="btn-post btn-min pull-left">
-                  <img class="img-box" src="/img/push-pin.png" alt="" />
-                </a>
+                  <button type="button" class="btn pull-left" onclick="like(<?=Auth::user()->id?>,<?=$value->id?>)">
+                    <span class="glyphicon glyphicon-thumbs-up like" aria-hidden="true"></span>
+                  </button>
+                </div>
+
+                <button type="button" class="btn pull-left">
+                  <span class="glyphicon glyphicon-comment comment" aria-hidden="true"></span>
+                </button>
+                <!--<a class="btn-post btn-min pull-left" href="#">
+                  <img class="img-box" src="img/push-pin.png" alt="">
+                </a>-->
               </div>
-
-
             </div>
           </div>
+
+
+          
         </div>
        </div>
       </div>

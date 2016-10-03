@@ -38,6 +38,8 @@
         <script src="/js/jquery.js"></script>
         <script src="/js/bootstrap.min.js"></script>
         <script src="/js/custom.js"></script>
+
+        <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="/css/nav.css">
         <link rel="stylesheet" type="text/css" href="/css/search.css">
         <link rel="stylesheet" type="text/css" href="/css/posts.css">
@@ -142,16 +144,11 @@
                   <ul class="dropdown-menu set-drop">
 
                   {{ Form::open(array('action' => 'HomeController@index', 'files' => true, 'class' => 'set')) }}
-
-                    
-
+                   
                     {{ Form::file('Alterar minha foto do perfil', array('class' => 'set')) }}
                     <a class="set" href="{{ url('/profilepic') }}">Alterar minha foto do perfil</a>
 
-                    
-
                   {{ Form::close() }}
-
 
                 </ul>
               </div>
