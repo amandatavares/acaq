@@ -139,7 +139,14 @@
 	margin-left: 2%;
 	margin-top: 0.75%;
 	border-radius: 6px;
+	overflow: hidden;
 }
+
+.following-box:hover, .followers-box:hover {
+	overflow-y: overlay;
+	overflow-x: hidden;
+}
+
 .followers-box {
 	position: absolute;
 	width: 23%;
@@ -148,6 +155,7 @@
 	margin-left: 2%;
 	margin-top: 350px;
 	border-radius: 6px;
+	overflow: hidden;
 }
 
 .friends {

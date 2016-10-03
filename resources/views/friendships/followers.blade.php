@@ -1,6 +1,8 @@
 @extends('layouts.app1')
 
 @section('content')
+
+	<div class="container">
 		
 		
 		<div class="container">
@@ -10,7 +12,7 @@
 				<div class="search-box">
 
 					<div class="friendsp-box">
-
+					
 					@foreach($followers as $f)
     					@foreach($users as $user)
 	    					@if($f == $user->id)
@@ -18,7 +20,8 @@
 									<a href="{{ url('profile/' . $user->id . '') }}"><img class="profile-friendp-pic" src="{{ $user->img_profile }}"></a>
 									<a href="{{ url('profile/' . $user->id . '') }}"><h5>{{ $user->getFullName() }}</h5></a>
 									<h6>{{ $user->email }}</h6>
-									<a href="{{ url('followers/'.$user->id) }}">Seguir de volta</a>
+									<a href="{{ url('followers/'.$user->id) }}"><h6 id="seguir">Seguir de volta</h6></a>
+
 								</div>
 							@endif
 						@endforeach
