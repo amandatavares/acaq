@@ -1,7 +1,9 @@
 @extends('layouts.app1')
 
 @section('content')
+<script>
 
+</script>
 <!--Post box-->
     <div class="container">
       <div class="row">
@@ -78,9 +80,28 @@
               <!-- <?= Auth::user()?> -->
               <div class="post-footer">
                 <script>
-                likes(<?= $value->id ?>);
+                  likes(<?= $value->id ?>);
                 </script>
-                <span class="pull-left" id="question-<?= $value->id ?>"></span>
+                <a class="pull-left likes" id="question-<?= $value->id ?>" data-toggle="modal" data-target="#modal-question-<?= $value->id?>"></a>
+
+                <div id="modal-question-<?= $value->id?>" style="margin-top:15% !important" class="modal fade" role="dialog">
+                  <div class="modal-dialog modal-sm">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Curtidas</h4>
+                      </div>
+                      <div class="modal-body body-<?= $value->id?>">
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
                 <a class="btn-post btn-min pull-left" onclick="like(<?=Auth::user()->id?>,<?=$value->id?>)">
                   <img class="img-box" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Bot%C3%B3n_Me_gusta.svg/1195px-Bot%C3%B3n_Me_gusta.svg.png" alt="" />
                 </a>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Likes as Likes;
+use App\User as User;
 class LikesController extends Controller
 {
     //
@@ -24,8 +25,12 @@ class LikesController extends Controller
     }
     public function questionLikes(Request $req){
       header('Content-type: application/json');
-      $qtd = Likes::where("questions_id",$req->questions_id)->get();
-      $res = array('qtd'=>$qtd->count(),'other'=>$qtd);
+      $q = Likes::where("questions_id",$req->questions_id);
+      $qtd = $q->get();
+      $res = array('qtd'=>$qtd->count(),'user'=>$q->get());
       return $res;
+    }
+    public function user_like(Request $req){
+      return User::find($req->id);
     }
 }
