@@ -3,14 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
-
 use App\User;
-
 use Illuminate\Support\Facades\Auth;
-
 use App\Friendship;
+use Illuminate\Support\Facades\DB;
 
 class FriendshipController extends Controller
 {
@@ -100,4 +97,11 @@ class FriendshipController extends Controller
 
         return view('friendships.followers')->with('followers',$followers)->with('users',$users);
     }
+
+    public function unfollow($id)
+    {
+        $f = DB::delete('delete from friendships where friendships.id ='.$id.' and friendships.user_id ='.Auth::user()->id);
+        return redirect('/profile');
+    }
+
 }

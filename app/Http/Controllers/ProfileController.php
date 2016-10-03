@@ -15,7 +15,7 @@ class ProfileController extends Controller
     //
     function index(){
 
-       $friendships = [];
+      $friendships = [];
       $not_friends = [];
       $friends = Auth::user()->friendships;
       $users = User::all();

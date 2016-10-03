@@ -66,6 +66,7 @@
             <img class="profile-friend-pic" src="{{ $val->img_profile }}">
             <h5>{{ $val->first_name }}</h5>
             <h6>{{ $val->email }}</h6>
+            <a href="{{ url('/following/'.$val->id.'/remove') }}"><h6 id="seguir">Deixar de seguir</h6></a>
         </div>
         @endforeach
     </div>

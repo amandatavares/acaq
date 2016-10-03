@@ -32,6 +32,7 @@ Route::get('/perguntas/answer/{id}', 'AnswerController@answer_create');
 Route::post('/perguntas/answer/{id}', 'AnswerController@answer_store');
 //Friendships
 Route::get('/following', 'FriendshipController@index');
+Route::get('/following/{id}/remove', 'FriendshipController@unfollow');
 Route::get('/followers', 'FriendshipController@followers');
 Route::get('/followers/{id}', 'FriendshipController@add_follower');
 Route::get('/pesquisa/followers/{id}', 'FriendshipController@add_follower_pesq');
