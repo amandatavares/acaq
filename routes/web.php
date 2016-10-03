@@ -28,6 +28,7 @@ Route::get('/following', 'FriendshipController@index');
 Route::get('/followers', 'FriendshipController@followers');
 
 Route::get('followers/{id}', 'FriendshipController@add_follower');
+Route::get('pesquisa/followers/{id}', 'FriendshipController@add_follower_pesq');
 
 Route::post('/profileimg', 'ProfileController@setPicProfile');
 

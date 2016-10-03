@@ -20,13 +20,13 @@
                   </div>
 
                   <div class="box-footer ">
-                    <a  class="btn-post btn-max pull-right" href="#">
+                    <a  class="btn-post btn-max pull-right" alt="Fazer pergunta" href="#">
                     {{ Form::submit('', array('class' => 'create-btn')) }}
                     </a>
 
                     <div>
 
-                    <a class="btn-post btn-min pull-right" href="#">
+                    <a class="btn-post btn-min pull-right" alt="Anexe uma foto" href="#">
                     {{ Form::file('img_path', array('class' => 'upload_img_btn')) }}
                     </a>
                     </div>

@@ -1,4 +1,3 @@
-<!-- app/views/nerds/show.blade.php -->
 
 @extends('layouts.app1')
 
@@ -114,3 +113,4 @@
     </div>
 
 @endsection
+
