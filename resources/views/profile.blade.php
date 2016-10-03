@@ -81,13 +81,17 @@
             </div>
         @endif
         
-        @foreach ($friends as $key => $val)
-        <div class="friends">
-            <h4></h4>
-            <img class="profile-friend-pic" src="{{ $val->img_profile }}">
-            <h5>{{ $val->first_name }}</h5>
-            <h6>{{ $val->email }}</h6>
-        </div>
+         @foreach($followers as $f)
+            @foreach($users as $user)
+                @if($f == $user->id)
+                <div class="friends">
+                <h4></h4>
+                <img class="profile-friend-pic" src="{{ $user->img_profile }}">
+                <h5>{{ $user->first_name }}</h5>
+                <h6>{{ $user->email }}</h6>
+                </div>
+                @endif
+            @endforeach
         @endforeach
     </div>
     </div>
