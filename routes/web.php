@@ -23,8 +23,6 @@ Route::get('/login', function () {
 Auth::routes();
 
 //ACAQ
-Route::get('/home', 'HomeController@index');
-Route::get('/profile', 'ProfileController@index');
 //Questions
 Route::resource("perguntas","QuestionController");
 Route::get('/perguntas/myquestions', 'QuestionController@myquestions');
@@ -39,9 +37,11 @@ Route::get('/followers/{id}', 'FriendshipController@add_follower');
 Route::get('/pesquisa/followers/{id}', 'FriendshipController@add_follower_pesq');
 Route::get('/profile/{id}', 'FriendshipController@show_questions');
 Route::get('/add_user/{id}', 'FriendshipController@add_friend');
-//Categories
-Route::get('/categories', 'CategoryController@index');
+//Categorie
 Route::get('/categorias', 'CategoryController@index');
+//Profiles
+Route::post('/profileimg', 'ProfileController@setPicProfile');
+Route::get('/profile', 'ProfileController@index');
 
 //Others
 Route::post('/pesquisa', function(Request $request){

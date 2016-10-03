@@ -57,7 +57,6 @@
     <nav class="navbar navbar-acaq" role="navigation">
     <div class="container">
 
-
          <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
           <span class="sr-only">Toggle navigation</span>
@@ -82,6 +81,10 @@
       </div>
 
       <ul class="nav navbar-nav navbar-right">
+      <li>
+        <h3 id="user_title">{{ Auth::user()->first_name }}</h3>
+      </li>
+
         <li>
           <div class="dropdown dropdown-profile">
             <button class="btn-trans dropdown-toggle" type="button" data-toggle="dropdown">
@@ -90,8 +93,6 @@
               </button>
               <ul class="dropdown-menu profile-drop">
                   <li class="set-prof"><a class="set" href="{{ url('/profile') }}">Meu Perfil</a></li>
-                  <li class="set-prof"><a class="set" href="{{ url('/following') }}">Seguindo</a></li>
-                  <li class="set-prof"><a class="set" href="{{ url('/followers') }}">Seguidores</a></li>
                   <li class="set-prof"><a class="set" href="#">Ajuda</a></li>
                   <li class="set-prof"><a class="set" href="{{ url('/logout') }}"
                                         onclick="event.preventDefault();
@@ -143,10 +144,11 @@
                   </button>
                   <ul class="dropdown-menu set-drop">
 
-                  {{ Form::open(array('action' => 'HomeController@index', 'files' => true, 'class' => 'set')) }}
+                  {{ Form::open(array('url' => '/profileimg', 'files' => true, 'class' => 'set')) }}
                    
-                    {{ Form::file('Alterar minha foto do perfil', array('class' => 'set')) }}
-                    <a class="set" href="{{ url('/profilepic') }}">Alterar minha foto do perfil</a>
+                    {{ Form::file('img_profile_path', array('class' => 'set')) }}
+                    
+                    {{ Form::submit('', array('class' => 'set', 'value'=>'Alterar minha foto do perfil')) }}
 
                   {{ Form::close() }}
 

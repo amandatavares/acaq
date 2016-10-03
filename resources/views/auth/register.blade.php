@@ -49,6 +49,7 @@
 
     <form role="form" method="POST" action="{{ url('/register') }}">
     {{ csrf_field() }}
+
     <div  class="form-group{{ $errors->has('first_name') ? ' has-error' : '' }}">
       <label for="first_name">Nome</label>
       <input type="text" id="first_name" class="form-control input-text" name="first_name" value="{{ old('first_name') }}" required autofocus>
