@@ -27,6 +27,7 @@ Auth::routes();
 Route::resource("perguntas","QuestionController");
 Route::get('/perguntas/myquestions', 'QuestionController@myquestions');
 Route::get('/home', 'QuestionController@index');
+Route::get('/perguntas/delete/{id}', 'QuestionController@delete');
 //Answers
 Route::get('/perguntas/answer/{id}', 'AnswerController@answer_create');
 Route::post('/perguntas/answer/{id}', 'AnswerController@answer_store');
@@ -36,13 +37,13 @@ Route::get('/following/{id}/remove', 'FriendshipController@unfollow');
 Route::get('/followers', 'FriendshipController@followers');
 Route::get('/followers/{id}', 'FriendshipController@add_follower');
 Route::get('/pesquisa/followers/{id}', 'FriendshipController@add_follower_pesq');
-Route::get('/profile/{id}', 'FriendshipController@show_questions');
 Route::get('/add_user/{id}', 'FriendshipController@add_friend');
 //Categorie
 Route::get('/categorias', 'CategoryController@index');
 //Profiles
 Route::post('/profileimg', 'ProfileController@setPicProfile');
 Route::get('/profile', 'ProfileController@index');
+Route::get('/profile/{id}', 'FriendshipController@show_questions');
 
 //Others
 Route::post('/pesquisa', function(Request $request){

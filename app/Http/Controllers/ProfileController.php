@@ -29,11 +29,11 @@ class ProfileController extends Controller
         }
       }
 
-        $followers = [];
-        foreach (Friendship::all() as $key => $f) {
-            if($f->id == Auth::user()->id)
-                $followers[] = $f->user_id;
-        }
+      $followers = [];
+      foreach (Friendship::all() as $key => $f) {
+          if($f->id == Auth::user()->id)
+              $followers[] = $f->user_id;
+      }
 
       $question = Question::all();
       return view('profile')

@@ -10,39 +10,32 @@
         <div class="col-md-12">
           <div class="box-post">
             <div class="box-post">
-            {{ Form::open(array('url' => 'perguntas', 'files' => true)) }}
+              {{ Form::open(array('url' => 'perguntas', 'files' => true)) }}
                   <div class="box-title">
-                    {{ Form::text('title', old('title'), array('class' => 'input-title', 'placeholder' => 'TÍTULO')) }}
+                    {{ Form::text('title', old('title'), array('class' => 'input-title', 'placeholder' => 'O que quer saber?')) }}
                   </div>
 
                   <div class="box-desc">
-                    {{ Form::textarea('description', old('description'), array('class' => 'input-desc', 'placeholder' => 'O que quer saber?')) }}
+                    {{ Form::textarea('description', old('description'), array('class' => 'input-desc', 'placeholder' => 'Descreva')) }}
                   </div>
 
                   <div class="box-footer ">
                     <a  class="btn-post btn-max pull-right" alt="Fazer pergunta" href="#">
-                    {{ Form::submit('', array('class' => 'create-btn')) }}
+                      {{ Form::submit('', array('class' => 'create-btn')) }}
                     </a>
 
                     <div>
-
-                    <a class="btn-post btn-min pull-right" alt="Anexe uma foto" href="#">
-                    {{ Form::file('img_path', array('class' => 'upload_img_btn')) }}
-                    </a>
+                      <a class="btn-post btn-min pull-right" alt="Anexe uma foto" href="#">
+                        {{ Form::file('img_path', array('class' => 'upload_img_btn')) }}
+                      </a>
                     </div>
-            {{ Form::close() }}
-
-                    <!-- BOTAO DE ANEXO (N ENTENDI PRA QUE SERVE)
-                    <a class="btn-post btn-min pull-right" href="#">
-                      <img class="img-box" src="img/push-pin.png" alt="" />
-                    </a> -->
-
                   </div>
+              {{ Form::close() }}
             </div>
           </div>
         </div>
       </div>
-      </div>
+    </div>
       <!--/Post box-->
 
         <!-- POST -->
@@ -57,24 +50,23 @@
                   <div class="post-box">
 
                   @if ( $value->user_id === Auth::user()->id)
-                  <div class="dropdown dropdown-post pull-right">
-                          <button class="btn-trans dropdown-toggle" type="button" data-toggle="dropdown">
-                              <span class="caret"></span>
-                          </button>
-                          <ul class="dropdown-menu post-drop">
-                              <li class="set-prof"><a href="{{ url('perguntas/' . $value->id) }}" class="set">Abrir pergunta</a></li>
-                              <li class="set-prof"><a class="set" href="{{ url('perguntas/' . $value->id . '/edit') }}">Editar</a></li>
-                              <li class="set-prof"><a class="set">
-                                  <form action="/perguntas/{{ $value->id }}" method="POST" style="float:left">
-                                  {{ csrf_field() }}
-                                  {{ method_field('DELETE') }}
-                                  <button>Apagar</button>
-                                  </form>
-                                  </a></li>
-                              <li class="set-prof"><a class="set" href="{{url('perguntas/answer/'.$value->id)}}">Responder</a></li>
-                          </ul>
+                      <div class="dropdown dropdown-post pull-right">
+                        <button class="btn-trans dropdown-toggle" type="button" data-toggle="dropdown">
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu post-drop">
+                            <li class="set-prof">
+                              <a class="set" href="{{ url('perguntas/' . $value->id . '/edit') }}">Editar</a>
+                            </li>
+                            <li class="set-prof">
+                              <a class="set" href="{{url('perguntas/delete/'.$value->id)}}">Apagar</a>
+                            </li>
+                            <li class="set-prof">
+                              <a class="set" href="{{url('perguntas/answer/'.$value->id)}}">Responder</a>
+                            </li>
+                        </ul>
                       </div>
-                    @endif
+                  @endif
 
 
 
@@ -87,14 +79,14 @@
                     </div>
 
                     <div class="post-title-desc">
-                      <h4 class="title">{{ $value->title }}</h4>
+                      <a href="{{ url('perguntas/' . $value->id) }}"><h4 class="title">{{ $value->title }}</h4></a>
                       <h6 class="desc">{{ $value->description }}</h6>
                     </div>
 
-                     @if ($value->img_path != NULL)
-                    <div class="thumbnail post-img">
-                      <img src="question_uploads/{{ $value->img_path }}" style="width:500px;height:auto;">
-                    </div>
+                    @if ($value->img_path != NULL)
+                      <div class="thumbnail post-img">
+                        <img src="question_uploads/{{ $value->img_path }}" style="width:500px;height:auto;">
+                      </div>
                     @endif
 
                     <div class="post-footer">

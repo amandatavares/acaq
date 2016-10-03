@@ -93,11 +93,11 @@ class QuestionController extends Controller
     public function edit($id)
     {
         // get the nerd
-        $questions = Question::find($id);
+        $question = Question::find($id);
 
         // show the edit form and pass the nerd
         return view('perguntas.edit')
-            ->with('question', $questions);
+            ->with('question', $question);
     }
     public function update(Request $request, $id)
     {
@@ -126,6 +126,11 @@ class QuestionController extends Controller
         Question::findOrFail($id)->delete();
         session()->flash('message', 'Successfully deleted question!');
         return redirect('/perguntas');
+    }
+    public function delete($id)
+    {
+        Question::findOrFail($id)->delete();
+        return redirect('/home');
     }
     /*public function comments($id){
         $question = Question::find($id);

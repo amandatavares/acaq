@@ -33,18 +33,13 @@ class FriendshipController extends Controller
     public function show_questions($id)
     {
         $friend = User::find($id);
-
         $friendships = [];
-        $not_friends = [];
         $friends = $friend->friendships;
         $users = User::all();
         foreach ($users as $key => $user) {
             foreach ($friends as $key => $f) {
-                if($user->id == $f->id){
+                if($user->id == $f->id)
                     $friendships[] = $user;
-                }else{
-                    $not_friends[] = $user;
-                }
             }
         }
 
@@ -81,7 +76,7 @@ class FriendshipController extends Controller
         $friend->id = $id;
         $friend->user_id = Auth::user()->id;
         $friend->save();
-        return redirect('home');
+        return redirect('following');
     }
     
 
