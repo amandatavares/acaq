@@ -18,13 +18,13 @@
                   </div>
 
                   <div class="box-footer ">
-                    <a  class="btn-post btn-max pull-right" href="#">
+                    <a  class="btn-post btn-max pull-right" alt="Fazer pergunta" href="#">
                     {{ Form::submit('', array('class' => 'create-btn')) }}
                     </a>
 
                     <div>
 
-                    <a class="btn-post btn-min pull-right" href="#">
+                    <a class="btn-post btn-min pull-right" alt="Anexe uma foto" href="#">
                     {{ Form::file('img_path', array('class' => 'upload_img_btn')) }}
                     </a>
                     </div>
@@ -101,18 +101,4 @@
       @endforeach
           <!-- POST -->
 
-<div class="container">
-    <div class="row">
-        <div class="dashb">
-            <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
-
-                <div class="panel-body">
-                    Você está logado, {{ Auth::user()->first_name }}!
-                    <a href="{{ url('/laravel') }}">Veja as perguntas</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 @endsection
