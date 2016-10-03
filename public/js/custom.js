@@ -1,5 +1,22 @@
+
 //list my likes
+var getUserLike = function(id,questions_id){
+  var result;
+  $.ajax({
+    type: "POST",
+    url:"/user_like",
+    data:{
+      id: id
+    },
+    success:function(response){
+      $('.body-'+questions_id).append('<div><a href="/profile/'+response.id+'">'+ response.first_name +'</a></div>');
+    }
+  });
+  // return result;
+  console.log(result);
+};
 var likes = function(questions_id){
+  $('.body-'+questions_id).empty();
   $.ajax({
     type: "POST",
     url:"/questionLikes",
@@ -7,8 +24,11 @@ var likes = function(questions_id){
       questions_id: questions_id
     },
     success:function(response){
-      console.log(response.other);
       $('#question-'+questions_id).empty().append(response.qtd);
+      var mycontent = [];
+      for(i=0;i<response.user.length;i++){
+        getUserLike(response.user[i].user_id,questions_id);
+      }
     }
   });
 };
@@ -22,7 +42,6 @@ var like = function(user_id,questions_id){
       questions_id: questions_id
     },
     success:function(response){
-      console.log(response);
       likes(questions_id);
     }
   });

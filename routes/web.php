@@ -71,3 +71,4 @@ Route::get('perfil', function(){
 // Curtidas
 Route::post('doLike','LikesController@doLike');
 Route::post('questionLikes','LikesController@questionLikes');
+Route::post('user_like','LikesController@user_like');

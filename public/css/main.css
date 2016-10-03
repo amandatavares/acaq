@@ -2,7 +2,10 @@
 body {
   padding: 0;
   margin: 0; }
-
+.likes{
+  cursor: pointer;
+  padding: 4px;
+}
 .vid-container {
   position: relative;
   height: 100vh;
@@ -177,7 +180,7 @@ cursor: pointer;
 color:transparent;
 position: relative;
 margin: -5px -30px;
-overflow: hidden  
+overflow: hidden
 }
 
 #seguir{
@@ -186,4 +189,3 @@ overflow: hidden
     margin-right: 30%;
 
 }
-    
