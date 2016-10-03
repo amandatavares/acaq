@@ -77,7 +77,11 @@
               <a href="{{ url('profile/' . $value->user_id . '') }}"><img class="profile-post-pic" src="{{ $value->user_img }}" title=" {{$value->first_name }}"></a>
               <h4 class="title">{{ $value->title }}</h4>
               <h6 class="desc">{{ $value->description }}</h6>
-              <!-- <?= Auth::user()?> -->
+               @if ($value->img_path != NULL)
+              <div class="thumbnail">
+                <img src="question_uploads/{{ $value->img_path }}" style="width:400px;height:400px;">
+              </div>
+              @endif
               <div class="post-footer">
                 <script>
                   likes(<?= $value->id ?>);
