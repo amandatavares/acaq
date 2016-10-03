@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use Illuminate\Http\Request;
+use App\User;
 use App\Question as Question;
 use Illuminate\Support\Facades\Auth;
 use Html;
@@ -13,9 +14,13 @@ class QuestionController extends Controller
     //
     function index(){
       // Liste todos os filmes e os retorne no Index
+
       $question = Question::orderBy('id','desc')->get();
+
+      $users = User::all();
+
       return view('home')
-            ->with('questions', $question);
+            ->with('questions', $question)->with('users', $users);
       // return view('home/index',['questions'=>$question]);
     }
     function create()
@@ -29,8 +34,8 @@ class QuestionController extends Controller
       // $input = $request->all();
       // return Question::create($input);
       $this->validate($request, array(
-            'title'       => 'required|max:255',
-            'description'      => 'required'
+            'title'       => 'required|max:255'//,
+            //'description'      => 'required'
       ));
 
 
@@ -61,16 +66,19 @@ class QuestionController extends Controller
       session()->flash('message', 'Successfully created question!');
       return redirect('home');
     }
+
     public function show($id)
     {
         // get the question
         $question = Question::find($id);
         $answers = $question->answers;
+        $users = User::all();
 
         // show the view and pass the nerd to it
         return view('perguntas.show')
-            ->with('question', $question)->with('answers',$answers);
+            ->with('question', $question)->with('answers',$answers)->with('users',$users);
     }
+
     public function edit($id)
     {
         // get the nerd
@@ -84,13 +92,10 @@ class QuestionController extends Controller
     {
         // validate
         // read more on validation at http: //laravel.com/docs/validation
-        $rules = array(
-             'title'       => 'required|max:255',
-              'description'      => 'required'
-        );
-
-        $validator = validate($request, $rules);
-
+        $this->validate($request, array(
+            'title'       => 'required|max:255'//,
+            //'description'      => 'required'
+        ));
         // process the login
         // store
         $questions = Question::find($id);

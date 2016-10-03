@@ -14,8 +14,12 @@
 					@foreach ($friends as $user)
 						<div class="friendsp">
 							<a href="{{ url('profile/' . $user->id . '') }}"><img class="profile-friendp-pic" src="{{ $user->img_profile }}"></a>
+
+							<div>
 							<a href="{{ url('profile/' . $user->id . '') }}"><h5>{{ $user->getFullName() }}</h5></a>
 							<h6>{{ $user->email }}</h6>
+							</div>	
+
 						</div>
 					@endforeach
 					</div>	

@@ -29,8 +29,9 @@ Route::get('/followers', 'FriendshipController@followers');
 
 Route::get('followers/{id}', 'FriendshipController@add_follower');
 
+Route::post('/profileimg', 'ProfileController@setPicProfile');
 
-Route::get('profile/{id}', 'FriendshipController@show_questions');
+Route::get('/profile/{id}', 'FriendshipController@show_questions');
 
 Route::get('/home', 'HomeController@index');
 Route::get('/categories', 'CategoryController@index');

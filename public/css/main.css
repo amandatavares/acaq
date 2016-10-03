@@ -189,3 +189,18 @@ overflow: hidden
     margin-right: 30%;
 
 }
+
+#user_title{
+    position: absolute;
+    right: 10%;
+    /* margin-left: -80px; */
+    font-family: Nexa;
+    /* font-weight: bold; */
+    color: #FFF;
+    /* margin-left: 20%; */
+    /* margin-top: 0.5%; */
+    font-size: 20px;
+    /* padding-top: 3%; */
+    /* position: relative; */
+    text-align: left;
+}

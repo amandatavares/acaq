@@ -65,5 +65,23 @@ class ProfileController extends Controller
       return view('profile')->with('questions', $questions);
     }
 
+    public function setPicProfile(Request $request){
+
+      if (isset($request->img_profile_path) && trim($request->img_profile_path) != "") {
+        // checking file is valid.
+        if ($request->hasFile('img_profile_path') && $request->img_profile_path->isValid()) {
+          $destinationPath = 'profile_pic_uploads/'; // upload path
+          $extension = $request->img_profile_path->getClientOriginalExtension(); // getting image extension
+          $fileName = md5(time()."img").'.'.$extension; // renameing image
+          Auth::user()->img_profile = '/profile_pic_uploads/'.$fileName;
+          $request->img_profile_path->move($destinationPath, $fileName); // uploading file to given path
+          //sending back with message
+          // Session::flash('success', 'Upload successfully');
+        }
+      }
+      Auth::user()->save();
+      return redirect('home');
+    }
+
 }
 
