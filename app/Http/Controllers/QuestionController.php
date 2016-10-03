@@ -13,7 +13,7 @@ class QuestionController extends Controller
     //
     function index(){
       // Liste todos os filmes e os retorne no Index
-      $question = Question::all();
+      $question = Question::orderBy('id','desc')->get();
       return view('home')
             ->with('questions', $question);
       // return view('home/index',['questions'=>$question]);
@@ -88,7 +88,7 @@ class QuestionController extends Controller
              'title'       => 'required|max:255',
               'description'      => 'required'
         );
-        
+
         $validator = validate($request, $rules);
 
         // process the login
