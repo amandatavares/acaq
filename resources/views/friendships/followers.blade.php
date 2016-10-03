@@ -20,7 +20,9 @@
 									<a href="{{ url('profile/' . $user->id . '') }}"><img class="profile-friendp-pic" src="{{ $user->img_profile }}"></a>
 									<a href="{{ url('profile/' . $user->id . '') }}"><h5>{{ $user->getFullName() }}</h5></a>
 									<h6>{{ $user->email }}</h6>
-									<a href="{{ url('followers/'.$user->id) }}"><h6 id="seguir">Seguir de volta</h6></a>
+									@if (Auth::user()->isFriend($user->id)==FALSE)
+										<a href="{{ url('followers/'.$user->id) }}"><h6 id="seguir">Seguir de volta</h6></a>
+									@endif
 
 								</div>
 							@endif
