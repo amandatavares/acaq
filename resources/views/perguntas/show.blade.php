@@ -83,9 +83,19 @@
                         </button>
                       </div>
 
-                      <button type="button" class="btn pull-left">
+                      <button type="button" class="btn pull-left" onclick="url('perguntas/answers/'.$question->id)">
                         <span class="glyphicon glyphicon-comment comment" aria-hidden="true"></span>
                       </button>
+                      {{ Form::open(['url' => ['perguntas/answer',$question->id], 'files' => true]) }}
+
+                          <div>
+                              {{ Form::label('description', 'Description') }}
+                              {{ Form::text('description', old('description'), array('class' => 'form-control')) }}
+                          </div>
+
+                          {{ Form::submit('OK', array('class' => 'btn btn-primary')) }}
+
+                      {{ Form::close() }}
                       <!--<a class="btn-post btn-min pull-left" href="#">
                         <img class="img-box" src="img/push-pin.png" alt="">
                       </a>-->

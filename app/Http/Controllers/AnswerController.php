@@ -125,7 +125,7 @@ class AnswerController extends Controller {
       	$answer->user_id = $request->user()->id;
 		$answer->save();
 		session()->flash('message', 'Successfully created answer!');
-      	return redirect('perguntas');
+      	return redirect('perguntas/'.$id);
 	}
 
 }
