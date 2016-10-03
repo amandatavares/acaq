@@ -43,7 +43,7 @@
       </div>
     </div>
     <div class="logo-sign">
-      <img class="img-responsive" src="http://placehold.it/300x100">
+      <img class="img-responsive" width="320px" height="180px" src="http://i63.tinypic.com/2zscifr.png">
     </div>
     <div class="box-sign">
 
