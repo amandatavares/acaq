@@ -71,6 +71,16 @@ class QuestionController extends Controller
         return view('perguntas.show')
             ->with('question', $question)->with('answers',$answers);
     }
+  /*public function show($id)
+    {
+        // get the question
+        $question = Question::find($id);
+        $answers = $question->answers;
+
+        // show the view and pass the nerd to it
+        return view('perguntas.show')
+            ->with('question', $question)->with('answers',$answers);
+    }*/
     public function edit($id)
     {
         // get the nerd
@@ -84,12 +94,10 @@ class QuestionController extends Controller
     {
         // validate
         // read more on validation at http: //laravel.com/docs/validation
-        $rules = array(
-             'title'       => 'required|max:255',
-              'description'      => 'required'
-        );
-
-        $validator = validate($request, $rules);
+        $this->validate($request, array(
+            'title'       => 'required|max:255',
+            'description'      => 'required'
+        ));
 
         // process the login
         // store
