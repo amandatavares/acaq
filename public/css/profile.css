@@ -118,7 +118,7 @@
 }
 
 .dropdown-post-my {
-	margin-right: 0.5%;
+	margin-right: 4.5%;
 }
 
 .post-drop {
@@ -137,7 +137,6 @@
 	width: 23%;
 	height: 50%;
 	background-color: white;
-	margin-left: 2%;
 	margin-top: 10px;
 	border-radius: 6px;
 	overflow: hidden;
@@ -153,7 +152,6 @@
 	width: 23%;
 	height: 50%;
 	background-color: white;
-	margin-left: 2%;
 	margin-top: 350px;
 	border-radius: 6px;
 	overflow: hidden;

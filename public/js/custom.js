@@ -1,4 +1,3 @@
-
 //list my likes
 var getUserLike = function(id,questions_id){
   var result;
@@ -46,3 +45,20 @@ var like = function(user_id,questions_id){
     }
   });
 };
+
+// $(document).ready(function() {
+  var showComment=function(id){
+    $(id).removeClass('hidden').show(900);
+    console.log($(id).show());
+  };
+    // $('.comm-btn').click(function(){
+    //   // $(this).siblings(".hideable").toggleClass('hidden');
+    //   // if($(this).hasClass('hidden')){
+    //   //   $(this).removeClass('hidden');
+    //   // }else{
+    //   //   $(this).addClass('hidden');
+    //   // }
+    //
+    //   console.log('ok');
+    // });
+// });

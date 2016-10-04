@@ -3,6 +3,8 @@
 @section('content')
 
 <!--Profile-->
+    <div id="container-profile">
+
     <div class="profile-box">
         <div class="cover-pic">
             <img class="cover" src="/img/cover.png">
@@ -46,10 +48,10 @@
 
     </div>
 
-   <div>
+   <div id="follow-box">
     <div class="following-box">
         <div >
-            <h5 class="friends-title">SEGUINDO</h5>
+            <h5 class="friends-title">SEGUINDO (10)</h5>
         </div>
         @if( $friends === [] )
             <div class="friends">
@@ -69,14 +71,14 @@
             </a>
 
             <h6>{{ $val->email }}</h6>
-            <a href="{{ url('/following/'.$val->id.'/remove') }}"><h6 id="seguir">-</h6></a>
+            <a href="{{ url('/following/'.$val->id.'/remove') }}" title="Deixar de seguir"><h6 id="seguir">-</h6></a>
         </div>
         @endforeach
     </div>
 
     <div class="followers-box">
         <div >
-            <h5 class="friends-title">SEGUIDORES</h5>
+            <h5 class="friends-title">SEGUIDORES (10)</h5>
         </div>
         @if( $followers === [] )
             <div class="friends">
@@ -100,13 +102,15 @@
                         <h6>{{ $user->email }}</h6>
 
                         @if (Auth::user()->isFriend($f)==FALSE)
-                            <a href="{{ url('profile/followers/'.$f) }}"><h6 id="seguir">+</h6></a>
+                            <a href="{{ url('profile/followers/'.$f) }}" title="Seguir"><h6 id="seguir">+</h6></a>
                         @endif
                     </div>
                 @endif
             @endforeach
         @endforeach
     </div>
+    </div>
+
     </div>
 
     <!--

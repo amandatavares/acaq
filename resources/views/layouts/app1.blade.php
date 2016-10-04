@@ -34,11 +34,12 @@
         </script>
     <!-- END OF ORIGINAL app.blade.php -->
 
-    <!-- START OF acaq imports -->
+        <!-- Scripts -->
         <script src="/js/jquery.js"></script>
         <script src="/js/bootstrap.min.js"></script>
         <script src="/js/custom.js"></script>
-
+    
+    <!-- START OF acaq imports -->      
         <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="/css/nav.css">
         <link rel="stylesheet" type="text/css" href="/css/search.css">
@@ -163,7 +164,7 @@
                   <img src="/img/settings.png" class="btn-post img-vertical-set-box" alt="" />
                   </button>
                   <ul class="dropdown-menu set-drop">
-                    <li class="set"><a class="set" href="conf-teste.php">Configurações gerais da conta</a></li>
+                    <li class="set"><a class="set" href="{{ url('/config') }}">Configurações gerais da conta</a></li>
                 </ul>
               </div>
             </li>

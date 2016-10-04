@@ -12,7 +12,7 @@
         @if(Auth::user()->isFriend($friend->id)==false)
             <a class="botao1" href="{{ url('profile_user/'.$friend->id.'/followers/'.$friend->id) }}">SEGUIR+</a>
         @else
-            <a class="botao1" href="{{ url('profile_user/'.$friend->id.'/followers/'.$friend->id.'/remove') }}">DEIXAR DE SEGUIR-</a>
+            <a class="botao1" href="{{ url('profile_user/'.$friend->id.'/followers/'.$friend->id.'/remove') }}">DEIXAR DE SEGUIR</a>
         @endif
 
         @foreach ($friend->questions as $q)
@@ -36,7 +36,7 @@
     <div>
         <div class="following-box">
         	<div>
-                <h5 class="friends-title">SEGUINDO</h5>
+                <h5 class="friends-title">SEGUINDO (10)</h5>                
             </div>
             @if( $friend_f === [] )
                 <div class="friends">
@@ -65,7 +65,7 @@
 
         <div class="followers-box">
             <div >
-                <h5 class="friends-title">SEGUIDORES</h5>
+                <h5 class="friends-title">SEGUIDORES (10)</h5>
             </div>
             
             @foreach($followers as $f)
@@ -83,7 +83,7 @@
 
                             <h6>{{ $user->email }}</h6>
                             @if (Auth::user()->isFriend($user->id)==FALSE and Auth::user()->id != $user->id)
-                                <a href="{{ url('profile_user/'.$friend->id.'/followers/'.$user->id) }}"><h6 id="seguir">+</h6></a>
+                                <a href="{{ url('profile_user/'.$friend->id.'/followers/'.$user->id) }}" title="Seguir"><h6 id="seguir">+</h6></a>
                             @endif
                         </div>
                     @endif

@@ -98,8 +98,10 @@
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                                 <h4 class="modal-title">Curtidas</h4>
                               </div>
+
                               <div class="modal-body body-<?= $value->id?>">
                               </div>
+
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
                               </div>
@@ -123,7 +125,7 @@
                 </div>
 
 
-                
+
               </div>
              </div>
             </div>
