@@ -51,22 +51,10 @@ Route::post('/pesquisa', function(Request $request){
 	$search = $request->search;
 	return view('pesquisa')->with('users',$users)->with('search',$search);
 });
-
-Route::get('perfil', function(){
-	return view('perfil');
-});
-
 // Curtidas
 Route::post('doLike','LikesController@doLike');
 Route::post('questionLikes','LikesController@questionLikes');
 Route::post('user_like','LikesController@user_like');
-
-//Testes Laravel
-Route::get('/laravel', 'LaravelController@index');
-Route::get('allusers', function(){
-	$users = App\User::all();
-	return view('allusers')->with('users',$users);
-});
 
 //Not_used
 Route::resource("answers","AnswerController");
