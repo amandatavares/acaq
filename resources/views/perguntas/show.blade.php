@@ -61,6 +61,8 @@
                           </div>
                         </div>
                       </div>
+
+
                       <div style="margin-left:20px">
                         <a class="pull-left likes" id="question-<?= $question->id ?>" data-toggle="modal" data-target="#modal-question-<?= $question->id?>"></a>
 
@@ -72,18 +74,22 @@
                       <button type="button" class="btn pull-left comm-btn" onclick="showComment('#comment-<?=$question->id?>')">
                         <span class="glyphicon glyphicon-comment comment" aria-hidden="true"></span>
                       </button>
-                    </div>
-                    </div>
-                  <div class="hideable hidden" id="comment-<?=$question->id?>">
-                    <div class="row">
-                      <div class="col-sm-12">
-                    {{ Form::open(['url' => ['perguntas/answer',$question->id], 'files' => true]) }}
+
+                      {{ Form::open(['url' => ['perguntas/answer',$question->id], 'files' => true]) }}
 
                           {{ Form::text('description', old('description'), array('class' => 'form-control answer-input', 'placeholder'=>'Digite sua resposta')) }}
 
-                      <!-- {{ Form::submit('OK', array('class' => 'btn btn-primary')) }} -->
-                    {{ Form::close() }}
-                  </div>
+                          <!-- {{ Form::submit('OK', array('class' => 'btn btn-primary')) }} -->
+                        {{ Form::close() }}
+                     
+                    </div>
+
+                    </div>
+                  <div class="hideable hidden" id="comment-<?=$question->id?>">
+                    <div class="row">
+
+                    
+
                   <div class="col-sm-12">
                     <h3 class="title-resp">Respostas</h3>
                     @foreach($answers as $key => $answers)

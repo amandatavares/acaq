@@ -17,16 +17,19 @@ class CategoriesTableSeeder extends Seeder
           'name' => 'Animais',
       ]);
       DB::table('categories')->insert([
-          'name' => 'Informática e tecnologia',
+          'name' => 'Tecnologia',
       ]);
       DB::table('categories')->insert([
           'name' => 'Saúde',
       ]);
       DB::table('categories')->insert([
-          'name' => 'Artes e entreterimento',
+          'name' => 'Artes e entretenimento',
       ]);
       DB::table('categories')->insert([
-          'name' => 'Lazer e compras',
+          'name' => 'Lazer',
+      ]); 
+      DB::table('categories')->insert([
+          'name' => 'Compras e vendas',
       ]);  
       DB::table('categories')->insert([
           'name' => 'Viagens e turismo',
@@ -35,7 +38,7 @@ class CategoriesTableSeeder extends Seeder
           'name' => 'Família e relacionamentos',
       ]);
       DB::table('categories')->insert([
-          'name' => 'Serviços gerais',
+          'name' => 'Outros',
       ]);
       DB::table('categories')->insert([
           'name' => 'Empregos',

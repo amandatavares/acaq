@@ -4,7 +4,7 @@ button, button:focus, a, a:focus, a:active, a:hover {
 
 .index-post {
 	display: block;
-	margin: 0.5% auto;
+	margin: 1.5% auto;
 	width: 600px;
 	height: 100%
 }
@@ -83,7 +83,15 @@ a:link{
 }
 
 .answer-input {
-	margin-top: 10px;
+	width: 490px;
+    float: left;
+    margin-left: 10px;
+
+    outline: none;
+    border: 0;
+    box-shadow: 0;
+    font-family: Nexa;
+    font-weight: bold;
 }
 
 .glyphicon {

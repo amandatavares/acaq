@@ -12,23 +12,54 @@
             <div class="box-post">
               {{ Form::open(array('url' => 'perguntas', 'files' => true)) }}
                   <div class="box-title">
-                    {{ Form::text('title', old('title'), array('class' => 'input-title', 'placeholder' => 'O que quer saber?')) }}
+                    {{ Form::text('title', old('title'), array('class' => 'input-title', 'placeholder' => 'Digite aqui sua pergunta')) }}
                   </div>
 
                   <div class="box-desc">
-                    {{ Form::textarea('description', old('description'), array('class' => 'input-desc', 'placeholder' => 'Descreva')) }}
+                    {{ Form::textarea('description', old('description'), array('class' => 'input-desc', 'placeholder' => 'Descreva (Opcional)')) }}
                   </div>
 
+                  {{ Form::Label('choose-category','Escolha uma categoria ' , array('class' => 'choose-category')) }}
+
+                  {{ Form::select('category-input', array('',
+                  '1'=>'Achados e perdidos',
+                  '2'=> 'Animais',
+                  '3'=>'Artes e entretenimento',
+                  '4'=>'Causas humanitárias',
+                  '5'=> 'Compras e vendas',
+                  '6'=> 'Empregos',
+                  '7'=> 'Família e relacionamentos',
+                  '8'=> 'Lazer',
+                  '9'=> 'Notícias e eventos',
+                  '10'=> 'Ofertas e descontos',
+                  '11'=> 'Religião e espiritualidade',
+                  '12'=> 'Saúde',
+                  '13'=> 'Tecnologia',
+                  '14'=> 'Viagens e turismo',
+                  '15'=> 'Outros'),'0') }}
+
                   <div class="box-footer ">
-                    <a  class="btn-post btn-max pull-right" alt="Fazer pergunta" href="#">
+                    <a  class="btn-post btn-max pull-right" alt="Fazer pergunta" title="Fazer pergunta" href="#">
                       {{ Form::submit('', array('class' => 'create-btn')) }}
                     </a>
 
                     <div>
-                      <a class="btn-post btn-min pull-right" alt="Anexe uma foto" href="#">
-                        {{ Form::file('img_path', array('class' => 'upload_img_btn')) }}
+                      <a class="btn-post btn-min pull-right" alt="Anexe uma foto" title="Anexe uma foto" href="#">
+                        {{ Form::file('img_path', array('class' => 'upload_img_btn','id'=>'myFile')) }}
                       </a>
+                      <!-- erro de upload-->
+                      <script type="text/javascript">
+                        $('#myFile').bind('change', function() {
+                          var mySize = this.files[0].size;
+
+                          if (mySize>2048000.0) {alert("ERRO: " + $("#err1").text());}
+                          
+                          });
+                      </script>
+                      <p id="err1" class="hidden">Tamanho da imagem maior que o suportado!<br> Tamanho máximo suportado: 2,048Mb </p> 
                     </div>
+
+
                   </div>
               {{ Form::close() }}
             </div>
@@ -127,6 +158,15 @@
                       <!--<a class="btn-post btn-min pull-left" href="#">
                         <img class="img-box" src="img/push-pin.png" alt="">
                       </a>-->
+
+
+                      {{ Form::open(['url' => ['perguntas/answer',$value->id], 'files' => true]) }}
+
+                          {{ Form::text('description', old('description'), array('class' => 'form-control answer-input', 'placeholder'=>'Digite sua resposta')) }}
+
+                          <!-- {{ Form::submit('OK', array('class' => 'btn btn-primary')) }} -->
+                        {{ Form::close() }}
+
                     </div>
                   </div>
                 </div>

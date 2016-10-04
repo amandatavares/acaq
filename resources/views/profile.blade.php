@@ -40,6 +40,14 @@
                     <div class="post">
                         <p class="title-my">{{ $value->title }}</p>
                         <p class="desc-my">{{ $value->description }}</p>
+
+                        @if ($value->img_path != NULL)
+                        <div class="thumbnail post-img">
+                            <img src="question_uploads/{{ $value->img_path }}" style="width:500px;height:auto;">
+                        </div>
+                        @endif
+                        
+
                     </div>
                 </div>
             @endif

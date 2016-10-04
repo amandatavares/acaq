@@ -112,3 +112,21 @@
 .upload_img_btn::-webkit-file-upload-button {
   visibility: hidden;
 }
+
+.choose-category{
+    outline: none;
+    border: 0;
+    box-shadow: 0;
+    font-family: Nexa;
+    font-weight: bold;
+    color: rgb(169, 169, 169);
+    margin-left: 20px;
+
+}
+
+select, option {
+  font-family: Nexa ;
+  color: #1abc9c;
+  font-weight: bold;
+
+}

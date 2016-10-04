@@ -149,9 +149,20 @@
                    
                     {{ Form::file('img_profile_path', array('class' => 'set')) }}
                     
-                    {{ Form::submit('', array('class' => 'set', 'value'=>'Alterar minha foto do perfil')) }}
+                    {{ Form::submit('', array('class' => 'set', 'id'=>'myPic', 'value'=>'Alterar minha foto do perfil')) }}
 
+                    <script type="text/javascript">
+                        $('#myPic').bind('change', function() {
+                          var mySize = this.files[0].size;
+
+                          if (mySize>2048000.0) {alert("ERRO: " + $("#err1").text());}
+                          
+                          });
+                      </script>
+                      <p id="err1" class="hidden">Tamanho da imagem maior que o suportado!<br> Tamanho máximo suportado: 2,048Mb </p>
+                      
                   {{ Form::close() }}
+                      
 
                 </ul>
               </div>
