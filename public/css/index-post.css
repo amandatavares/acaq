@@ -29,6 +29,10 @@
 	position: relative;
 }
 
+a:link{
+	text-decoration: none !important;
+}
+
 .desc {
 	font-family: Nexa;
 	color: #2D2E38;
@@ -47,6 +51,7 @@
 	float: left;
 	margin-top: 17%;
 	margin-left: 40%;
+	margin-bottom: 10px !important;
 }
 
 .post-footer {
@@ -55,7 +60,7 @@
 	width: 100%;
 	background: #e4dfe1;
 	padding: 0 15px;
-	margin-top: 10%;
+	display: table;
 }
 
 .glyphicon {

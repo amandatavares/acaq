@@ -19,33 +19,9 @@
                             <p class="title-my">{{ $q->title }}</p>
                         </a>
                         <p class="desc-my">{{ $q->description }}</p>
-                        <div class="dropdown dropdown-post-my pull-right">
-                            <button class="btn-trans dropdown-toggle" type="button" data-toggle="dropdown">
-                                <!-- http://loremflickr.com/200/200/woman,profile -->
-                                <span class="caret"></span>
-                            </button>
-                            @if ( $friend->user_id === Auth::user()->id)
-                                <div class="dropdown dropdown-post pull-right">
-                                    <button class="btn-trans dropdown-toggle" type="button" data-toggle="dropdown">
-                                        <span class="caret"></span>
-                                    </button>
-                                    <ul class="dropdown-menu post-drop">
-                                        <li class="set-prof">
-                                            <a class="set" href="{{ url('perguntas/' . $q->id . '/edit') }}">Editar</a>
-                                        </li>
-                                        <li class="set-prof">
-                                          <a class="set" href="{{url('perguntas/delete/'.$q->id)}}">Apagar</a>
-                                        </li>
-                                        <li class="set-prof">
-                                          <a class="set" href="{{url('perguntas/answer/'.$q->id)}}">Responder</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            @endif
 
 
-
-                        </div>
+                        
                     </div>
                 </div>
             @endif
@@ -57,7 +33,7 @@
         	<div>
                 <h5 class="friends-title">SEGUINDO</h5>
             </div>
-            @if( $friend_f == null )
+            @if( $friend_f === [] )
                 <div class="friends">
                     <h5>Está seguindo ninguém</h5>
                     <h5></h5>
@@ -77,7 +53,8 @@
             <div >
                 <h5 class="friends-title">SEGUIDORES</h5>
             </div>
-            @if( $friend_f === null )
+
+            @if( $friend_f === [] )
                 <div class="friends">
                     <h5>Você está seguindo ninguém</h5>
                     <h5>Procure um amigo!</h5>

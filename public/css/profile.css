@@ -118,7 +118,6 @@
 }
 
 .dropdown-post-my {
-	margin-top: -10%;
 	margin-right: 0.5%;
 }
 
@@ -139,7 +138,7 @@
 	height: 50%;
 	background-color: white;
 	margin-left: 2%;
-	margin-top: 0.75%;
+	margin-top: 10px;
 	border-radius: 6px;
 	overflow: hidden;
 }

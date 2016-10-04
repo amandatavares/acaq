@@ -15,30 +15,29 @@
         @foreach ($questions as $key => $value)
             @if ( $value->user_id === Auth::user()->id)
                 <div class="publication-box">
+
+                    <div class="dropdown dropdown-post-my pull-right">
+                        <button class="btn-trans dropdown-toggle" type="button" data-toggle="dropdown">
+                            <!-- http://loremflickr.com/200/200/woman,profile -->
+                            <span class="caret"></span>
+                        </button>
+
+                        <ul class="dropdown-menu post-drop">
+                            <li class="set-prof">
+                                <a href="{{ url('perguntas/' . $value->id) }}" class="set">Abrir pergunta</a>
+                            </li>
+                            <li class="set-prof">
+                                <a class="set" href="{{ url('perguntas/' . $value->id . '/edit') }}">Editar</a>
+                            </li>
+                            
+                            <li class="set-prof"><a class="set" href="{{url('perguntas/answer/'.$value->id)}}">Responder</a></li>
+                        </ul>
+                    </div>
+
                     <img class="profile-post-pic-my" src="{{ Auth::user()->img_profile }}">
                     <div class="post">
                         <p class="title-my">{{ $value->title }}</p>
                         <p class="desc-my">{{ $value->description }}</p>
-                        <div class="dropdown dropdown-post-my pull-right">
-                            <button class="btn-trans dropdown-toggle" type="button" data-toggle="dropdown">
-                                <!-- http://loremflickr.com/200/200/woman,profile -->
-                                <span class="caret"></span>
-                            </button>
-
-                            <ul class="dropdown-menu post-drop">
-                                <li class="set-prof">
-                                    <a href="{{ url('perguntas/' . $value->id) }}" class="set">Abrir pergunta</a>
-                                </li>
-                                <li class="set-prof">
-                                    <a class="set" href="{{ url('perguntas/' . $value->id . '/edit') }}">Editar</a>
-                                </li>
-                                
-                                <li class="set-prof"><a class="set" href="{{url('perguntas/answer/'.$value->id)}}">Responder</a></li>
-                            </ul>
-
-
-
-                        </div>
                     </div>
                 </div>
             @endif
@@ -74,10 +73,9 @@
         <div >
             <h5 class="friends-title">SEGUIDORES</h5>
         </div>
-        @if( $friends === null )
+        @if( $followers === [] )
             <div class="friends">
-                <h5>Você está seguindo ninguém</h5>
-                <h5>Procure um amigo!</h5>
+                <h5>Você não possui seguidores</h5>
             </div>
         @endif
         
