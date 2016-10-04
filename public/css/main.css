@@ -186,11 +186,19 @@ overflow: hidden
 }
 
 #seguir{
-  float: right;
-    margin-top: -6%;
-    margin-right: 30%;
-
+    float: right;
+    margin-top: -2.5%;
+    margin-right: 35%;
+    font-weight: 600;
 }
+
+#seguir2{
+    float: right;
+    margin-top: -5%;
+    margin-right: 20%;
+    font-weight: 600;
+}
+
 
 #user_title{
     position: absolute;
