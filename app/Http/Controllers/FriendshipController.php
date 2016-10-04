@@ -115,5 +115,11 @@ class FriendshipController extends Controller
         $f = DB::delete('delete from friendships where friendships.id ='.$id.' and friendships.user_id ='.Auth::user()->id);
         return redirect('/profile');
     }
+    public function unfollow_prof_user($id2,$id)
+    {
+        $f = DB::delete('delete from friendships where friendships.id ='.$id.' and friendships.user_id ='.Auth::user()->id);
+        return redirect('profile/'.$id2);
+    }
+
 
 }

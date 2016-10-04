@@ -100,7 +100,7 @@
                         <h6>{{ $user->email }}</h6>
 
                         @if (Auth::user()->isFriend($f)==FALSE)
-                            <a href="{{ url('profile/followers/'.$f) }}"><h6 id="seguir">Seguir</h6></a>
+                            <a href="{{ url('profile/followers/'.$f) }}"><h6 id="seguir">+</h6></a>
                         @endif
                     </div>
                 @endif
