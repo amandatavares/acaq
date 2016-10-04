@@ -41,6 +41,7 @@ button, button:focus, a, a:focus, a:active, a:hover {
 	font-size: 20px;
 	padding-top: 3%;
 	position: relative;
+	width: 450px;
 }
 
 a:link{
@@ -54,7 +55,7 @@ a:link{
 .desc {
 	font-family: Nexa;
 	color: #2D2E38;
-	margin-left: 5%;
+	margin-left: 20%;
 	margin-right: 5%;
 	font-size: 14px;
 	margin-bottom: 10px;

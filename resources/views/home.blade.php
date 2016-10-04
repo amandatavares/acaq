@@ -50,7 +50,7 @@
                   <div class="post-box">
 
                   @if ( $value->user_id === Auth::user()->id )
-                      <div class="dropdown dropdown-post pull-right">
+                      <div class="dropdown dropdown-post pull-right" >
                         <button class="btn-trans dropdown-toggle" type="button" data-toggle="dropdown">
                             <span class="caret"></span>
                         </button>
@@ -105,8 +105,10 @@
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                                 <h4 class="modal-title">Curtidas</h4>
                               </div>
+
                               <div class="modal-body body-<?= $value->id?>">
                               </div>
+
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
                               </div>

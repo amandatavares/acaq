@@ -7,24 +7,23 @@
     <div class="box-sign">
 
     <form method="POST" action="{{ url('/config') }}">
-    {{ csrf_field() }}
 
     <div  class="form-group">
-      <label for="first_name">Nome</label>
-      <input type="text" id="first_name" class=" input-text" name="first_name" value="{{ Auth::user()->first_name }}">
+      <label for="first_name" style="font-family: Nexa;">Nome</label>
+      <input type="text" id="first_name" class="input-text" style="font-family: Nexa;" name="first_name" value="{{ Auth::user()->first_name }}">
     </div>
 
     <div class="form-group">
-      <label for="last_name">Sobrenome</label>
-      <input id="last_name" type="text" class=" input-text" name="last_name" value="{{ Auth::user()->last_name }}">
+      <label for="last_name" style="font-family: Nexa;">Sobrenome</label>
+      <input id="last_name" type="text" class=" input-text" style="font-family: Nexa;" name="last_name" value="{{ Auth::user()->last_name }}">
     </div>
           
     <div class="form-group">
       <label>Foto do Perfil</label>
-      {{ Form::file('img_profile_path', array('class' => 'set')) }}
+      {{ Form::file('img_profile_path', array('class' => 'set','style'=>'font-family: Nexa;')) }}
     </div>
                       
-      {{ Form::submit('Atualizar Dados', array('class' => 'set', 'value'=>'')) }}
+      {{ Form::submit('Atualizar Dados', array('class' => 'set')) }}
 
 
 

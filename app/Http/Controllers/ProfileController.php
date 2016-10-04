@@ -83,7 +83,7 @@ class ProfileController extends Controller
         }
       }
       
-      Auth::user()->save();
+      $me->save();
       return redirect('home');
     }
 
@@ -107,7 +107,6 @@ class ProfileController extends Controller
           Auth::user()->img_profile = '/profile_pic_uploads/'.$fileName;
           $request->img_profile_path->move($destinationPath, $fileName); // uploading file to given path
           //sending back with message
-          // Session::flash('success', 'Upload successfully');
         }
       }
       Auth::user()->save();
