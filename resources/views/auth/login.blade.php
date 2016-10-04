@@ -60,7 +60,7 @@
         <source src="img/bg2.mp4" type="video/mp4">
       </video>
       <div class="box">
-        <img class="img-responsive" width="160px" height="90px" src="http://i63.tinypic.com/2zscifr.png">
+        <img class="img-responsive" id="logo" width="160px" height="90px" src="http://i63.tinypic.com/2zscifr.png">
         <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
         	{{ csrf_field() }}
 

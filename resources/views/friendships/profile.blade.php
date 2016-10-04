@@ -10,6 +10,8 @@
             <h1 class="name">{{ $friend->first_name }} {{ $friend->last_name }}</h1>
         </div>
 
+        <a class="botao1" href="{{ url('/login') }}">SEGUIR+</a>
+
         @foreach ($friend->questions as $q)
             @if ( $q->user_id === $friend->id)
                 <div class="publication-box">
@@ -41,8 +43,15 @@
             
             @foreach ($friend_f as $key => $val)
             <div class="friends">
-                <img class="profile-friend-pic" src="{{ $val->img_profile }}">
-                <h5>{{ $val->first_name }}</h5>
+
+                <a href="{{ url('profile/' . $val->id) }}">
+                    <img class="profile-friend-pic" src="{{ $val->img_profile }}">
+                </a>
+
+                <a href="{{ url('profile/' . $val->id) }}">
+                    <h5>{{ $val->first_name }}</h5>
+                </a>
+
                 <h6>{{ $val->email }}</h6>
                 @if (Auth::user()->isFriend($val->id)==FALSE and Auth::user()->id != $val->id)
                     <a href="{{ url('pesquisa/followers/'.$val->id) }}"><h6 id="seguir">Seguir</h6></a>
@@ -67,6 +76,19 @@
                             @if (Auth::user()->isFriend($user->id)==FALSE and Auth::user()->id != $user->id)
                                 <a href="{{ url('followers/'.$user->id) }}"><h6 id="seguir">Seguir</h6></a>
                             @endif
+                        </div>
+                    @endif
+                    @if($f == $user->id)
+                        <div class="friends">
+
+                            <a href="{{ url('profile/' . $user->id) }}">
+                                <img class="profile-friend-pic" src="{{ $user->img_profile }}">
+                            </a>
+
+                            <a href="{{ url('profile/' . $user->id) }}">
+                                <h5>{{ $user->first_name }}</h5>
+                            </a>
+                            <h6>{{ $user->email }}</h6>
                         </div>
                     @endif
                 @endforeach

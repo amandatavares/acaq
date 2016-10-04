@@ -25,7 +25,7 @@
 									</div>
 										
 									@if (Auth::user()->isFriend($user->id)==FALSE)
-										<a href="{{ url('followers/'.$user->id) }}"><h6 id="seguir2">Seguir de volta</h6></a>
+										<a href="{{ url('followers/'.$user->id) }}"><h6 id="seguir2">+</h6></a>
 									@endif
 
 								</div>
