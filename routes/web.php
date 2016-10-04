@@ -44,6 +44,9 @@ Route::get('/categorias', 'CategoryController@index');
 Route::post('/profileimg', 'ProfileController@setPicProfile');
 Route::get('/profile', 'ProfileController@index');
 Route::get('/profile/{id}', 'FriendshipController@show_questions');
+Route::get('/profile/followers/{id}', 'FriendshipController@add_follower_prof');
+Route::get('/profile_user/{id2}/followers/{id}', 'FriendshipController@add_follower_prof_user');
+Route::get('/profile_user/{id2}/followers/{id}/remove', 'FriendshipController@unfollow_prof_user');
 
 //Others
 Route::post('/pesquisa', function(Request $request){
@@ -51,24 +54,10 @@ Route::post('/pesquisa', function(Request $request){
 	$search = $request->search;
 	return view('pesquisa')->with('users',$users)->with('search',$search);
 });
-
-Route::get('perfil', function(){
-	return view('perfil');
-});
-
 // Curtidas
 Route::post('doLike','LikesController@doLike');
 Route::post('questionLikes','LikesController@questionLikes');
 Route::post('user_like','LikesController@user_like');
 
-//Testes Laravel
-Route::get('/laravel', 'LaravelController@index');
-Route::get('allusers', function(){
-	$users = App\User::all();
-	return view('allusers')->with('users',$users);
-});
-
 //Not_used
 Route::resource("answers","AnswerController");
-Route::resource("comments","CommentController");
-Route::resource('dashboard', 'DashboardController@getIndex');

@@ -18,7 +18,8 @@
 							<div>
 							<a href="{{ url('profile/' . $user->id . '') }}"><h5>{{ $user->getFullName() }}</h5></a>
 							<h6>{{ $user->email }}</h6>
-							</div>	
+							</div>
+							<a href="{{ url('/following/'.$user->id.'/remove') }}"><h6 id="seguir2">-</h6></a>
 
 						</div>
 					@endforeach

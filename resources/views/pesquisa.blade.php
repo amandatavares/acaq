@@ -15,7 +15,7 @@
 								<a href="{{ url('profile/' . $user->id . '') }}"><h5>{{ $user->getFullName() }}</h5></a>
 								<h6>{{ $user->email }}</h6>
 								@if (Auth::user()->isFriend($user->id)==FALSE and Auth::user()->id != $user->id)
-									<a href="{{ url('pesquisa/followers/'.$user->id) }}"><h6 id="seguir">Seguir</h6></a>
+									<a href="{{ url('pesquisa/followers/'.$user->id) }}"><h6 id="seguir2">+</h6></a>
 								@endif
 							</div>
 						@endif

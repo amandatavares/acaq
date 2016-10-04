@@ -46,7 +46,6 @@ button, button:focus, a, a:focus, a:active, a:hover {
 
 a:link{
 	text-decoration: none !important;
-	color: #10735f !important;
 }
 
 .title:hover{

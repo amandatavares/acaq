@@ -53,18 +53,23 @@
         </div>
         @if( $friends === [] )
             <div class="friends">
-                <h5>Você está seguindo ninguém</h5>
-                <h5>Procure um amigo!</h5>
+                <h4>Você está seguindo ninguém</h4>
+                <h4>Procure um amigo!</h4>
             </div>
         @endif
         
         @foreach ($friends as $key => $val)
         <div class="friends">
-            <h4></h4>
-            <img class="profile-friend-pic" src="{{ $val->img_profile }}">
-            <h5>{{ $val->first_name }}</h5>
+            <a href="{{ url('profile/' . $val->id . '') }}">
+                <img class="profile-friend-pic" src="{{ $val->img_profile }}">
+            </a>
+
+            <a href="{{ url('profile/' . $val->id . '') }}">
+                <h5>{{ $val->first_name }}</h5>
+            </a>
+
             <h6>{{ $val->email }}</h6>
-            <a href="{{ url('/following/'.$val->id.'/remove') }}"><h6 id="seguir">Deixar de seguir</h6></a>
+            <a href="{{ url('/following/'.$val->id.'/remove') }}"><h6 id="seguir">-</h6></a>
         </div>
         @endforeach
     </div>
@@ -75,19 +80,29 @@
         </div>
         @if( $followers === [] )
             <div class="friends">
-                <h5>Você não possui seguidores</h5>
+                <h4>Você não possui seguidores</h4>
             </div>
         @endif
         
          @foreach($followers as $f)
             @foreach($users as $user)
                 @if($f == $user->id)
-                <div class="friends">
-                <h4></h4>
-                <img class="profile-friend-pic" src="{{ $user->img_profile }}">
-                <h5>{{ $user->first_name }}</h5>
-                <h6>{{ $user->email }}</h6>
-                </div>
+                    <div class="friends">
+
+                        <a href="{{ url('profile/' . $user->id . '') }}">
+                            <img class="profile-friend-pic" src="{{ $user->img_profile }}">
+                        </a>
+
+                        <a href="{{ url('profile/' . $user->id . '') }}">
+                            <h5>{{ $user->first_name }}</h5>
+                        </a>
+
+                        <h6>{{ $user->email }}</h6>
+
+                        @if (Auth::user()->isFriend($f)==FALSE)
+                            <a href="{{ url('profile/followers/'.$f) }}"><h6 id="seguir">+</h6></a>
+                        @endif
+                    </div>
                 @endif
             @endforeach
         @endforeach

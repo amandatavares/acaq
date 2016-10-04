@@ -32,20 +32,6 @@ class User extends Authenticatable
         return $this->first_name . ' ' . $this->last_name;
     }
 
-    public function friends()
-    {
-        return $this->belongsToMany('User', 'friends_users', 'user_id', 'friend_id');
-    }
-
-    public function addFriend(User $user)
-    {
-        $this->friends()->attach($user->id);
-    }
-
-    public function removeFriend(User $user)
-    {
-        $this->friends()->detach($user->id);
-    }
     public function isFriend($id)
     {
         $friends = Auth::user()->friendships;
@@ -56,16 +42,6 @@ class User extends Authenticatable
         }
         return FALSE;
     }
-
-    // protected $fillable = [
-    //     'name', 'email', 'password',
-    // ];
-
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
 
     public function questions()
     {
