@@ -95,6 +95,23 @@ class FriendshipController extends Controller
         return redirect('profile/'.$id2);
     }
 
+    public function followingQuestions()
+    {
+        $friendships = [];
+        $friends = Auth::user()->friendships;
+        $users = User::all();
+        foreach ($users as $user) {
+            foreach ($friends as $f) {
+                if($user->id == $f->id){
+                    $friendships[] = $user;
+                }
+            }
+        }
+        $questions_order = DB::table('questions')
+                ->orderBy('created_at', 'desc')
+                ->get();
+        return view('friendships.questions')->with('friends',$friendships)->with('questions_order', $questions_order);
+    }
     
 
 

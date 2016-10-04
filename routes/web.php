@@ -38,6 +38,7 @@ Route::get('/following', 'FriendshipController@index');
 Route::get('/following/{id}/remove', 'FriendshipController@unfollow');
 Route::get('/followers', 'FriendshipController@followers');
 Route::get('/followers/{id}', 'FriendshipController@add_follower');
+Route::get('/following/questions', 'FriendshipController@followingQuestions');
 Route::get('/pesquisa/followers/{id}', 'FriendshipController@add_follower_pesq');
 Route::get('/add_user/{id}', 'FriendshipController@add_friend');
 

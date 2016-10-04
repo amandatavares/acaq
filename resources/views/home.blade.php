@@ -76,12 +76,10 @@
            <div class="container">
             <div class="row">
               <div class="col-md-12">
-
-               <div class="index-post">
+                <div class="index-post">
                   <div class="post-box">
-
-                  @if ( $value->user_id === Auth::user()->id )
-                      <div class="dropdown dropdown-post pull-right" >
+                    @if ( $value->user_id === Auth::user()->id )
+                      <div class="dropdown dropdown-post pull-right">
                         <button class="btn-trans dropdown-toggle" type="button" data-toggle="dropdown">
                             <span class="caret"></span>
                         </button>
@@ -97,16 +95,11 @@
                             </li>
                         </ul>
                       </div>
-                  @endif
-
-
-
+                    @endif
                     <div class="profile-pic-post pull-left">
                       <a href="{{ url('profile/' . $value->user_id . '') }}">
-                      <img class="profile-post-pic" src="{{ $user->img_profile }}">
-                      </a>
-
-
+                        <img class="profile-post-pic" src="{{ $user->img_profile }}">
+                      </a>                  
                     </div>
 
                     <div class="post-title-desc">

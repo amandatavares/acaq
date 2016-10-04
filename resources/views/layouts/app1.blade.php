@@ -130,7 +130,7 @@
                   </button>
 
                   <ul class="dropdown-menu set-drop">
-                    <li class="set"><a class="set" href="conf-teste.php">Ver perguntas de quem sigo</a></li>
+                    <li class="set"><a class="set" href="{{ url('/following/questions') }}">Ver perguntas de quem sigo</a></li>
                     <li class="set"><a class="set" href="{{ url('/following') }}">Seguindo</a></li>
                     <li class="set"><a class="set" href="{{ url('/followers') }}">Seguidores</a></li>
                     
