@@ -69,7 +69,7 @@
             </a>
 
             <h6>{{ $val->email }}</h6>
-            <a href="{{ url('/following/'.$val->id.'/remove') }}"><h6 id="seguir">Deixar de seguir</h6></a>
+            <a href="{{ url('/following/'.$val->id.'/remove') }}"><h6 id="seguir">-</h6></a>
         </div>
         @endforeach
     </div>
