@@ -35,8 +35,7 @@
             </div>
             @if( $friend_f === [] )
                 <div class="friends">
-                    <h5>Está seguindo ninguém</h5>
-                    <h5></h5>
+                    <h4>Está seguindo ninguém</h4>
                 </div>
             @endif
             
@@ -53,13 +52,6 @@
             <div >
                 <h5 class="friends-title">SEGUIDORES</h5>
             </div>
-
-            @if( $friend_f === [] )
-                <div class="friends">
-                    <h5>Você está seguindo ninguém</h5>
-                    <h5>Procure um amigo!</h5>
-                </div>
-            @endif
             
             @foreach($followers as $f)
                 @foreach($users as $user)
