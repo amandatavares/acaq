@@ -74,7 +74,7 @@
                       <a href="{{ url('profile/' . $value->user_id . '') }}">
                       <img class="profile-post-pic" src="{{ $user->img_profile }}">
                       </a>
-                      
+
 
                     </div>
 
@@ -90,6 +90,8 @@
                     @endif
 
                     <div class="post-footer">
+                      iduser <?=Auth::user()->id?>
+                      idpost {{$value->id}}
                       <script>
                         likes(<?= $value->id ?>);
                       </script>
@@ -130,7 +132,7 @@
                 </div>
 
 
-                
+
               </div>
              </div>
             </div>

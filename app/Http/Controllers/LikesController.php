@@ -15,26 +15,11 @@ class LikesController extends Controller
       $like = new Likes();
       $like->user_id = $req->user_id;
       $like->questions_id = $req->questions_id;
-
-      /*if(DB::table('likes')->whereColumn([['questions_id', '=', $req->questions_id],['user_id', '=', $req->user_id]])->count()>=1){
-        DB::delete('delete from likes where likes.questions_id ='.$req->questions_id.' and likes.user_id ='$req->user_id);
-      }else{
-        if ($like->save()) {
-          return "true";
-        }else {
-          return "false";
-        }
-      }*/
-
       
-      if(Likes::where(["questions_id"=>$req->questions_id],["user_id"=>$req->user_id])->count()>=1){
-        Likes::where(["questions_id"=>$req->questions_id],["user_id"=>$req->user_id])->delete();
+      if(Likes::where(["questions_id"=>$req->questions_id])->where(["user_id"=>$req->user_id])->count()==1){
+        Likes::where(["questions_id"=>$req->questions_id])->where(["user_id"=>$req->user_id])->delete();
       }else{
-        if ($like->save()) {
-          return "true";
-        }else {
-          return "false";
-        }
+        $like->save();
       }
     }
     public function questionLikes(Request $req){
