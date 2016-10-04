@@ -92,7 +92,7 @@ class FriendshipController extends Controller
         $friend->id = $id;
         $friend->user_id = Auth::user()->id;
         $friend->save();
-        return redirect('profile'.$id2);
+        return redirect('profile/'.$id2);
     }
 
     

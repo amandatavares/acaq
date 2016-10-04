@@ -45,7 +45,7 @@ Route::post('/profileimg', 'ProfileController@setPicProfile');
 Route::get('/profile', 'ProfileController@index');
 Route::get('/profile/{id}', 'FriendshipController@show_questions');
 Route::get('/profile/followers/{id}', 'FriendshipController@add_follower_prof');
-Route::get('/profile_user/{id_user}/followers/{id}', 'FriendshipController@add_follower_prof_user');
+Route::get('/profile_user/{id2}/followers/{id}', 'FriendshipController@add_follower_prof_user');
 
 //Others
 Route::post('/pesquisa', function(Request $request){
