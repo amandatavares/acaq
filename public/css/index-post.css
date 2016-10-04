@@ -1,3 +1,7 @@
+button, button:focus, a, a:focus, a:active, a:hover {
+	outline: none;
+}
+
 .index-post {
 	display: block;
 	margin: 0.5% auto;
@@ -75,8 +79,12 @@ a:link{
 	height: 30px;
 	width: 100%;
 	background: #e4dfe1;
-	padding: 0 15px;
+	padding: 15px;
 	display: table;
+}
+
+.answer-input {
+	margin-top: 10px;
 }
 
 .glyphicon {
@@ -129,10 +137,6 @@ a:link{
 	border-style: solid;
 }
 
-.box-part {
-	border-top: 1px solid #ccc;
-	border-bottom: 1px solid #ccc;
-}
 .post-img{
 	margin-top: 10%;
 }
