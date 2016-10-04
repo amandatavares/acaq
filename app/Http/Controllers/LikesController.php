@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Likes as Likes;
 use App\User as User;
+use Illuminate\Support\Facades\DB;
+
 class LikesController extends Controller
 {
     //
@@ -13,6 +15,18 @@ class LikesController extends Controller
       $like = new Likes();
       $like->user_id = $req->user_id;
       $like->questions_id = $req->questions_id;
+
+      /*if(DB::table('likes')->whereColumn([['questions_id', '=', $req->questions_id],['user_id', '=', $req->user_id]])->count()>=1){
+        DB::delete('delete from likes where likes.questions_id ='.$req->questions_id.' and likes.user_id ='$req->user_id);
+      }else{
+        if ($like->save()) {
+          return "true";
+        }else {
+          return "false";
+        }
+      }*/
+
+      
       if(Likes::where(["questions_id"=>$req->questions_id],["user_id"=>$req->user_id])->count()>=1){
         Likes::where(["questions_id"=>$req->questions_id],["user_id"=>$req->user_id])->delete();
       }else{

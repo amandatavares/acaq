@@ -49,7 +49,7 @@
                <div class="index-post">
                   <div class="post-box">
 
-                  @if ( $value->user_id === Auth::user()->id)
+                  @if ( $value->user_id === Auth::user()->id )
                       <div class="dropdown dropdown-post pull-right">
                         <button class="btn-trans dropdown-toggle" type="button" data-toggle="dropdown">
                             <span class="caret"></span>

@@ -22,7 +22,7 @@ class CreateQuestionsTable extends Migration
                 references('id')->
                 on('categories');
             $table->string('title');
-            $table->string('description');
+            $table->string('description', 5000);
             $table->string('img_path')->nullable();
 
             $table->string('user_img')->nullable();
