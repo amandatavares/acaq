@@ -44,8 +44,8 @@
                   <script>
                     likes(<?= $question->id ?>);
                   </script>
-
-                  <div>
+                  
+                  <div class="box-part">
                     <a class="pull-left likes" id="question-<?= $question->id ?>" data-toggle="modal" data-target="#modal-question-<?= $question->id?>"></a>
 
                     <div id="modal-question-<?= $question->id?>" style="margin-top:15% !important" class="modal fade" role="dialog">
@@ -65,17 +65,20 @@
                     </div>
                     <button type="button" class="btn pull-left" onclick="like(<?=Auth::user()->id?>,<?=$question->id?>)">
                       <span class="glyphicon glyphicon-thumbs-up like" aria-hidden="true"></span>
+                    </button>                  
+
+
+                    <button type="button" class="btn pull-left" onclick="url('perguntas/answers/'.$question->id)">
+                      <span class="glyphicon glyphicon-comment comment" aria-hidden="true"></span>
                     </button>
                   </div>
-
-                  <button type="button" class="btn pull-left" onclick="url('perguntas/answers/'.$question->id)">
-                    <span class="glyphicon glyphicon-comment comment" aria-hidden="true"></span>
-                  </button>
+                  <!-- /box-part -->
+                  
                   {{ Form::open(['url' => ['perguntas/answer',$question->id], 'files' => true]) }}
                     <div>
-                        {{ Form::text('description', old('description'), array('class' => 'form-control')) }}
+                        {{ Form::text('description', old('description'), array('class' => 'form-control', 'placeholder'=>'Digite sua resposta')) }}
                     </div>
-                    {{ Form::submit('OK', array('class' => 'btn btn-primary')) }}
+                    <!-- {{ Form::submit('OK', array('class' => 'btn btn-primary')) }} -->
                   {{ Form::close() }}
                 </div>
                 <h3 class="title-resp">Respostas</h3>
