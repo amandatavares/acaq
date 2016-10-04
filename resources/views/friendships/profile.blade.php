@@ -44,6 +44,9 @@
                 <img class="profile-friend-pic" src="{{ $val->img_profile }}">
                 <h5>{{ $val->first_name }}</h5>
                 <h6>{{ $val->email }}</h6>
+                @if (Auth::user()->isFriend($val->id)==FALSE and Auth::user()->id != $val->id)
+                    <a href="{{ url('pesquisa/followers/'.$val->id) }}"><h6 id="seguir">Seguir</h6></a>
+                @endif
             </div>
             @endforeach
         </div>
@@ -55,14 +58,17 @@
             
             @foreach($followers as $f)
                 @foreach($users as $user)
-                @if($f == $user->id)
-            <div class="friends">
-                <h4></h4>
-                <img class="profile-friend-pic" src="{{ $user->img_profile }}">
-                <h5>{{ $user->first_name }}</h5>
-                <h6>{{ $user->email }}</h6>
-            </div>
-                @endif
+                    @if($f == $user->id)
+                        <div class="friends">
+                            <h4></h4>
+                            <img class="profile-friend-pic" src="{{ $user->img_profile }}">
+                            <h5>{{ $user->first_name }}</h5>
+                            <h6>{{ $user->email }}</h6>
+                            @if (Auth::user()->isFriend($user->id)==FALSE and Auth::user()->id != $user->id)
+                                <a href="{{ url('followers/'.$user->id) }}"><h6 id="seguir">Seguir</h6></a>
+                            @endif
+                        </div>
+                    @endif
                 @endforeach
             @endforeach
         </div>

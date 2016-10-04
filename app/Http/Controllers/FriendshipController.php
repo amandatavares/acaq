@@ -78,6 +78,23 @@ class FriendshipController extends Controller
         $friend->save();
         return redirect('following');
     }
+    public function add_follower_prof($id)
+    {
+        $friend = new Friendship;
+        $friend->id = $id;
+        $friend->user_id = Auth::user()->id;
+        $friend->save();
+        return redirect('profile');
+    }
+     public function add_follower_prof_user($id2, $id)
+    {
+        $friend = new Friendship;
+        $friend->id = $id;
+        $friend->user_id = Auth::user()->id;
+        $friend->save();
+        return redirect('profile'.$id2);
+    }
+
     
 
 

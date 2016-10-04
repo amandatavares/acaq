@@ -87,18 +87,22 @@
          @foreach($followers as $f)
             @foreach($users as $user)
                 @if($f == $user->id)
-                <div class="friends">
+                    <div class="friends">
 
-                <a href="{{ url('profile/' . $user->id . '') }}">
-                    <img class="profile-friend-pic" src="{{ $user->img_profile }}">
-                </a>
+                        <a href="{{ url('profile/' . $user->id . '') }}">
+                            <img class="profile-friend-pic" src="{{ $user->img_profile }}">
+                        </a>
 
-                <a href="{{ url('profile/' . $user->id . '') }}">
-                <h5>{{ $user->first_name }}</h5>
-                </a>
+                        <a href="{{ url('profile/' . $user->id . '') }}">
+                            <h5>{{ $user->first_name }}</h5>
+                        </a>
 
-                <h6>{{ $user->email }}</h6>
-                </div>
+                        <h6>{{ $user->email }}</h6>
+
+                        @if (Auth::user()->isFriend($f)==FALSE)
+                            <a href="{{ url('profile/followers/'.$f) }}"><h6 id="seguir">Seguir</h6></a>
+                        @endif
+                    </div>
                 @endif
             @endforeach
         @endforeach
