@@ -90,8 +90,6 @@
                     @endif
 
                     <div class="post-footer">
-                      iduser <?=Auth::user()->id?>
-                      idpost {{$value->id}}
                       <script>
                         likes(<?= $value->id ?>);
                       </script>
