@@ -58,7 +58,7 @@
                           </div>
                           <div class="modal-body body-<?= $question->id?>"></div>
                           <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove" aria-hidden="true"></button>
                           </div>
                         </div>
                       </div>
@@ -78,7 +78,7 @@
                     {{ Form::submit('OK', array('class' => 'btn btn-primary')) }}
                   {{ Form::close() }}
                 </div>
-                <h3 class="title">Respostas</h3>
+                <h3 class="title-resp">Respostas</h3>
                   @foreach($answers as $key => $answers) 
                     <p class="desc"><strong>{{$answers->user->first_name}}: </strong>{{$answers->description}}</p>
                   @endforeach
