@@ -9,7 +9,7 @@
         <div class="row">
           <div class="col-md-12">
             <div class="index-post">
-              <div class="post-box">                   
+              <div class="post-box">
                 @if ( $question->user_id === Auth::user()->id)
                   <div class="dropdown dropdown-post pull-right">
                       <button class="btn-trans dropdown-toggle" type="button" data-toggle="dropdown">
@@ -44,7 +44,7 @@
                   <script>
                     likes(<?= $question->id ?>);
                   </script>
-                    <div class="row">         
+                    <div class="row">
                       <a class="pull-left likes" id="question-<?= $question->id ?>" data-toggle="modal" data-target="#modal-question-<?= $question->id?>"></a>
 
                       <div id="modal-question-<?= $question->id?>" style="margin-top:15% !important" class="modal fade" role="dialog">
@@ -64,33 +64,32 @@
                       </div>
                       <button type="button" class="btn pull-left" onclick="like(<?=Auth::user()->id?>,<?=$question->id?>)">
                         <span class="glyphicon glyphicon-thumbs-up like" aria-hidden="true"></span>
-                      </button>                  
+                      </button>
 
 
-                      <button type="button" class="btn pull-left comm-btn" onclick="url('perguntas/answers/'.$question->id)">
+                      <button type="button" class="btn pull-left comm-btn" onclick="showComment('#comment-<?=$question->id?>')">
                         <span class="glyphicon glyphicon-comment comment" aria-hidden="true"></span>
-                      </button>   
-                    </div>                                 
-                  <div class="hideable hidden">
+                      </button>
+                    </div>
+                  <div class="hideable hidden" id="comment-<?=$question->id?>">
                     <div class="row">
                     {{ Form::open(['url' => ['perguntas/answer',$question->id], 'files' => true]) }}
-                      
+
                           {{ Form::text('description', old('description'), array('class' => 'form-control answer-input', 'placeholder'=>'Digite sua resposta')) }}
-                      
+
                       <!-- {{ Form::submit('OK', array('class' => 'btn btn-primary')) }} -->
                     {{ Form::close() }}
                     </div>
                     <h3 class="title-resp">Respostas</h3>
-                    @foreach($answers as $key => $answers) 
-                      <p class="desc"><strong>{{$answers->user->first_name}}: </strong>{{$answers->description}}</p>
+                    @foreach($answers as $key => $answers)
+                      <p class="desc"><strong>{{$answers->user->first_name}} : </strong>{{$answers->description}}</p>
                     @endforeach
                 </div>
               </div>
-            </div>     
+            </div>
           </div>
         </div>
       </div>
     @endif
   @endforeach
 @endsection
-
