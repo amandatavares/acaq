@@ -42,6 +42,11 @@
 
 a:link{
 	text-decoration: none !important;
+	color: #10735f !important;
+}
+
+.title:hover{
+	color: #10735f !important;
 }
 
 .desc {
