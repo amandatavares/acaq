@@ -163,7 +163,7 @@
                   <img src="/img/settings.png" class="btn-post img-vertical-set-box" alt="" />
                   </button>
                   <ul class="dropdown-menu set-drop">
-                    <li class="set"><a class="set" href="conf-teste.php">Configurações gerais da conta</a></li>
+                    <li class="set"><a class="set" href="{{ url('/config') }}">Configurações gerais da conta</a></li>
                 </ul>
               </div>
             </li>
