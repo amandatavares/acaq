@@ -45,7 +45,6 @@
                     likes(<?= $question->id ?>);
                   </script>
                     <div class="row">
-                      <a class="pull-left likes" id="question-<?= $question->id ?>" data-toggle="modal" data-target="#modal-question-<?= $question->id?>"></a>
 
                       <div id="modal-question-<?= $question->id?>" style="margin-top:15% !important" class="modal fade" role="dialog">
                         <div class="modal-dialog modal-sm">
@@ -62,6 +61,9 @@
                           </div>
                         </div>
                       </div>
+                      <div style="margin-left:20px">
+                        <a class="pull-left likes" id="question-<?= $question->id ?>" data-toggle="modal" data-target="#modal-question-<?= $question->id?>"></a>
+
                       <button type="button" class="btn pull-left" onclick="like(<?=Auth::user()->id?>,<?=$question->id?>)">
                         <span class="glyphicon glyphicon-thumbs-up like" aria-hidden="true"></span>
                       </button>
@@ -71,19 +73,24 @@
                         <span class="glyphicon glyphicon-comment comment" aria-hidden="true"></span>
                       </button>
                     </div>
+                    </div>
                   <div class="hideable hidden" id="comment-<?=$question->id?>">
                     <div class="row">
+                      <div class="col-sm-12">
                     {{ Form::open(['url' => ['perguntas/answer',$question->id], 'files' => true]) }}
 
                           {{ Form::text('description', old('description'), array('class' => 'form-control answer-input', 'placeholder'=>'Digite sua resposta')) }}
 
                       <!-- {{ Form::submit('OK', array('class' => 'btn btn-primary')) }} -->
                     {{ Form::close() }}
-                    </div>
+                  </div>
+                  <div class="col-sm-12">
                     <h3 class="title-resp">Respostas</h3>
                     @foreach($answers as $key => $answers)
-                      <p class="desc"><strong>{{$answers->user->first_name}} : </strong>{{$answers->description}}</p>
+                      <p class="desc"><a href="/profile/<?=$answers->user->id?>">{{$answers->user->first_name}} {{ $answers->user->last_name}}</a> {{$answers->description}}</p>
                     @endforeach
+                  </div>
+                </div>
                 </div>
               </div>
             </div>

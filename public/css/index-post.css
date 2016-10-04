@@ -25,7 +25,7 @@ button, button:focus, a, a:focus, a:active, a:hover {
 	font-family: Nexa;
 	font-weight: bold;
 	color: #1abc9c;
-	margin-left: 20%;
+	margin-left: 5%;
 	margin-top: 5%;
 	font-size: 20px;
 	padding-top: 3%;
@@ -54,7 +54,7 @@ a:link{
 .desc {
 	font-family: Nexa;
 	color: #2D2E38;
-	margin-left: 20%;
+	margin-left: 5%;
 	margin-right: 5%;
 	font-size: 14px;
 	margin-bottom: 10px;
@@ -89,7 +89,7 @@ a:link{
 	text-align: center;
     font-size: 18px;
 	position: relative;
-	float: left;	
+	float: left;
 	color: #7f8c8d;
 	margin-left: -4px;
 	margin-top: -3px;
