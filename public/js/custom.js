@@ -1,4 +1,3 @@
-
 //list my likes
 var getUserLike = function(id,questions_id){
   var result;
@@ -46,3 +45,9 @@ var like = function(user_id,questions_id){
     }
   });
 };
+
+$(document).ready(function() {
+    $('.comm-btn').click(function(){
+      $(this).siblings(".hideable").toggleClass('hidden');
+    });
+});

@@ -9,8 +9,11 @@
             <img class="profile-pic" src="{{ $friend->img_profile }}">
             <h1 class="name">{{ $friend->first_name }} {{ $friend->last_name }}</h1>
         </div>
-
-        <a class="botao1" href="{{ url('/login') }}">SEGUIR+</a>
+        @if(Auth::user()->isFriend($friend->id)==false)
+            <a class="botao1" href="{{ url('profile_user/'.$friend->id.'/followers/'.$friend->id) }}">SEGUIR+</a>
+        @else
+            <a class="botao1" href="{{ url('profile_user/'.$friend->id.'/followers/'.$friend->id.'/remove') }}">DEIXAR DE SEGUIR-</a>
+        @endif
 
         @foreach ($friend->questions as $q)
             @if ( $q->user_id === $friend->id)
@@ -42,21 +45,21 @@
             @endif
             
             @foreach ($friend_f as $key => $val)
-            <div class="friends">
+                <div class="friends">
 
-                <a href="{{ url('profile/' . $val->id) }}">
-                    <img class="profile-friend-pic" src="{{ $val->img_profile }}">
-                </a>
+                    <a href="{{ url('profile/' . $val->id) }}">
+                        <img class="profile-friend-pic" src="{{ $val->img_profile }}">
+                    </a>
 
-                <a href="{{ url('profile/' . $val->id) }}">
-                    <h5>{{ $val->first_name }}</h5>
-                </a>
+                    <a href="{{ url('profile/' . $val->id) }}">
+                        <h5>{{ $val->first_name }}</h5>
+                    </a>
+                    <h6>{{ $val->email }}</h6>
+                    @if (Auth::user()->isFriend($val->id)==FALSE and Auth::user()->id != $val->id)
+                        <a href="{{ url('pesquisa/followers/'.$val->id) }}"><h6 id="seguir">+</h6></a>
+                    @endif
+                </div>
 
-                <h6>{{ $val->email }}</h6>
-                @if (Auth::user()->isFriend($val->id)==FALSE and Auth::user()->id != $val->id)
-                    <a href="{{ url('pesquisa/followers/'.$val->id) }}"><h6 id="seguir">+</h6></a>
-                @endif
-            </div>
             @endforeach
         </div>
 
@@ -71,16 +74,16 @@
                         <div class="friends">
                             
                             <a href="{{ url('profile/' . $user->id) }}">
-                            <img class="profile-friend-pic" src="{{ $user->img_profile }}">
+                                <img class="profile-friend-pic" src="{{ $user->img_profile }}">
                             </a>
 
                             <a href="{{ url('profile/' . $user->id) }}">
-                            <h5>{{ $user->first_name }}</h5>
+                                <h5>{{ $user->first_name }}</h5>
                             </a>
 
                             <h6>{{ $user->email }}</h6>
                             @if (Auth::user()->isFriend($user->id)==FALSE and Auth::user()->id != $user->id)
-                                <a href="{{ url('followers/'.$user->id) }}"><h6 id="seguir">+</h6></a>
+                                <a href="{{ url('profile_user/'.$friend->id.'/followers/'.$user->id) }}"><h6 id="seguir">+</h6></a>
                             @endif
                         </div>
                     @endif
