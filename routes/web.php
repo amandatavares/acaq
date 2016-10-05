@@ -32,6 +32,7 @@ Route::get('/perguntas/delete/{id}', 'QuestionController@delete');
 //Answers
 Route::get('/perguntas/answer/{id}', 'AnswerController@answer_create');
 Route::post('/perguntas/answer/{id}', 'AnswerController@answer_store');
+Route::get('perguntas/{id}/answer/{id2}/remove', 'AnswerController@destroy');
 
 //Friendships
 Route::get('/following', 'FriendshipController@index');
@@ -53,6 +54,7 @@ Route::get('/profile/{id}', 'FriendshipController@show_questions');
 Route::get('/profile/followers/{id}', 'FriendshipController@add_follower_prof');
 Route::get('/profile_user/{id2}/followers/{id}', 'FriendshipController@add_follower_prof_user');
 Route::get('/profile_user/{id2}/followers/{id}/remove', 'FriendshipController@unfollow_prof_user');
+Route::get('/profile/perguntas/delete/{id}', 'QuestionController@delete_pergunta_profile');
 
 //Others
 Route::post('/pesquisa', function(Request $request){

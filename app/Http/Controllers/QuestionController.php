@@ -131,10 +131,10 @@ class QuestionController extends Controller
         Question::findOrFail($id)->delete();
         return redirect('/home');
     }
-    /*public function comments($id){
-        $question = Question::find($id);
-        return view('perguntas.comment')->with('question', $question);
-    }*/
+    public function delete_pergunta_profile($id){
+        Question::findOrFail($id)->delete();
+        return redirect('/profile');
+    }
     public function myquestions(){
       $user = Auth::user();
       $questions = $user->questions;

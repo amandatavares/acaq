@@ -30,6 +30,7 @@
                             <li class="set-prof">
                               <a class="set" href="{{url('perguntas/delete/'.$value->id)}}">Apagar</a>
                             </li>
+
                         </ul>
                       </div>
                     
@@ -37,6 +38,13 @@
                       <a href="{{ url('profile/' . $value->user_id . '') }}">
                         <img class="profile-post-pic" src="{{ Auth::user()->img_profile }}">
                       </a>                  
+
+                            <li class="set-prof">
+                              <a class="set" href="{{url('profile/perguntas/delete/'.$value->id)}}">Apagar</a>
+                            </li>
+
+                        </ul>
+
                     </div>
 
                     <div class="post-title-desc">
