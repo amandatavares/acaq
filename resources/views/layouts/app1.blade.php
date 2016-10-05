@@ -126,6 +126,21 @@
               <div class="dropdown dropdown-conf">
                 <button id="vert" class="btn-trans dropdown-toggle" type="button" data-toggle="dropdown">
                   <!-- http://loremflickr.com/200/200/woman,profile -->
+                  <img src="/img/follow.png" class="btn-post img-vertical-set-box" alt="" />
+                  </button>
+
+                  <ul class="dropdown-menu set-drop">
+                    <li class="set"><a class="set" href="LINK DA CATEGORIA">CATEGORIA</a></li>
+                    <li class="set"><a class="set" href="LINK DA CATEGORIA">CATEGORIA</a></li>
+                    <li class="set"><a class="set" href="LINK DA CATEGORIA">CATEGORIA</a></li>
+                    
+                </ul>
+              </div></li>
+
+              <li>
+              <div class="dropdown dropdown-conf">
+                <button id="vert" class="btn-trans dropdown-toggle" type="button" data-toggle="dropdown">
+                  <!-- http://loremflickr.com/200/200/woman,profile -->
                   <img src="/img/follow_request.png" class="btn-post img-vertical-set-box" alt="" />
                   </button>
 
