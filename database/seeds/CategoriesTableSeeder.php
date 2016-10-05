@@ -23,7 +23,7 @@ class CategoriesTableSeeder extends Seeder
           'name' => 'Artes e entretenimento',
       ]);
       DB::table('categories')->insert([
-          'name' => 'Causas humanitárias',
+          'name' => 'Comida',
       ]);
       DB::table('categories')->insert([
           'name' => 'Compras e vendas',

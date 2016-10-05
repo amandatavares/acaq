@@ -21,11 +21,11 @@
 
                   {{ Form::Label('choose-category','Escolha uma categoria ' , array('class' => 'choose-category')) }}
 
-                  {{ Form::select('category_id', array('',
+                  {{ Form::select('category_id', array(
                   '1'=>'Achados e perdidos',
                   '2'=> 'Animais',
                   '3'=>'Artes e entretenimento',
-                  '4'=>'Causas humanitárias',
+                  '4'=>'Comida',
                   '5'=> 'Compras e vendas',
                   '6'=> 'Empregos',
                   '7'=> 'Família e relacionamentos',
@@ -36,7 +36,7 @@
                   '12'=> 'Saúde',
                   '13'=> 'Tecnologia',
                   '14'=> 'Viagens e turismo',
-                  '15'=> 'Outros'),'0') }}
+                  '15'=> 'Outros'),'15') }}
 
                   <div class="box-footer ">
                     <a  class="btn-post btn-max pull-right" alt="Fazer pergunta" title="Fazer pergunta" href="#">

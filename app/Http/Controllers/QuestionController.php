@@ -15,7 +15,7 @@ class QuestionController extends Controller
     function index(){
       // Liste todos os filmes e os retorne no Index
 
-      $question = Question::orderBy('id','desc')->get();
+      $question = Question::orderBy('id','asc')->get();
 
       $users = User::all();
 
@@ -32,7 +32,8 @@ class QuestionController extends Controller
     function store(Request $request)
     {
       $this->validate($request, array(
-            'title'       => 'required|max:255'
+            'title'       => 'required|max:255',
+            'category_id' => 'required'
       ));
 
 

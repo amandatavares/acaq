@@ -11,7 +11,7 @@ class CategoryController extends Controller
 {
     public function index($id) {
         $category = Category::find($id);
-        return view('categories')
+        return view('category')
             ->with('category', $category);
     }
 

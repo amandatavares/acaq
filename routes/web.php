@@ -44,7 +44,7 @@ Route::get('/add_user/{id}', 'FriendshipController@add_friend');
 
 //Categorie
 Route::get('/categorias', 'CategoryController@index1');
-Route::get('/categories/{id}', 'CategoryController@index');
+Route::get('/category/{id}', 'CategoryController@index');
 
 //Profiles
 Route::post('/profileimg', 'ProfileController@setPicProfile');

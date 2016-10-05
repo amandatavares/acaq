@@ -129,9 +129,21 @@
                   </button>
 
                   <ul class="dropdown-menu set-drop">
-                    <li class="set"><a class="set" href="LINK DA CATEGORIA">CATEGORIA</a></li>
-                    <li class="set"><a class="set" href="LINK DA CATEGORIA">CATEGORIA</a></li>
-                    <li class="set"><a class="set" href="LINK DA CATEGORIA">CATEGORIA</a></li>
+                    <li class="set"><a class="set" href="/category/1">Achados e perdidos ( {{App\Category::find(1)->questions->count()}} )</a></li>
+                    <li class="set"><a class="set" href="/category/2">Animais ( {{App\Category::find(2)->questions->count()}} )</a></li>
+                    <li class="set"><a class="set" href="/category/3">Artes e entretenimento ( {{App\Category::find(3)->questions->count()}} )</a></li>
+                    <li class="set"><a class="set" href="/category/4">Comida ( {{App\Category::find(4)->questions->count()}} )</a></li>
+                    <li class="set"><a class="set" href="/category/5">Compras e vendas ( {{App\Category::find(5)->questions->count()}} )</a></li>
+                    <li class="set"><a class="set" href="/category/6">Empregos ( {{App\Category::find(6)->questions->count()}} )</a></li>
+                    <li class="set"><a class="set" href="/category/7">Família e relacionamentos ( {{App\Category::find(7)->questions->count()}} )</a></li>
+                    <li class="set"><a class="set" href="/category/8">Lazer ( {{App\Category::find(8)->questions->count()}} )</a></li>
+                    <li class="set"><a class="set" href="/category/9">Notícias e eventos ( {{App\Category::find(9)->questions->count()}} )</a></li>
+                    <li class="set"><a class="set" href="/category/10">Ofertas e descontos ( {{App\Category::find(10)->questions->count()}} )</a></li>
+                    <li class="set"><a class="set" href="/category/11">Religião e espiritualidade ( {{App\Category::find(11)->questions->count()}} )</a></li>
+                    <li class="set"><a class="set" href="/category/12">Saúde ( {{App\Category::find(12)->questions->count()}} )</a></li>
+                    <li class="set"><a class="set" href="/category/13">Tecnologia ( {{App\Category::find(13)->questions->count()}} )</a></li>
+                    <li class="set"><a class="set" href="/category/14">Viagens e turismo ( {{App\Category::find(14)->questions->count()}} )</a></li>
+                    <li class="set"><a class="set" href="/category/15">Outros ( {{App\Category::find(15)->questions->count()}} )</a></li>
                     
                 </ul>
               </div></li>
@@ -163,7 +175,7 @@
                    
                     {{ Form::file('img_profile_path', array('class' => 'set')) }}
                     
-                    {{ Form::submit('', array('class' => 'set', 'id'=>'myPic', 'value'=>'Alterar minha foto do perfil')) }}
+                    {{ Form::submit('Enviar', array('class' => 'set', 'id'=>'myPic', 'value'=>'Alterar minha foto do perfil')) }}
 
                     <script type="text/javascript">
                         $('#myPic').bind('change', function() {
