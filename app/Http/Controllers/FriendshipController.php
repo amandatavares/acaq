@@ -36,22 +36,28 @@ class FriendshipController extends Controller
         $friendships = [];
         $friends = $friend->friendships;
         $users = User::all();
+        $count_followings = 0;
         foreach ($users as $key => $user) {
             foreach ($friends as $key => $f) {
-                if($user->id == $f->id)
+                if($user->id == $f->id){
                     $friendships[] = $user;
+                    $count_followings+=1;
+                }
             }
         }
 
+        $count_followers=0;
         $users = User::all();
         $followers = [];
         foreach (Friendship::all() as $key => $f) {
-            if($f->id == $friend->id)
+            if($f->id == $friend->id){
                 $followers[] = $f->user_id;
+                $count_followers+=1;
+            }
         }
 
     	return view('friendships.profile')
-    		->with('friend', $friend)->with('friend_f', $friendships)->with('followers',$followers)->with('users',$users);
+    		->with('friend', $friend)->with('friend_f', $friendships)->with('followers',$followers)->with('users',$users)->with('count_followers',$count_followers)->with('count_followings',$count_followings);
     }
     /*public function add_friend($id)
     {

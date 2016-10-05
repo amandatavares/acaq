@@ -21,7 +21,7 @@
 
                   {{ Form::Label('choose-category','Escolha uma categoria ' , array('class' => 'choose-category')) }}
 
-                  {{ Form::select('category-input', array('',
+                  {{ Form::select('category_id', array('',
                   '1'=>'Achados e perdidos',
                   '2'=> 'Animais',
                   '3'=>'Artes e entretenimento',
