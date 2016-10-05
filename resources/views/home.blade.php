@@ -93,11 +93,15 @@
                         </ul>
                       </div>
                     @endif
+
                     <div class="profile-pic-post pull-left">
                       <a href="{{ url('profile/' . $value->user_id . '') }}">
                         <img class="profile-post-pic" src="{{ $user->img_profile }}">
+                        <div class="name-post"><h5>{{ $user->first_name}}</h5></div>
                       </a>                  
                     </div>
+
+
 
                     <div class="post-title-desc">
                       <a href="{{ url('perguntas/' . $value->id) }}"><h4 class="title">{{ $value->title }}</h4></a>
@@ -174,7 +178,7 @@
                             </button>
                             <ul class="dropdown-menu post-drop">
                               <li class="set-prof">
-                                <a class="set" href="SUA URL AQUIIIIII">Apagar</a>
+                                <a class="set" href="{{ url('perguntas/'.$value->id.'/answer/'.$answers->id.'/remove') }}">Apagar</a>
                               </li>
                             </ul>
                           </div>
