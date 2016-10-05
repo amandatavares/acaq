@@ -142,7 +142,7 @@
                         </button>
                       </div>
 
-                      <button type="button" class="btn pull-left">
+                      <button type="button" class="btn pull-left" onclick="showComment('#comment-<?=$value->id?>')">
                         <span class="glyphicon glyphicon-comment comment" aria-hidden="true"></span>
                       </button>
                       <!--<a class="btn-post btn-min pull-left" href="#">
@@ -158,6 +158,47 @@
                         {{ Form::close() }}
 
                     </div>
+
+                    <!-- inicio respostas-->
+                   <div class="hideable hidden" id="comment-<?=$value->id?>" style="background: #e4dfe1;" >
+                    <div class="row">
+
+                    <div class="col-sm-12" style="margin-bottom: 10px;" >
+                      <h3 class="title-resp">Respostas</h3>
+                      @foreach($value->answers as $key => $answers)
+
+                           @if ( $answers->user_id === Auth::user()->id )
+                            <div class="dropdown dropdown-post pull-right">
+                              <button class="btn-trans dropdown-toggle" type="button" data-toggle="dropdown" style="margin-right: 10px;">
+                                  <span class="caret"></span>
+                              </button>
+                              <ul class="dropdown-menu post-drop">
+                                  <li class="set-prof">
+                                    <a class="set" href="SUA URL AQUIIIIII">Apagar</a>
+                                  </li>
+                              </ul>
+                            </div>
+                          @endif
+
+                        <div class="answer-box">
+                          <div class="profile-pic-post pull-left">
+                            <a href="/profile/<?=$answers->user->id?>">
+                              <img class="profile-post-pic profile-answer-pic" src="<?=$answers->user->img_profile?>">
+                            </a>                  
+                          </div>
+
+                          <a href="/profile/<?=$answers->user->id?>" class="answer-name">{{$answers->user->first_name}} {{ $answers->user->last_name}}</a>
+
+                          <p class="answer-desc"> {{$answers->description}}</p>
+                        </div>
+
+                      @endforeach
+                    </div>
+                  </div>
+                </div>
+                <!-- fim das respostas-->
+
+
                   </div>
                 </div>
 
