@@ -115,7 +115,7 @@ class AnswerController extends Controller {
 	}
 	public function destroy_home($id)
 	{
-		$answer = Answer::findOrFail($id2);
+		$answer = Answer::findOrFail($id);
 		$answer->delete();
 
 		return redirect('home/');
