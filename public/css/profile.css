@@ -7,19 +7,20 @@
 	position: absolute;
 	right: 5%;
 	margin-top: 10px;
-	min-width: 60%;
+	width: 800px;
 	height: 98.5%;
 	border-top-left-radius: 6px;
 	border-top-right-radius: 6px;
 	background-color: white;
-	overflow-y: overlay;
-	overflow-x: hidden;
+	overflow-y: scroll;
+	overflow-x: hidden; 
+	
 }
 
 /*Para a parte superior*/
 .cover-pic {
 	width: 100%;
-	height: 30%;
+	height: 400px;
 }
 
 .cover-pic img.cover {
@@ -67,17 +68,11 @@
 
 /*Para a parte inferior*/
 .publication-box {
-	position: relative;
-	float: bottom;
-	top: 210px;
-	width: 100%;
-	min-height: 30%;
-	border: 2px;
-	border-right: 0;
-	border-left: 0;
-	/*border-bottom: 0;*/
-	border-style: solid;
-	border-color: #efefef;
+    background-color: rgba(232, 227, 229, 0.48);
+    width: 700px;
+    border-radius: 10px;
+    margin: 10px;
+    margin: 10px auto;
 }
 
 .profile-post-pic-my {
