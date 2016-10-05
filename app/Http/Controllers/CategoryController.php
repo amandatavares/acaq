@@ -9,7 +9,14 @@ use App\Category as Category;
 
 class CategoryController extends Controller
 {
-    public function index() {
+    public function index($id) {
+        $category = Category::find($id);
+        return view('category')
+            ->with('category', $category);
+    }
+
+
+    public function index1() {
         $categories = Category::all();
         return view('perguntas.categories')
             ->with('categories', $categories);

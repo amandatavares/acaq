@@ -9,9 +9,9 @@
             <img class="profile-pic" src="{{ $friend->img_profile }}">
             <h1 class="name">{{ $friend->first_name }} {{ $friend->last_name }}</h1>
         </div>
-        @if(Auth::user()->isFriend($friend->id)==false)
+        @if(Auth::user()->isFriend($friend->id)==false and Auth::user()->id!=$friend->id)
             <a class="botao1" href="{{ url('profile_user/'.$friend->id.'/followers/'.$friend->id) }}">SEGUIR+</a>
-        @else
+        @elseif(Auth::user()->id!=$friend->id)
             <a class="botao1" href="{{ url('profile_user/'.$friend->id.'/followers/'.$friend->id.'/remove') }}">DEIXAR DE SEGUIR</a>
         @endif
 

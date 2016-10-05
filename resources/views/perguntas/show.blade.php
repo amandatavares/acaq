@@ -84,7 +84,7 @@
                     </div>
 
                     
-                  <div class="hideable hidden" id="comment-<?=$question->id?>">
+                  <div class="hideable" id="comment-<?=$question->id?>">
                     <div class="row">                 
 
                   <div class="col-sm-12" style="margin-bottom: 10px;" >
@@ -119,7 +119,7 @@
                     @endforeach
                   </div>
 
-                  
+
                 </div>
                 </div>
               </div>

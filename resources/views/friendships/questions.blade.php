@@ -24,7 +24,7 @@
 
                     @if ($question->img_path != NULL)
                       <div class="thumbnail post-img">
-                        <img src="question_uploads/{{ $question->img_path }}" style="width:500px;height:auto;">
+                        <img src="/question_uploads/{{ $question->img_path }}" style="width:500px;height:auto;">
                       </div>
                     @endif
 

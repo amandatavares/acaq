@@ -32,7 +32,8 @@ class QuestionController extends Controller
     function store(Request $request)
     {
       $this->validate($request, array(
-            'title'       => 'required|max:255'
+            'title'       => 'required|max:255',
+            'category_id' => 'required'
       ));
 
 
@@ -67,7 +68,8 @@ class QuestionController extends Controller
     public function show($id)
     {
         // get the question
-        $question = Question::find($id);
+        $question = Question::orderBy('id','desc')->find($id);
+;
         $answers = $question->answers;
         $users = User::all();
 

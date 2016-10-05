@@ -114,7 +114,7 @@ class FriendshipController extends Controller
             }
         }
         $questions_order = DB::table('questions')
-                ->orderBy('created_at', 'desc')
+                ->orderBy('created_at', 'asc')
                 ->get();
         return view('friendships.questions')->with('friends',$friendships)->with('questions_order', $questions_order);
     }
