@@ -90,9 +90,6 @@
                             <li class="set-prof">
                               <a class="set" href="{{url('perguntas/delete/'.$value->id)}}">Apagar</a>
                             </li>
-                            <li class="set-prof">
-                              <a class="set" href="{{url('perguntas/answer/'.$value->id)}}">Responder</a>
-                            </li>
                         </ul>
                       </div>
                     @endif

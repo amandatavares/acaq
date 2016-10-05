@@ -56,7 +56,7 @@
                     </a>
                     <h6>{{ $val->email }}</h6>
                     @if (Auth::user()->isFriend($val->id)==FALSE and Auth::user()->id != $val->id)
-                        <a href="{{ url('pesquisa/followers/'.$val->id) }}"><h6 id="seguir">+</h6></a>
+                        <a href="{{ url('profile_user/'.$friend->id.'/followers/'.$val->id) }}"><h6 id="seguir">+</h6></a>
                     @endif
                 </div>
 
