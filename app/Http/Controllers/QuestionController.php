@@ -15,7 +15,7 @@ class QuestionController extends Controller
     function index(){
       // Liste todos os filmes e os retorne no Index
 
-      $question = Question::orderBy('id','asc')->get();
+      $question = Question::orderBy('id','desc')->get();
 
       $users = User::all();
 
@@ -68,7 +68,8 @@ class QuestionController extends Controller
     public function show($id)
     {
         // get the question
-        $question = Question::find($id);
+        $question = Question::orderBy('id','desc')->find($id);
+;
         $answers = $question->answers;
         $users = User::all();
 

@@ -114,18 +114,21 @@
       <nav class="nav nav-aberta">
         <div class="wrap">
           <ul class="listaNav">
-              <button class="btn-trans" type="button">
-                <li>
-                  <a href="{{ url('/home') }}">
-                    <img class="btn-post img-vertical-set-box" src="/img/home.png" alt=""/>
-                  </a>
-                </li>
-              </button>          
+
+            <button class="btn-trans" type="button">
               <li>
-              <div class="dropdown dropdown-conf">
+                <a href="{{ url('/home') }}" title="Home">
+                  <img class="btn-post img-vertical-set-box" src="/img/home.png" alt=""/>
+                </a>
+              </li>
+              </button>
+
+
+              <li>
+              <div class="dropdown dropdown-conf" title="Categorias">
                 <button id="vert" class="btn-trans dropdown-toggle" type="button" data-toggle="dropdown">
                   <!-- http://loremflickr.com/200/200/woman,profile -->
-                  <img src="/img/follow.png" class="btn-post img-vertical-set-box" alt="" />
+                  <img src="/img/category.png" class="btn-post img-vertical-set-box" alt="" />
                   </button>
 
                   <ul class="dropdown-menu set-drop">
@@ -149,7 +152,7 @@
               </div></li>
 
               <li>
-              <div class="dropdown dropdown-conf">
+              <div class="dropdown dropdown-conf" title="Opções de seguir">
                 <button id="vert" class="btn-trans dropdown-toggle" type="button" data-toggle="dropdown">
                   <!-- http://loremflickr.com/200/200/woman,profile -->
                   <img src="/img/follow_request.png" class="btn-post img-vertical-set-box" alt="" />
@@ -164,7 +167,7 @@
               </div></li>
 
               <li>
-              <div class="dropdown dropdown-conf">
+              <div class="dropdown dropdown-conf" title="Alterar imagem do Perfil">
                 <button id="vert" class="btn-trans dropdown-toggle" type="button" data-toggle="dropdown">
                   <!-- http://loremflickr.com/200/200/woman,profile -->
                   <img src="/img/user.png" class="btn-post img-vertical-set-box" alt="" />
@@ -195,7 +198,7 @@
             </li>
 
             <li>
-              <div class="dropdown dropdown-conf">
+              <div class="dropdown dropdown-conf" title="Configurações gerais da conta">
                 <button id="vert" class="btn-trans dropdown-toggle" type="button" data-toggle="dropdown">
                   <!-- http://loremflickr.com/200/200/woman,profile -->
                   <img src="/img/settings.png" class="btn-post img-vertical-set-box" alt="" />
