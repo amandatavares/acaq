@@ -31,11 +31,8 @@ class QuestionController extends Controller
 
     function store(Request $request)
     {
-      // $input = $request->all();
-      // return Question::create($input);
       $this->validate($request, array(
-            'title'       => 'required|max:255'//,
-            //'description'      => 'required'
+            'title'       => 'required|max:255'
       ));
 
 
@@ -46,7 +43,7 @@ class QuestionController extends Controller
       $q->description = $request->description;
       $q->user_id = $request->user()->id;
       $q->user_img = $request->user()->img_profile;
-      $q->category_id = 1;
+      $q->category_id = $request->category_id;
 
       if (isset($request->img_path) && trim($request->img_path) != "") {
         // checking file is valid.

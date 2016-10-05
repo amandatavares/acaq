@@ -36,7 +36,7 @@
     <div>
         <div class="following-box">
         	<div>
-                <h5 class="friends-title">SEGUINDO (10)</h5>                
+                <h5 class="friends-title">SEGUINDO ( {{ $count_followings }} )</h5>                
             </div>
             @if( $friend_f === [] )
                 <div class="friends">
@@ -65,7 +65,7 @@
 
         <div class="followers-box">
             <div >
-                <h5 class="friends-title">SEGUIDORES (10)</h5>
+                <h5 class="friends-title">SEGUIDORES ( {{ $count_followers }} )</h5>
             </div>
             
             @foreach($followers as $f)
