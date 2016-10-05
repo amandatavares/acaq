@@ -174,7 +174,7 @@
                             </button>
                             <ul class="dropdown-menu post-drop">
                               <li class="set-prof">
-                                <a class="set" href="url('perguntas/answer/'.$answer->id.'/remove')">Apagar</a>
+                                <a class="set" href="{{url('perguntas/answer/'.$answers->id.'/remove')}}">Apagar</a>
                               </li>
                             </ul>
                           </div>
