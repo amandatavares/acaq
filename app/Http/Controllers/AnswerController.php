@@ -113,6 +113,13 @@ class AnswerController extends Controller {
 
 		return redirect('perguntas/'.$id);
 	}
+	public function destroy_home($id)
+	{
+		$answer = Answer::findOrFail($id2);
+		$answer->delete();
+
+		return redirect('home/');
+	}
 
 	public function answer_create($id){
 		$q = Question::find($id);

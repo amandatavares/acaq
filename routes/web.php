@@ -33,6 +33,7 @@ Route::get('/perguntas/delete/{id}', 'QuestionController@delete');
 Route::get('/perguntas/answer/{id}', 'AnswerController@answer_create');
 Route::post('/perguntas/answer/{id}', 'AnswerController@answer_store');
 Route::get('perguntas/{id}/answer/{id2}/remove', 'AnswerController@destroy');
+Route::get('perguntas/answer/{id}/remove', 'AnswerController@destroy_home');
 
 //Friendships
 Route::get('/following', 'FriendshipController@index');
