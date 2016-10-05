@@ -22,14 +22,12 @@ button, button:focus, a, a:focus, a:active, a:hover {
 }
 
 .title-resp {
-	font-family: Nexa;
-	font-weight: bold;
-	color: #1abc9c;
-	margin-left: 5%;
-	margin-top: 5%;
-	font-size: 20px;
-	padding-top: 3%;
-	position: relative;
+    font-family: Nexa;
+    font-weight: bold;
+    color: #1abc9c;
+    margin-left: 4%;
+    font-size: 20px;
+    position: relative;
 }
 
 .title {
@@ -147,4 +145,34 @@ a:link{
 
 .post-img{
 	margin-top: 10%;
+}
+
+.profile-answer-pic{
+	width: 50px;
+    height: 50px;
+    margin-left: 50px;
+    margin-top: -5px;
+}
+
+.answer-name{
+	text-align: center;
+    font-family: Nexa;
+    font-weight: bold;
+    color: #1abc9c;
+    margin-left: 15px;
+}
+
+.answer-desc{
+    font-family: Nexa;
+    color: #2D2E38;
+    font-size: 14px;
+    font-weight: bold !important;
+    margin: 0px 0px 0px 115px;
+}
+
+.answer-box{
+	display: table;
+	width: 100%;
+	height: auto;
+	margin-top: 15px;	
 }
