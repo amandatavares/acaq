@@ -114,14 +114,13 @@
       <nav class="nav nav-aberta">
         <div class="wrap">
           <ul class="listaNav">
-            <button class="btn-trans" type="button">
-              <li>
-                <a href="{{ url('/home') }}">
-                  <img class="btn-post img-vertical-set-box" src="/img/home.png" alt=""/>
-                </a>
-              </li>
-              </button>
-
+              <button class="btn-trans" type="button">
+                <li>
+                  <a href="{{ url('/home') }}">
+                    <img class="btn-post img-vertical-set-box" src="/img/home.png" alt=""/>
+                  </a>
+                </li>
+              </button>          
               <li>
               <div class="dropdown dropdown-conf">
                 <button id="vert" class="btn-trans dropdown-toggle" type="button" data-toggle="dropdown">
@@ -179,8 +178,6 @@
                 </ul>
               </div>
             </li>
-
-
           </ul>
         </div>
       </nav>
