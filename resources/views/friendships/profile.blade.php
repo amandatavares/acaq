@@ -24,10 +24,8 @@
                             <p class="title-my">{{ $q->title }}</p>
                         </a>
                         <p class="desc-my">{{ $q->description }}</p>
-
-
-                        
                     </div>
+
                 </div>
             @endif
         @endforeach

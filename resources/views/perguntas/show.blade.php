@@ -89,16 +89,16 @@
 
                   <div class="col-sm-12" style="margin-bottom: 10px;" >
                     <h3 class="title-resp">Respostas</h3>
-                    @foreach($answers as $key => $answers)
+                    @foreach($answers as $key => $answer)
 
-                         @if ( $answers->user->id === Auth::user()->id )
+                         @if ( $answer->user->id === Auth::user()->id )
                           <div class="dropdown dropdown-post pull-right">
                             <button class="btn-trans dropdown-toggle" type="button" data-toggle="dropdown" style="margin-right: 10px;">
                                 <span class="caret"></span>
                             </button>
                             <ul class="dropdown-menu post-drop">
                                 <li class="set-prof">
-                                  <a class="set" href="SUA URL AQUIIIIII">Apagar</a>
+                                  <a class="set" href="{{ url('perguntas/'.$question->id.'/answer/'.$answer->id.'/remove') }}">Apagar</a>
                                 </li>
                             </ul>
                           </div>
@@ -106,14 +106,14 @@
 
                       <div class="answer-box">
                         <div class="profile-pic-post pull-left">
-                          <a href="/profile/<?=$answers->user->id?>">
-                            <img class="profile-post-pic profile-answer-pic" src="<?=$answers->user->img_profile?>">
+                          <a href="/profile/<?=$answer->user->id?>">
+                            <img class="profile-post-pic profile-answer-pic" src="<?=$answer->user->img_profile?>">
                           </a>                  
                         </div>
 
-                        <a href="/profile/<?=$answers->user->id?>" class="answer-name">{{$answers->user->first_name}} {{ $answers->user->last_name}}</a>
+                        <a href="/profile/<?=$answer->user->id?>" class="answer-name">{{$answer->user->first_name}} {{ $answer->user->last_name}}</a>
 
-                        <p class="answer-desc"> {{$answers->description}}</p>
+                        <p class="answer-desc"> {{$answer->description}}</p>
                       </div>
 
                     @endforeach

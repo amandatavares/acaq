@@ -106,12 +106,12 @@ class AnswerController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function destroy($id, $id2)
 	{
-		$answer = Answer::findOrFail($id);
+		$answer = Answer::findOrFail($id2);
 		$answer->delete();
 
-		return redirect()->route('answers.index')->with('message', 'Item deleted successfully.');
+		return redirect('perguntas/'.$id);
 	}
 
 	public function answer_create($id){
